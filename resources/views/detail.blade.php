@@ -356,7 +356,7 @@
                                         <?php } ?>
                                         <p>
                                            <span class="col-red" >IDR{{ number_format($master_datum->price,0) }}</span><br/>
-                                           <a href="#">
+                                           <a href="{{ url('/play') }}">
                                                 <img class="media-object" src="{{ asset('/img_game/play.png') }}" width="50" height="50">
                                            </a>
                                         </p>
