@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Sign In | Bootstrap Based Admin Template - Material Design</title>
+    <title>Sign In | Games</title>
     <!-- Favicon-->
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 
@@ -28,8 +28,8 @@
 <body class="login-page">
     <div class="login-box">
         <div class="logo">
-            <a href="javascript:void(0);">Admin<b>BSB</b></a>
-            <small>Admin BootStrap Based - Material Design</small>
+            <a href="javascript:void(0);">Admin<b>Games</b></a>
+            <small>Admin Game Store - Material Design</small>
         </div>
         <div class="card">
             <div class="body">
@@ -77,7 +77,7 @@
                     </div>
                     <div class="row m-t-15 m-b--20">
                         <div class="col-xs-6">
-                            <a href="sign-up.html">Register Now!</a>
+                            <a href="{{ url('/register') }}">Register Now!</a>
                         </div>
                         <div class="col-xs-6 align-right">
                             <a href="{{ url('/password/reset') }}">Forgot Password?</a>

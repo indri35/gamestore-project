@@ -8,7 +8,6 @@ use App\Http\Requests;
 
 class Chart1Controller extends Controller
 {
-	@return 
     public function chart1()
 	{
 	    $x1 = CompanyDetails::where ( 'x', '006' )->get ();

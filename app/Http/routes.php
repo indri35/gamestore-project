@@ -10,13 +10,12 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('/home', 'HomeController@index');
-Route::get('/', 'HomeController@index');
-Route::get('/detail/{id}', ['as'=>'detail.id','uses'=>'HomeController@detail']);
 
 Route::group(['middleware' => 'auth'], function(){
 
-	Route::get('/login', 'HomeController@login');
+	Route::get('/home', 'HomeController@index');
+	Route::get('/', 'HomeController@index');
+	Route::get('/detail/{id}', ['as'=>'detail.id','uses'=>'HomeController@detail']);
 
 	Route::get('/action', 'HomeController@action');
 	Route::get('/addgameaction', 'HomeController@addgameaction');
@@ -34,10 +33,10 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/addgamesports', 'HomeController@addgamesports');
 
 	Route::get('/addgame', 'HomeController@addgame');
+	Route::post('/adddatagame', 'HomeController@adddatagame');
 
 });
 
-
-Route::post('/adddatagame', 'HomeController@adddatagame');
-
+//activation
+Route::get('/user/activation/{token}', 'Auth\AuthController@activateUser')->name('user.activate');
 Route::auth();

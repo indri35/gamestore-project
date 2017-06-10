@@ -42,9 +42,11 @@ class AuthController extends Controller
     public function __construct(ActivationService $activationService)
     {
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
-         $this->activationService = $activationService;
+        $this->activationService = $activationService;
     }
 
+
+    /*
     public function register(Request $request)
     {
         $validator = $this->validator($request->all());
@@ -61,6 +63,8 @@ class AuthController extends Controller
 
         return redirect('/login')->with('status', 'We sent you an activation code. Check your email.');
     }
+
+    */
     /**
      * Get a validator for an incoming registration request.
      *
@@ -84,6 +88,9 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+        if(!isset($data['img']))
+            $data['img']="";
+
         return User::create([
             'name' => $data['name'],
             'role' => '1',

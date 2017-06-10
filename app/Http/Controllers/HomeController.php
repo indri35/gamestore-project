@@ -17,6 +17,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $user = Auth::user();
@@ -74,17 +80,17 @@ class HomeController extends Controller
                 foreach($max as $row){
                     $max = $row->id+1;
                 }
-        $imageName = 'game_icon'.-$max. 
+                $imageName = 'game_icon'.-$max. 
                 $request->file('img')->getClientOriginalName();
-        $path = base_path() . '/public/img_game/';
-        $request->file('img')->move($path , $imageName);
-        $masterdata = new MasterData;
-        $masterdata->img = '/img_game/'.$imageName;
-        $masterdata->name = Input::get('name'); 
-        $masterdata->desc = Input::get('desc');
-        $masterdata->category = Input::get('category');  
-        $masterdata->price = Input::get('price');  
-        $masterdata->save();
+                $path = base_path() . '/public/img_game/';
+                $request->file('img')->move($path , $imageName);
+                $masterdata = new MasterData;
+                $masterdata->img = '/img_game/'.$imageName;
+                $masterdata->name = Input::get('name'); 
+                $masterdata->desc = Input::get('desc');
+                $masterdata->category = Input::get('category');  
+                $masterdata->price = Input::get('price');  
+                $masterdata->save();
         
         return $this->index()->withMessage('Game saved!');
     }
