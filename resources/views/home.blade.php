@@ -83,16 +83,6 @@
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
     <!-- #END# Overlay For Sidebars -->
-    <!-- Search Bar -->
-    <div class="search-bar">
-        <div class="search-icon">
-            <i class="material-icons">search</i>
-        </div>
-        <input type="text" placeholder="START TYPING...">
-        <div class="close-search">
-            <i class="material-icons">close</i>
-        </div>
-    </div>
     <!-- #END# Search Bar -->
     <!-- Top Bar -->
     <nav class="navbar">
@@ -100,12 +90,13 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="../../index.html">GAME STORE Project</a>
+                <a class="navbar-brand" href="{{ url('/') }}">GAME STORE Project</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Call Search -->
                     <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
+                    <li><a href="{{ url('/login') }}"><i class="material-icons">person</i></a></li>
                     <!-- #END# Call Search -->
                     <!-- Notifications -->
                     
@@ -123,38 +114,38 @@
             <div class="menu">
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
-                    <li class="active">
-                        <a href="../../pages/ui/alerts.html">
+                    <li class="active" >
+                        <a href="{{ url('/') }}">
                             <i class="material-icons">select_all</i>
                             <span>All</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../../pages/ui/alerts.html">
+                        <a href="{{ url('/action') }}">
                             <i class="material-icons">videogame_asset</i>
                             <span>Action</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../../pages/ui/alerts.html">
+                        <a href="{{ url('/casino') }}">
                             <i class="material-icons">videogame_asset</i>
                             <span>Casino</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../../pages/ui/alerts.html">
+                        <a href="{{ url('/adventure') }}">
                             <i class="material-icons">videogame_asset</i>
-                            <span>Flappy Bird</span>
+                            <span>Adventure</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../../pages/ui/alerts.html">
+                        <a href="{{ url('/puzzle') }}">
                             <i class="material-icons">videogame_asset</i>
-                            <span>Fuzzle</span>
+                            <span>Puzzle</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../../pages/ui/alerts.html">
+                        <a href="{{ url('/sports') }}">
                             <i class="material-icons">videogame_asset</i>
                             <span>Sports</span>
                         </a>
@@ -165,7 +156,7 @@
             <!-- Footer -->
             <div class="legal">
                 <div class="copyright">
-                    &copy; 2016 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+                    &copy; 2017 <a href="javascript:void(0);">Game Store</a>.
                 </div>
                 <div class="version">
                     <b>Version: </b> 1.0.4
@@ -340,12 +331,13 @@
                                             <h3>{{ $master_datum->name }}</h3>
                                             <p>
                                                 <b>Category : </b> {{ $master_datum->category }}<br/>
-                                                <span class="rating" data-default-rating="{{ $master_datum->avg_rate }}" disabled></span>
                                                 <?php if($master_datum->user_rate==NULL){ ?>
-                                                (0)
+                                                <div class="font-15">No Review</div>
                                                 <?php }else{ ?>
-                                                ({{ $master_datum->user_rate }})
+                                                <span class="rating" data-default-rating="{{ $master_datum->avg_rate }}" disabled></span>
+                                                ({{ $master_datum->user_rate }})<br/>
                                                 <?php } ?>
+                                                <span class="col-red" >IDR{{ number_format($master_datum->price,0) }}</span>
                                             </p>
                                         </div>
                                     </div>

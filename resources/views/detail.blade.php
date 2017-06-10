@@ -6,27 +6,27 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>Game Store - Project</title>
     <!-- Favicon-->
-    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
-    <link href="{{ ('../assets/plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ URL::to('assets/plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
 
     <!-- Waves Effect Css -->
-    <link href="{{ ('../assets/plugins/node-waves/waves.css') }}" rel="stylesheet" />
+    <link href="{{ URL::to('assets/plugins/node-waves/waves.css') }}" rel="stylesheet" />
 
     <!-- Animation Css -->
-    <link href="{{ ('../assets/plugins/animate-css/animate.css') }}" rel="stylesheet" />
+    <link href="{{ URL::to('assets/plugins/animate-css/animate.css') }}" rel="stylesheet" />
 
     <!-- Custom Css -->
-    <link href="{{ ('../assets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ URL::to('assets/css/style.css') }}" rel="stylesheet">
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
-    <link href="{{ ('../assets/css/themes/all-themes.css') }}" rel="stylesheet" />
-    <link rel="stylesheet" href="{{ ('../assets/css/SimpleStarRating.css') }}">
+    <link href="{{ URL::to('assets/css/themes/all-themes.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ URL::to('assets/css/SimpleStarRating.css') }}">
         <style>
             body {
                 background-color: #999;
@@ -93,6 +93,7 @@
             <i class="material-icons">close</i>
         </div>
     </div>
+
     <!-- #END# Search Bar -->
     <!-- Top Bar -->
     <nav class="navbar">
@@ -100,12 +101,13 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="../../index.html">GAME STORE Project</a>
+                <a class="navbar-brand" href="{{ url('/') }}">GAME STORE Project</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Call Search -->
                     <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
+                    <li><a href="{{ url('/login') }}"><i class="material-icons">person</i></a></li>
                     <!-- #END# Call Search -->
                     <!-- Notifications -->
                     
@@ -124,37 +126,37 @@
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
                     <li class="active">
-                        <a href="../../pages/ui/alerts.html">
+                        <a href="{{ url('/') }}">
                             <i class="material-icons">select_all</i>
                             <span>All</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../../pages/ui/alerts.html">
+                        <a href="{{ url('/action') }}">
                             <i class="material-icons">videogame_asset</i>
                             <span>Action</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../../pages/ui/alerts.html">
+                        <a href="{{ url('/casino') }}">
                             <i class="material-icons">videogame_asset</i>
                             <span>Casino</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../../pages/ui/alerts.html">
+                        <a href="{{ url('/adventure') }}">
                             <i class="material-icons">videogame_asset</i>
-                            <span>Flappy Bird</span>
+                            <span>Adventure</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../../pages/ui/alerts.html">
+                        <a href="{{ url('/puzzle') }}">
                             <i class="material-icons">videogame_asset</i>
-                            <span>Fuzzle</span>
+                            <span>Puzzle</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../../pages/ui/alerts.html">
+                        <a href="{{ url('/sports') }}">
                             <i class="material-icons">videogame_asset</i>
                             <span>Sports</span>
                         </a>
@@ -165,7 +167,7 @@
             <!-- Footer -->
             <div class="legal">
                 <div class="copyright">
-                    &copy; 2016 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+                    &copy; 2017 <a href="javascript:void(0);">Game Store</a>.
                 </div>
                 <div class="version">
                     <b>Version: </b> 1.0.4
@@ -336,7 +338,7 @@
                                 <div class="media">
                                     <div class="media-left">
                                         <a href="javascript:void(0);">
-                                            <img class="media-object" src="{{ asset($master_datum->img) }}" width="100" height="100">
+                                            <img class="media-object" src="{{ asset($master_datum->img) }}" width="200" height="200">
                                         </a>
                                     </div>
                                     <div class="media-body">
@@ -344,9 +346,19 @@
                                         <p>
                                            {{ $master_datum->desc }} 
                                         </p>
+                                        <?php if($master_datum->user_rate==0){ ?>
+                                        <p> No Review </p>
+                                        <?php }else{ ?>
                                         <p>
                                             <span class="rating" data-default-rating="{{ $master_datum->avg_rate }}" disabled></span> {{ $master_datum->avg_rate }}/5.00<br/>
                                             Based on {{ $master_datum->user_rate }} votes & user reviews.
+                                        </p>
+                                        <?php } ?>
+                                        <p>
+                                           <span class="col-red" >IDR{{ number_format($master_datum->price,0) }}</span><br/>
+                                           <a href="#">
+                                                <img class="media-object" src="{{ asset('/img_game/play.png') }}" width="50" height="50">
+                                           </a>
                                         </p>
                                     </div>
                                 </div>
@@ -370,10 +382,14 @@
                         </div>
                         <div class="body">
                             @foreach($master_datas as $master_datum)
+                                    <?php if($master_datum->user_rate==0){ ?>
+                                        <p> No Review </p>
+                                    <?php }else{ ?>
                                     <span class="rating" data-default-rating="{{ $master_datum->rate }}" disabled></span><br/>
                                     by <i class="font-italic col-orange">{{ $master_datum->user_name }}</i> - {{ $master_datum->created_at }} <br/>
                                     {{ $master_datum->comment }} <br/>
                                     <hr>
+                                    <?php } ?> 
                             @endforeach   
                         </div>
                     </div>
@@ -384,27 +400,27 @@
     </section>
 
     <!-- Jquery Core Js -->
-    <script src="{{ ('../assets/plugins/jquery/jquery.min.js') }}"></script>
+    <script src="{{ URL::to('assets/plugins/jquery/jquery.min.js') }}"></script>
 
     <!-- Bootstrap Core Js -->
-    <script src="{{ ('../assets/plugins/bootstrap/js/bootstrap.js') }}"></script>
+    <script src="{{ URL::to('assets/plugins/bootstrap/js/bootstrap.js') }}"></script>
 
     <!-- Select Plugin Js -->
-    <script src="{{ ('../assets/plugins/bootstrap-select/js/bootstrap-select.js') }}"></script>
+    <script src="{{ URL::to('assets/plugins/bootstrap-select/js/bootstrap-select.js') }}"></script>
 
     <!-- Slimscroll Plugin Js -->
-    <script src="{{ ('../assets/plugins/jquery-slimscroll/jquery.slimscroll.js') }}"></script>
+    <script src="{{ URL::to('assets/plugins/jquery-slimscroll/jquery.slimscroll.js') }}"></script>
 
     <!-- Waves Effect Plugin Js -->
-    <script src="{{ ('../assets/plugins/node-waves/waves.js') }}"></script>
+    <script src="{{ URL::to('assets/plugins/node-waves/waves.js') }}"></script>
 
     <!-- Custom Js -->
-    <script src="{{ ('../assets/js/admin.js') }}"></script>
+    <script src="{{ URL::to('assets/js/admin.js') }}"></script>
 
     <!-- Demo Js -->
-    <script src="{{ ('../assets/js/demo.js') }}"></script>
+    <script src="{{ URL::to('assets/js/demo.js') }}"></script>
 
-    <script src="{{ ('../assets/js/SimpleStarRating.js') }}"></script>
+    <script src="{{ URL::to('assets/js/SimpleStarRating.js') }}"></script>
         <script>
             var ratings = document.getElementsByClassName('rating');
 
