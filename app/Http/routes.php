@@ -11,10 +11,11 @@
 |
 */
 
+Route::get('/', 'HomeController@index');
+
 Route::group(['middleware' => 'auth'], function(){
 
 	Route::get('/home', 'HomeController@index');
-	Route::get('/', 'HomeController@index');
 	Route::get('/detail/{id}', ['as'=>'detail.id','uses'=>'HomeController@detail']);
 
 	Route::get('/action', 'HomeController@action');
