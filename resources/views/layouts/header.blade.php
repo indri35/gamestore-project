@@ -1,222 +1,189 @@
+<!DOCTYPE html>
+<html>
+
 <head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Game Store - Project</title>
+    <!-- Favicon-->
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 
-  <!-- Basic -->
-  <title>AppXoffer - Mobile App Tracking &amp; Attribution Analytics</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
-  <!-- Define Charset -->
-  <meta charset="utf-8">
+    <!-- Bootstrap Core Css -->
+    <link href="{{ ('assets/plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
 
-  <!-- Responsive Metatag -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Waves Effect Css -->
+    <link href="{{ ('assets/plugins/node-waves/waves.css') }}" rel="stylesheet" />
 
-  <!-- Page Description and Author -->
-  <meta name="description" content="Margo - Responsive HTML5 Template">
-  <meta name="author" content="iThemesLab">
+    <!-- Animation Css -->
+    <link href="{{ ('assets/plugins/animate-css/animate.css') }}" rel="stylesheet" />
 
-  <!-- Bootstrap CSS  -->
-  <link rel="stylesheet" href="{{ asset('assets/asset/css/bootstrap.min.css') }}" type="text/css" media="screen">
+    <!-- Custom Css -->
+    <link href="{{ ('assets/css/style.css') }}" rel="stylesheet">
 
-  <!-- Font Awesome CSS -->
-  <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css') }}" type="text/css" media="screen">
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="{{ ('assets/css/themes/all-themes.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ ('assets/css/SimpleStarRating.css') }}">
+        <style>
+            body {
+                background-color: #999;
+                font-family: sans-serif;
+                margin: 0;
+            }
 
-  <!-- Slicknav -->
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/slicknav.css') }}" media="screen">
+            main {
+                background-color: white;
+                width: 80%;
+                margin: 0 auto;
+                padding: 50px;
+                text-align: center;
+            }
 
-  <!-- Margo CSS Styles  -->
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}" media="screen">
+            table {
+                display: inline-block;
+            }
 
-  <!-- Responsive CSS Styles  -->
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.css') }}" media="screen">
+            td {
+                padding: 1em;
+            }
 
-  <!-- Css3 Transitions Styles  -->
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.css') }}" media="screen">
+            .golden {
+                color: #ee0;
+                background-color: #444;
+            }
 
-  <!-- Color CSS Styles  -->
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/colors/red.css') }}" title="red" media="screen" />
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/colors/jade.css') }}" title="jade" media="screen" />
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/colors/green.css') }}" title="green" media="screen" />
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/colors/blue.css') }}" title="blue" media="screen" />
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/colors/beige.css') }}" title="beige" media="screen" />
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/colors/cyan.css') }}" title="cyan" media="screen" />
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/colors/orange.css') }}" title="orange" media="screen" />
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/colors/peach.css') }}" title="peach" media="screen" />
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/colors/pink.css') }}" title="pink" media="screen" />
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/colors/purple.css') }}" title="purple" media="screen" />
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/colors/sky-blue.css') }}" title="sky-blue" media="screen" />
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/colors/yellow.css') }}" title="yellow" media="screen" />
-
-  <!-- Margo JS  -->
-  <script type="text/javascript" src="{{ asset('assets/js/jquery-2.1.4.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('assets/js/jquery.migrate.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('assets/js/modernizrr.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('assets/asset/js/bootstrap.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('assets/js/jquery.fitvids.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('assets/js/nivo-lightbox.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('assets/js/jquery.isotope.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('assets/js/jquery.appear.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('assets/js/count-to.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('assets/js/jquery.textillate.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('assets/js/jquery.lettering.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('assets/js/jquery.easypiechart.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('assets/js/jquery.nicescroll.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('assets/js/jquery.parallax.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('assets/js/mediaelement-and-player.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('assets/js/jquery.slicknav.js') }}"></script>
-  
-
-  <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
+            .big-red {
+                color: #f11;
+                font-size: 50px;
+            }
+        </style>
 </head>
 
-<body>
-
-  <!-- Full Body Container -->
-  <div id="container">
-
-
-    <!-- Start Header Section -->
-    <div class="hidden-header"></div>
-    <header class="clearfix">
-
-      <!-- Start Top Bar -->
-      <div class="top-bar">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-7">
-              <!-- Start Contact Info -->
-              <ul class="contact-details">
-                <li><a href="#"><i class="fa fa-map-marker"></i> House-54/A, London, UK</a>
-                </li>
-                <li><a href="#"><i class="fa fa-envelope-o"></i> info@yourcompany.com</a>
-                </li>
-                <li><a href="#"><i class="fa fa-phone"></i> +12 345 678 000</a>
-                </li>
-              </ul>
-              <!-- End Contact Info -->
+<body class="theme-red">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
             </div>
-            <!-- .col-md-6 -->
-            <div class="col-md-5">
-              <!-- Start Social Links -->
-              <ul class="social-list">
-                <li>
-                  <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a>
-                </li>
-                <li>
-                  <a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
-                </li>
-                <li>
-                  <a class="google itl-tooltip" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a>
-                </li>
-                <li>
-                  <a class="dribbble itl-tooltip" data-placement="bottom" title="Dribble" href="#"><i class="fa fa-dribbble"></i></a>
-                </li>
-                <li>
-                  <a class="linkdin itl-tooltip" data-placement="bottom" title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                </li>
-                <li>
-                  <a class="flickr itl-tooltip" data-placement="bottom" title="Flickr" href="#"><i class="fa fa-flickr"></i></a>
-                </li>
-                <li>
-                  <a class="tumblr itl-tooltip" data-placement="bottom" title="Tumblr" href="#"><i class="fa fa-tumblr"></i></a>
-                </li>
-                <li>
-                  <a class="instgram itl-tooltip" data-placement="bottom" title="Instagram" href="#"><i class="fa fa-instagram"></i></a>
-                </li>
-                <li>
-                  <a class="vimeo itl-tooltip" data-placement="bottom" title="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
-                </li>
-                <li>
-                  <a class="skype itl-tooltip" data-placement="bottom" title="Skype" href="#"><i class="fa fa-skype"></i></a>
-                </li>
-              </ul>
-              <!-- End Social Links -->
-            </div>
-            <!-- .col-md-6 -->
-          </div>
-          <!-- .row -->
+            <p>Please wait...</p>
         </div>
-        <!-- .container -->
-      </div>
-      <!-- .top-bar -->
-      <!-- End Top Bar -->
-
-
-      <!-- Start  Logo & Naviagtion  -->
-      <div class="navbar navbar-default navbar-top">
-        <div class="container">
-          <div class="navbar-header">
-            <!-- Stat Toggle Nav Link For Mobiles -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <i class="fa fa-bars"></i>
-            </button>
-            <!-- End Toggle Nav Link For Mobiles -->
-            <a class="navbar-brand" href="index.html">
-              <img alt="" src="{{ asset('assets/images/logo.png') }}">
-            </a>
-          </div>
-          <div class="navbar-collapse collapse">
-            <!-- Stat Search -->
-            <div class="search-side">
-              <a class="show-search"><i class="fa fa-search"></i></a>
-              <div class="search-form">
-                <form autocomplete="off" role="search" method="get" class="searchform" action="#">
-                  <input type="text" value="" name="s" id="s" placeholder="Search the site...">
-                </form>
-              </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- #END# Search Bar -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="{{ url('/') }}">GAME STORE Project</a>
             </div>
-            <!-- End Search -->
-            <!-- Start Navigation List -->
-            <ul class="nav navbar-nav navbar-right">
-              <li>
-                <a class="active" href="{{ url('/') }}">Home</a>
-              </li>
-              <li>
-                <a href="{{ url('/features') }}">Features</a>
-              </li>
-              <li>
-                <a href="{{ url('/company') }}">Company</a>
-              </li>
-              <li>
-                <a href="{{ url('/patrners') }}">Partners</a>
-              </li>
-              <li>
-                <a href="{{ url('/contact') }}">Contact</a>
-              </li>
-              <li>
-                <a href="#">Login</a>
-              </li>
-            </ul>
-            <!-- End Navigation List -->
-          </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Call Search -->
+                    <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
+                    <li><a href="{{ url('/login') }}"><i class="material-icons">person</i></a></li>
+                    <!-- #END# Call Search -->
+                    <!-- Notifications -->
+                    
+                    <!-- #END# Tasks -->
+                    <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
+                </ul>
+            </div>
         </div>
-
-        <!-- Mobile Menu Start -->
-        <ul class="wpb-mobile-menu">
-          <li>
-                <a class="active" href="{{ url('/') }}">Home</a>
-              </li>
-              <li>
-                <a href="{{ url('/features') }}">Features</a>
-              </li>
-              <li>
-                <a href="{{ url('/company') }}">Company</a>
-              </li>
-              <li>
-                <a href="{{ url('/patrners') }}">Partners</a>
-              </li>
-              <li>
-                <a href="{{ url('/contact') }}">Contact</a>
-              </li>
-              <li>
-                <a href="#">Login</a>
-              </li>
-        </ul>
-        <!-- Mobile Menu End -->
-
-      </div>
-      <!-- End Header Logo & Naviagtion -->
-
-    </header>
-    <!-- End Header Section -->
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+          @if(Auth::user())
+              <div class="user-info">
+                <div class="image">
+                    <img src="{{ asset(Auth::user()->img) }}" width="48" height="48" alt="User" />
+                </div>
+                <div class="info-container">
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ (Auth::user()->name) }}</div>
+                    <div class="email">{{ (Auth::user()->email) }}</div>
+                    <div class="btn-group user-helper-dropdown">
+                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="{{ url('/logout') }}"><i class="material-icons">input</i>Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            @endif
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+                    <li class="header">MAIN NAVIGATION</li>
+                    <li class="active" >
+                        <a href="{{ url('/') }}">
+                            <i class="material-icons">select_all</i>
+                            <span>All</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/action') }}">
+                            <i class="material-icons">videogame_asset</i>
+                            <span>Action</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/casino') }}">
+                            <i class="material-icons">videogame_asset</i>
+                            <span>Casino</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/adventure') }}">
+                            <i class="material-icons">videogame_asset</i>
+                            <span>Adventure</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/puzzle') }}">
+                            <i class="material-icons">videogame_asset</i>
+                            <span>Puzzle</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/sports') }}">
+                            <i class="material-icons">videogame_asset</i>
+                            <span>Sports</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- #Menu -->
+            <!-- Footer -->
+            <div class="legal">
+                <div class="copyright">
+                    &copy; 2017 <a href="javascript:void(0);">Game Store</a>.
+                </div>
+                <div class="version">
+                    <b>Version: </b> 1.0.4
+                </div>
+            </div>
+            <!-- #Footer -->
+        </aside>
+        <!-- #END# Left Sidebar -->
+        <!-- Right Sidebar -->
+        <aside id="rightsidebar" class="right-sidebar">
+        </aside>
+        <!-- #END# Right Sidebar -->
+    </section>

@@ -53,27 +53,6 @@ class HomeController extends Controller
 		}
 	}
 	
-	public function adventure()
-		    {
-		$user = Auth::user();
-		if($user->role=='2'){
-			$master_datas = DB::table('t_games')
-						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
-						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.category,t_games.img,t_games.price,t_games_rate.avg_rate,t_games_rate.user_rate'))
-						                ->where('t_games.category','Adventure')
-						                ->paginate();
-			return view('adventure', compact('master_datas'));
-		}
-		else{
-			$master_datas = DB::table('t_games')
-						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
-						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.category,t_games.img,t_games.price,t_games_rate.avg_rate,t_games_rate.user_rate'))
-						                ->where('t_games.category','Adventure')
-						                ->paginate();
-			return view('admin.adventure-admin', compact('master_datas'));
-		}
-	}
-	
 	
 	public function adddatagame(Request $request)
 		        {
@@ -101,112 +80,13 @@ class HomeController extends Controller
 		
 		return $this->index()->withMessage('Game saved!');
 	}
-	
-	public function action()
-		    {
-		$user = Auth::user();
-		if($user->role=='2'){
-			$master_datas = DB::table('t_games')
-						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
-						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.category,t_games.img,t_games.price,t_games_rate.avg_rate,t_games_rate.user_rate'))
-						                ->where('t_games.category','Action')
-						                ->paginate();
-			return view('action', compact('master_datas'));
-		}
-		else{
-			$master_datas = DB::table('t_games')
-						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
-						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.category,t_games.img,t_games.price,t_games_rate.avg_rate,t_games_rate.user_rate'))
-						                ->where('t_games.category','Action')
-						                ->paginate();
-			return view('admin.action-admin', compact('master_datas'));
-		}
-	}
-	
-	
-	
-	public function casino()
-		    {
-		$user = Auth::user();
-		if($user->role=='2'){
-			$master_datas = DB::table('t_games')
-						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
-						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.category,t_games.img,t_games.price,t_games_rate.avg_rate,t_games_rate.user_rate'))
-						                ->where('t_games.category','Casino')
-						                ->paginate();
-			return view('casino', compact('master_datas'));
-		}
-		else{
-			$master_datas = DB::table('t_games')
-						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
-						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.category,t_games.img,t_games.price,t_games_rate.avg_rate,t_games_rate.user_rate'))
-						                ->where('t_games.category','Casino')
-						                ->paginate();
-			return view('admin.casino-admin', compact('master_datas'));
-		}
-	}
-	
-	public function sports()
-		    {
-		$user = Auth::user();
-		if($user->role=='2'){
-			$master_datas = DB::table('t_games')
-						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
-						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.category,t_games.img,t_games.price,t_games_rate.avg_rate,t_games_rate.user_rate'))
-						                ->where('t_games.category','Sports')
-						                ->paginate();
-			return view('sports', compact('master_datas'));
-		}
-		else{
-			$master_datas = DB::table('t_games')
-						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
-						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.category,t_games.img,t_games.price,t_games_rate.avg_rate,t_games_rate.user_rate'))
-						                ->where('t_games.category','Sports')
-						                ->paginate();
-			return view('admin.sports-admin', compact('master_datas'));
-		}
-	}
-	
-	public function puzzle()
-		    {
-		$user = Auth::user();
-		if($user->role=='2'){
-			$master_datas = DB::table('t_games')
-						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
-						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.category,t_games.img,t_games.price,t_games_rate.avg_rate,t_games_rate.user_rate'))
-						                ->where('t_games.category','Puzzle')
-						                ->paginate();
-			return view('puzzle', compact('master_datas'));
-		}
-		else{
-			$master_datas = DB::table('t_games')
-						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
-						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.category,t_games.img,t_games.price,t_games_rate.avg_rate,t_games_rate.user_rate'))
-						                ->where('t_games.category','Puzzle')
-						                ->paginate();
-			return view('admin.puzzle-admin', compact('master_datas'));
-		}
-	}
-	
+		
 	
 	public function addgameadventure()
 		    {
 		$user = Auth::user();
 		return view('admin.addgameadventure');
 	}
-
-	public function play()
-		{
-    		$user = Auth::user();
-            		$master_datas = DB::table('t_games')
-				                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
-				                ->join('t_rate', 't_rate.id_game', '=', 't_games.id','left outer')
-				                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.category,t_games.img,t_games.price,t_games_rate.avg_rate,t_games_rate.user_rate, t_rate.user_name,t_rate.rate,t_rate.comment,t_rate.created_at'))
-				                ->where('t_games.id',$id)
-				                ->paginate();
-            return view('detail', compact('master_datas'));
-	}
-	
 	
 	public function addgameaction()
 		    {

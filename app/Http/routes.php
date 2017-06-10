@@ -11,15 +11,15 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
-Route::get('/detail/{id}', ['as'=>'detail.id','uses'=>'HomeController@detail']);
-Route::get('/action', 'HomeController@action');
-Route::get('/casino', 'HomeController@casino');
-Route::get('/adventure', 'HomeController@adventure');
-Route::get('/home', 'HomeController@index');
-Route::get('/puzzle', 'HomeController@puzzle');
-Route::get('/sports', 'HomeController@sports');
-Route::get('/play', 'HomeController@play');
+Route::get('/', 'PublicController@index');
+Route::get('/detail/{id}', ['as'=>'detail.id','uses'=>'PublicController@detail']);
+Route::get('/action', 'PublicController@action');
+Route::get('/casino', 'PublicController@casino');
+Route::get('/adventure', 'PublicController@adventure');
+Route::get('/home', 'PublicController@index');
+Route::get('/puzzle', 'PublicController@puzzle');
+Route::get('/sports', 'PublicController@sports');
+Route::get('/play', 'PublicController@play');
 
 Route::group(['middleware' => 'auth'], function(){
 
