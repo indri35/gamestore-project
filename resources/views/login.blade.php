@@ -1,97 +1,93 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title> ModularAdmin - Free Dashboard Theme | HTML Version </title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
-        <link rel="stylesheet" href="{{ asset('assets/dist/css/vendor.css') }}">
-        <!-- Theme initialization -->
-        <script>
-            var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
-            {};
-            var themeName = themeSettings.themeName || '';
-            if (themeName)
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="{{ asset('assets/dist/css/app-blue.css') }}">');
-            }
-            else
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="{{ asset('assets/dist/css/app-blue.css') }}">');
-            }
-        </script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Sign In | Bootstrap Based Admin Template - Material Design</title>
+    <!-- Favicon-->
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 
-    <body>
-        <div class="auth">
-            <div class="auth-container">
-                <div class="card">
-                    <header class="auth-header">
-                        <h1 class="auth-title">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="{{ ('assets/plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="{{ ('assets/plugins/node-waves/waves.css') }}" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="{{ ('assets/plugins/animate-css/animate.css') }}" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="{{ ('assets/css/style.css') }}" rel="stylesheet">
+</head>
+
+<body class="login-page">
+    <div class="login-box">
         <div class="logo">
-          <span class="l l1"></span>
-          <span class="l l2"></span>
-          <span class="l l3"></span>
-          <span class="l l4"></span>
-          <span class="l l5"></span>
-        </div>        GameStore - Project
-      </h1> </header>
-                    <div class="auth-content">
-                        @if (session('status'))
-                            <div class="alert alert-success">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-                        @if (session('warning'))
-                            <div class="alert alert-warning">
-                                {{ session('warning') }}
-                            </div>
-                        @endif
-                        <p class="text-xs-center">LOGIN TO CONTINUE</p>
-                        <form id="login-form" method="POST" action="{{ url('/login') }}">
-                        {{ csrf_field() }}
-                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}"> <label for="email" class="col-md-3 control-label">E-Mail</label> <input class="form-control underlined" id="email" type="email" name="email" value="{{ old('email') }}" required> </div>
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}"> <label for="password" class="col-md-3 control-label">Password</label> <input class="form-control underlined" id="password" type="password" name="password" value="{{ old('password') }}" required> </div>
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            <div class="form-group"> <label for="remember">
-            <input class="checkbox" id="remember" type="checkbox"> 
-            <span>Remember me</span>
-          </label> <a href="reset.html" class="forgot-btn pull-right">Forgot password?</a> </div>
-                            <div class="form-group"> <button type="submit" class="btn btn-block btn-primary">Login</button> </div>
-                            <div class="form-group">
-                                <p class="text-muted text-xs-center">Do not have an account? <a href="signup.html">Sign Up!</a></p>
-                            </div>
-                        </form>
+            <a href="javascript:void(0);">Admin<b>BSB</b></a>
+            <small>Admin BootStrap Based - Material Design</small>
+        </div>
+        <div class="card">
+            <div class="body">
+                <form id="sign_in" method="POST">
+                    <div class="msg">Sign in to start your session</div>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">person</i>
+                        </span>
+                        <div class="form-line">
+                            <input type="text" class="form-control" name="username" placeholder="Username" required autofocus>
+                        </div>
                     </div>
-                </div>
-                <div class="text-xs-center">
-                    <a href="index.html" class="btn btn-secondary rounded btn-sm"> <i class="fa fa-arrow-left"></i> Back to dashboard </a>
-                </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">lock</i>
+                        </span>
+                        <div class="form-line">
+                            <input type="password" class="form-control" name="password" placeholder="Password" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8 p-t-5">
+                            <input type="checkbox" name="rememberme" id="rememberme" class="filled-in chk-col-pink">
+                            <label for="rememberme">Remember Me</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <button class="btn btn-block bg-pink waves-effect" type="submit">SIGN IN</button>
+                        </div>
+                    </div>
+                    <div class="row m-t-15 m-b--20">
+                        <div class="col-xs-6">
+                            <a href="sign-up.html">Register Now!</a>
+                        </div>
+                        <div class="col-xs-6 align-right">
+                            <a href="forgot-password.html">Forgot Password?</a>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-        <!-- Reference block for JS -->
-        <div class="ref" id="ref">
-            <div class="color-primary"></div>
-            <div class="chart">
-                <div class="color-primary"></div>
-                <div class="color-secondary"></div>
-            </div>
-        </div>
-        <script src="{{ asset('assets/dist/js/vendor.js') }}"></script>
-        <script src="{{ asset('assets/dist/js/app.js') }}"></script>
-    </body>
+    </div>
+
+    <!-- Jquery Core Js -->
+    <script src="{{ ('assets/plugins/jquery/jquery.min.js') }}"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="{{ ('assets/plugins/bootstrap/js/bootstrap.js') }}"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="{{ ('assets/plugins/node-waves/waves.js') }}"></script>
+
+    <!-- Validation Plugin Js -->
+    <script src="{{ ('assets/plugins/jquery-validation/jquery.validate.js') }}"></script>
+
+    <!-- Custom Js -->
+    <script src="{{ ('assets/js/admin.js') }}"></script>
+    <script src="{{ ('assets/js/pages/examples/sign-in.js') }}"></script>
+</body>
 
 </html>

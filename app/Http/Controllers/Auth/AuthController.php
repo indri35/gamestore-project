@@ -7,6 +7,9 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use App\ActivationService;
+use Illuminate\Http\Request;
+
 
 class AuthController extends Controller
 {
@@ -28,18 +31,36 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/index';
-
+    protected $redirectTo = 'home';
+    
+    protected $activationService;
     /**
      * Create a new authentication controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(ActivationService $activationService)
     {
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+         $this->activationService = $activationService;
     }
 
+    public function register(Request $request)
+    {
+        $validator = $this->validator($request->all());
+
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+
+        $user = $this->create($request->all());
+
+        $this->activationService->sendActivationMail($user);
+
+        return redirect('/login')->with('status', 'We sent you an activation code. Check your email.');
+    }
     /**
      * Get a validator for an incoming registration request.
      *
@@ -65,8 +86,29 @@ class AuthController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'role' => '1',
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'img' => $data['img']
         ]);
+    }
+
+        public function authenticated(Request $request, $user)
+    {
+        if (!$user->activated) {
+            $this->activationService->sendActivationMail($user);
+            auth()->logout();
+            return back()->with('warning', 'You need to confirm your account. We have sent you an activation code, please check your email.');
+        }
+        return redirect()->intended($this->redirectPath());
+    }
+
+    public function activateUser($token)
+    {
+        if ($user = $this->activationService->activateUser($token)) {
+            auth()->login($user);
+            return redirect($this->redirectPath());
+        }
+        abort(404);
     }
 }

@@ -10,18 +10,34 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
-Route::get('/', 'HomeController@index');
-
 Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
+Route::get('/detail/{id}', ['as'=>'detail.id','uses'=>'HomeController@detail']);
 
-Route::get('/company', 'HomeController@company');
+Route::group(['middleware' => 'auth'], function(){
 
-Route::get('/features', 'HomeController@features');
+	Route::get('/login', 'HomeController@login');
 
-Route::get('/partners', 'HomeController@partners');
+	Route::get('/action', 'HomeController@action');
+	Route::get('/addgameaction', 'HomeController@addgameaction');
 
-Route::get('/contact', 'HomeController@contact');
+	Route::get('/casino', 'HomeController@casino');
+	Route::get('/addgamecasino', 'HomeController@addgamecasino');
+
+	Route::get('/adventure', 'HomeController@adventure');
+	Route::get('/addgameadventure', 'HomeController@addgameadventure');
+
+	Route::get('/puzzle', 'HomeController@puzzle');
+	Route::get('/addgamepuzzle', 'HomeController@addgamepuzzle');
+
+	Route::get('/sports', 'HomeController@sports');
+	Route::get('/addgamesports', 'HomeController@addgamesports');
+
+	Route::get('/addgame', 'HomeController@addgame');
+
+});
 
 
+Route::post('/adddatagame', 'HomeController@adddatagame');
 
+Route::auth();

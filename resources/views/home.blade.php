@@ -1,261 +1,390 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title> ModularAdmin - Free Dashboard Theme | HTML Version </title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
-        <link rel="stylesheet" href="{{ asset('assets/dist/css/vendor.css') }}">
-        <!-- Theme initialization -->
-        <script>
-            var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
-            {};
-            var themeName = themeSettings.themeName || '';
-            if (themeName)
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="{{ asset('assets/dist/css/app-blue.css') }}">');
-            }
-            else
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="{{ asset('assets/dist/css/app.css') }}">');
-            }
-        </script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Game Store - Project</title>
+    <!-- Favicon-->
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 
-    <body>
-        <div class="main-wrapper">
-            <div class="app" id="app">
-                <header class="header">
-                    <div class="header-block header-block-collapse hidden-lg-up"> <button class="collapse-btn" id="sidebar-collapse-btn">
-                <i class="fa fa-bars"></i>
-            </button> </div>
-                    <div class="header-block header-block-search hidden-sm-down">
-                        <form role="search">
-                            <div class="input-container"> <i class="fa fa-search"></i> <input type="search" placeholder="Search">
-                                <div class="underline"></div>
-                            </div>
-                        </form>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="{{ ('assets/plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="{{ ('assets/plugins/node-waves/waves.css') }}" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="{{ ('assets/plugins/animate-css/animate.css') }}" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="{{ ('assets/css/style.css') }}" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="{{ ('assets/css/themes/all-themes.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ ('assets/css/SimpleStarRating.css') }}">
+        <style>
+            body {
+                background-color: #999;
+                font-family: sans-serif;
+                margin: 0;
+            }
+
+            main {
+                background-color: white;
+                width: 80%;
+                margin: 0 auto;
+                padding: 50px;
+                text-align: center;
+            }
+
+            table {
+                display: inline-block;
+            }
+
+            td {
+                padding: 1em;
+            }
+
+            .golden {
+                color: #ee0;
+                background-color: #444;
+            }
+
+            .big-red {
+                color: #f11;
+                font-size: 50px;
+            }
+        </style>
+</head>
+
+<body class="theme-red">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
                     </div>
-                    <div class="header-block header-block-nav">
-                        <ul class="nav-profile">
-                            <li class="notifications new">
-                                <a href="" data-toggle="dropdown"> <i class="fa fa-bell-o"></i> <sup>
-                      <span class="counter">8</span>
-                    </sup> </a>
-                                <div class="dropdown-menu notifications-dropdown-menu">
-                                    <ul class="notifications-container">
-                                        <li>
-                                            <a href="" class="notification-item">
-                                                <div class="img-col">
-                                                    <div class="img" style="background-image: url('assets/faces/3.jpg')"></div>
-                                                </div>
-                                                <div class="body-col">
-                                                    <p> <span class="accent">Zack Alien</span> pushed new commit: <span class="accent">Fix page load performance issue</span>. </p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="" class="notification-item">
-                                                <div class="img-col">
-                                                    <div class="img" style="background-image: url('assets/faces/5.jpg')"></div>
-                                                </div>
-                                                <div class="body-col">
-                                                    <p> <span class="accent">Amaya Hatsumi</span> started new task: <span class="accent">Dashboard UI design.</span>. </p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="" class="notification-item">
-                                                <div class="img-col">
-                                                    <div class="img" style="background-image: url('assets/faces/8.jpg')"></div>
-                                                </div>
-                                                <div class="body-col">
-                                                    <p> <span class="accent">Andy Nouman</span> deployed new version of <span class="accent">NodeJS REST Api V3</span> </p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <footer>
-                                        <ul>
-                                            <li> <a href="">
-                            View All
-                          </a> </li>
-                                        </ul>
-                                    </footer>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- #END# Search Bar -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="{{ url('/') }}">GAME STORE Project</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Call Search -->
+                    <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
+                    <li><a href="{{ url('/login') }}"><i class="material-icons">person</i></a></li>
+                    <!-- #END# Call Search -->
+                    <!-- Notifications -->
+                    
+                    <!-- #END# Tasks -->
+                    <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+                    <li class="header">MAIN NAVIGATION</li>
+                    <li class="active" >
+                        <a href="{{ url('/') }}">
+                            <i class="material-icons">select_all</i>
+                            <span>All</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/action') }}">
+                            <i class="material-icons">videogame_asset</i>
+                            <span>Action</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/casino') }}">
+                            <i class="material-icons">videogame_asset</i>
+                            <span>Casino</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/adventure') }}">
+                            <i class="material-icons">videogame_asset</i>
+                            <span>Adventure</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/puzzle') }}">
+                            <i class="material-icons">videogame_asset</i>
+                            <span>Puzzle</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/sports') }}">
+                            <i class="material-icons">videogame_asset</i>
+                            <span>Sports</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- #Menu -->
+            <!-- Footer -->
+            <div class="legal">
+                <div class="copyright">
+                    &copy; 2017 <a href="javascript:void(0);">Game Store</a>.
+                </div>
+                <div class="version">
+                    <b>Version: </b> 1.0.4
+                </div>
+            </div>
+            <!-- #Footer -->
+        </aside>
+        <!-- #END# Left Sidebar -->
+        <!-- Right Sidebar -->
+        <aside id="rightsidebar" class="right-sidebar">
+            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>
+                <li role="presentation"><a href="#settings" data-toggle="tab">SETTINGS</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active in active" id="skins">
+                    <ul class="demo-choose-skin">
+                        <li data-theme="red" class="active">
+                            <div class="red"></div>
+                            <span>Red</span>
+                        </li>
+                        <li data-theme="pink">
+                            <div class="pink"></div>
+                            <span>Pink</span>
+                        </li>
+                        <li data-theme="purple">
+                            <div class="purple"></div>
+                            <span>Purple</span>
+                        </li>
+                        <li data-theme="deep-purple">
+                            <div class="deep-purple"></div>
+                            <span>Deep Purple</span>
+                        </li>
+                        <li data-theme="indigo">
+                            <div class="indigo"></div>
+                            <span>Indigo</span>
+                        </li>
+                        <li data-theme="blue">
+                            <div class="blue"></div>
+                            <span>Blue</span>
+                        </li>
+                        <li data-theme="light-blue">
+                            <div class="light-blue"></div>
+                            <span>Light Blue</span>
+                        </li>
+                        <li data-theme="cyan">
+                            <div class="cyan"></div>
+                            <span>Cyan</span>
+                        </li>
+                        <li data-theme="teal">
+                            <div class="teal"></div>
+                            <span>Teal</span>
+                        </li>
+                        <li data-theme="green">
+                            <div class="green"></div>
+                            <span>Green</span>
+                        </li>
+                        <li data-theme="light-green">
+                            <div class="light-green"></div>
+                            <span>Light Green</span>
+                        </li>
+                        <li data-theme="lime">
+                            <div class="lime"></div>
+                            <span>Lime</span>
+                        </li>
+                        <li data-theme="yellow">
+                            <div class="yellow"></div>
+                            <span>Yellow</span>
+                        </li>
+                        <li data-theme="amber">
+                            <div class="amber"></div>
+                            <span>Amber</span>
+                        </li>
+                        <li data-theme="orange">
+                            <div class="orange"></div>
+                            <span>Orange</span>
+                        </li>
+                        <li data-theme="deep-orange">
+                            <div class="deep-orange"></div>
+                            <span>Deep Orange</span>
+                        </li>
+                        <li data-theme="brown">
+                            <div class="brown"></div>
+                            <span>Brown</span>
+                        </li>
+                        <li data-theme="grey">
+                            <div class="grey"></div>
+                            <span>Grey</span>
+                        </li>
+                        <li data-theme="blue-grey">
+                            <div class="blue-grey"></div>
+                            <span>Blue Grey</span>
+                        </li>
+                        <li data-theme="black">
+                            <div class="black"></div>
+                            <span>Black</span>
+                        </li>
+                    </ul>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="settings">
+                    <div class="demo-settings">
+                        <p>GENERAL SETTINGS</p>
+                        <ul class="setting-list">
+                            <li>
+                                <span>Report Panel Usage</span>
+                                <div class="switch">
+                                    <label><input type="checkbox" checked><span class="lever"></span></label>
                                 </div>
                             </li>
-                            <li class="profile dropdown">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                    <div class="img" style="background-image: url('https://avatars3.githubusercontent.com/u/3959008?v=3&s=40')"> </div> <span class="name">
-                      John Doe
-                    </span> </a>
-                                <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <a class="dropdown-item" href="#"> <i class="fa fa-user icon"></i> Profile </a>
-                                    <a class="dropdown-item" href="#"> <i class="fa fa-bell icon"></i> Notifications </a>
-                                    <a class="dropdown-item" href="#"> <i class="fa fa-gear icon"></i> Settings </a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="login.html"> <i class="fa fa-power-off icon"></i> Logout </a>
+                            <li>
+                                <span>Email Redirect</span>
+                                <div class="switch">
+                                    <label><input type="checkbox"><span class="lever"></span></label>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>SYSTEM SETTINGS</p>
+                        <ul class="setting-list">
+                            <li>
+                                <span>Notifications</span>
+                                <div class="switch">
+                                    <label><input type="checkbox" checked><span class="lever"></span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Auto Updates</span>
+                                <div class="switch">
+                                    <label><input type="checkbox" checked><span class="lever"></span></label>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>ACCOUNT SETTINGS</p>
+                        <ul class="setting-list">
+                            <li>
+                                <span>Offline</span>
+                                <div class="switch">
+                                    <label><input type="checkbox"><span class="lever"></span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Location Permission</span>
+                                <div class="switch">
+                                    <label><input type="checkbox" checked><span class="lever"></span></label>
                                 </div>
                             </li>
                         </ul>
                     </div>
-                </header>
-                <aside class="sidebar">
-                    <div class="sidebar-container">
-                        <div class="sidebar-header">
-                            <div class="brand">
-                                <div class="logo"> <span class="l l1"></span> <span class="l l2"></span> <span class="l l3"></span> <span class="l l4"></span> <span class="l l5"></span> </div> Modular Admin </div>
+                </div>
+            </div>
+        </aside>
+        <!-- #END# Right Sidebar -->
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Custom Content -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                All Category
+                            </h2>
                         </div>
-                        <nav class="menu">
-                            <ul class="nav metismenu" id="sidebar-menu">
-                                <li class="active">
-                                    <a href="index.html"> <i class="fa fa-home"></i> Dashboard </a>
-                                </li>
-                                <li>
-                                    <a href=""> <i class="fa fa-th-large"></i> Category <i class="fa arrow"></i> </a>
-                                    <ul>
-                                        <li> <a href="items-list.html">
-                                    All
-                                </a> </li>
-                                        <li> <a href="item-editor.html">
-                                    Arcade
-                                </a> </li>
-                                <li> <a href="item-editor.html">
-                                    Puzzle
-                                </a> </li>
-                                <li> <a href="item-editor.html">
-                                    Casual
-                                </a> </li>
-                                    </ul>
-                                </li>
-                                <li >
-                                    <a href="{{ url('/features') }}"> <i class="fa fa-list"></i> List Games </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </aside>
-                <div class="sidebar-overlay" id="sidebar-overlay"></div>
-                <article class="content cards-page">
-                    
-                            <div class="col-xl-12">
-                                <div class="card sameheight-item">
-                                    <div class="card-block">
-                                        <div class="card-title-block">
-                                            <h3 class="title">
-                            
-                        </h3> </div>
-                                        <!-- Nav tabs -->
-                                        <ul class="nav nav-pills">
-                                            <li class="nav-item"> <a href="" class="nav-link active" data-target="#home-pills" aria-controls="home-pills" data-toggle="tab" role="tab">All</a> </li>
-                                            <li class="nav-item"> <a href="" class="nav-link" data-target="#profile-pills" aria-controls="profile-pills" data-toggle="tab" role="tab">Arcade</a> </li>
-                                            <li class="nav-item"> <a href="" class="nav-link" data-target="#messages-pills" aria-controls="messages-pills" data-toggle="tab" role="tab">Puzzle</a> </li>
-                                            <li class="nav-item"> <a href="" class="nav-link" data-target="#settings-pills" aria-controls="settings-pills" data-toggle="tab" role="tab">Casual</a> </li>
-                                        </ul>
-                                        <!-- Tab panes -->
-                                        <div class="tab-content">
-                                            <div class="tab-pane fade in active" id="home-pills">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                                                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                                                    deserunt mollit anim id est laborum.</p>
-                                            </div>
-                                            <div class="tab-pane fade" id="profile-pills">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                                                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                                                    deserunt mollit anim id est laborum.</p>
-                                            </div>
-                                            <div class="tab-pane fade" id="messages-pills">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                                                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                                                    deserunt mollit anim id est laborum.</p>
-                                            </div>
-                                            <div class="tab-pane fade" id="settings-pills">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                                                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                                                    deserunt mollit anim id est laborum.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- /.card-block -->
-                                </div>
-                                <!-- /.card -->
-                            </div>
-                            <!-- /.col-xl-6 -->
-                        </div>
-                    </section>
-                </article>
-                <div class="modal fade" id="modal-media">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        <span class="sr-only">Close</span>
-                    </button>
-                                <h4 class="modal-title">Media Library</h4> </div>
-                            <div class="modal-body modal-tab-container">
-                                <ul class="nav nav-tabs modal-tabs" role="tablist">
-                                    <li class="nav-item"> <a class="nav-link" href="#gallery" data-toggle="tab" role="tab">Gallery</a> </li>
-                                    <li class="nav-item"> <a class="nav-link active" href="#upload" data-toggle="tab" role="tab">Upload</a> </li>
-                                </ul>
-                                <div class="tab-content modal-tab-content">
-                                    <div class="tab-pane fade" id="gallery" role="tabpanel">
-                                        <div class="images-container">
-                                            <div class="row"> </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade active in" id="upload" role="tabpanel">
-                                        <div class="upload-container">
-                                            <div id="dropzone">
-                                                <form action="/" method="POST" enctype="multipart/form-data" class="dropzone needsclick dz-clickable" id="demo-upload">
-                                                    <div class="dz-message-block">
-                                                        <div class="dz-message needsclick"> Drop files here or click to upload. </div>
-                                                    </div>
-                                                </form>
-                                            </div>
+                        <div class="body">
+                            <div class="row">
+                            @foreach($master_datas as $master_datum)
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="thumbnail">
+                                        <a href="{{ route('detail.id', ['id' => $master_datum->id]) }}" ><img src="{{ asset($master_datum->img) }}"></a>
+                                        <div class="caption">
+                                            <h3>{{ $master_datum->name }}</h3>
+                                            <p>
+                                                <b>Category : </b> {{ $master_datum->category }}<br/>
+                                                <?php if($master_datum->user_rate==NULL){ ?>
+                                                <div class="font-15">No Review</div>
+                                                <?php }else{ ?>
+                                                <span class="rating" data-default-rating="{{ $master_datum->avg_rate }}" disabled></span>
+                                                ({{ $master_datum->user_rate }})<br/>
+                                                <?php } ?>
+                                                <span class="col-red" >IDR{{ number_format($master_datum->price,0) }}</span>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
+                            @endforeach
                             </div>
-                            <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">Insert Selected</button> </div>
                         </div>
-                        <!-- /.modal-content -->
                     </div>
-                    <!-- /.modal-dialog -->
                 </div>
-                <!-- /.modal -->
-                <div class="modal fade" id="confirm-modal">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                                <h4 class="modal-title"><i class="fa fa-warning"></i> Alert</h4> </div>
-                            <div class="modal-body">
-                                <p>Are you sure want to do this?</p>
-                            </div>
-                            <div class="modal-footer"> <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button> <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button> </div>
-                        </div>
-                        <!-- /.modal-content -->
-                    </div>
-                    <!-- /.modal-dialog -->
-                </div>
-                <!-- /.modal -->
             </div>
+            <!-- #END# Custom Content -->
         </div>
-        <!-- Reference block for JS -->
-        <div class="ref" id="ref">
-            <div class="color-primary"></div>
-            <div class="chart">
-                <div class="color-primary"></div>
-                <div class="color-secondary"></div>
-            </div>
-        </div>
-        <script src="{{ asset('assets/dist/js/vendor.js') }}"></script>
-        <script src="{{ asset('assets/dist/js/app.js') }}"></script>
-    </body>
+    </section>
+
+    <!-- Jquery Core Js -->
+    <script src="{{ ('assets/plugins/jquery/jquery.min.js') }}"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="{{ ('assets/plugins/bootstrap/js/bootstrap.js') }}"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="{{ ('assets/plugins/bootstrap-select/js/bootstrap-select.js') }}"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="{{ ('assets/plugins/jquery-slimscroll/jquery.slimscroll.js') }}"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="{{ ('assets/plugins/node-waves/waves.js') }}"></script>
+
+    <!-- Custom Js -->
+    <script src="{{ ('assets/js/admin.js') }}"></script>
+
+    <!-- Demo Js -->
+    <script src="{{ ('assets/js/demo.js') }}"></script>
+
+    <script src="{{ ('assets/js/SimpleStarRating.js') }}"></script>
+        <script>
+            var ratings = document.getElementsByClassName('rating');
+
+            for (var i = 0; i < ratings.length; i++) {
+                var r = new SimpleStarRating(ratings[i]);
+
+                ratings[i].addEventListener('rate', function(e) {
+                    console.log('Rating: ' + e.detail);
+                });
+            }
+        </script>
+</body>
 
 </html>
