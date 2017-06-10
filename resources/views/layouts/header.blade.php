@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Game Store - Project</title>
+    <title>Kujang Game Store</title>
     <!-- Favicon-->
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 
@@ -90,17 +90,15 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="{{ url('/') }}">GAME STORE Project</a>
+                <a class="navbar-brand" href="{{ url('/') }}">KUJANG GAME STORE</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Call Search -->
                     <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
-                    <li><a href="{{ url('/login') }}"><i class="material-icons">person</i></a></li>
-                    <!-- #END# Call Search -->
-                    <!-- Notifications -->
-                    
-                    <!-- #END# Tasks -->
+                    @if(!Auth::user())
+                      <li><a href="{{ url('/login') }}"><i class="material-icons">person</i></a></li>
+                    @endif
                     <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
                 </ul>
             </div>
