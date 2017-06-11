@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use App\ActivationService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 
 class AuthController extends Controller
@@ -31,7 +32,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = 'home';
+    protected $redirectTo = '/';
     
     protected $activationService;
     /**
@@ -88,15 +89,17 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        if(!isset($data['img']))
-            $data['img']="";
-
+        if(Input::hasFile('img')){
+            $file = Input::file('img');
+            $file1 = $file->move(public_path().'/img_profil/',$file->GetClientOriginalName());
+            $image = $file->GetClientOriginalName();
+         }
         return User::create([
             'name' => $data['name'],
-            'role' => '1',
+            'role' => '2',
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'img' => $data['img']
+            'img' => '/img_game/'.$image
         ]);
     }
 

@@ -1,25 +1,28 @@
     <!-- Jquery Core Js -->
-    <script src="{{ ('assets/plugins/jquery/jquery.min.js') }}"></script>
+    <script src="{{ URL::to('assets/plugins/jquery/jquery.min.js') }}"></script>
 
     <!-- Bootstrap Core Js -->
-    <script src="{{ ('assets/plugins/bootstrap/js/bootstrap.js') }}"></script>
+    <script src="{{ URL::to('assets/plugins/bootstrap/js/bootstrap.js') }}"></script>
 
     <!-- Select Plugin Js -->
-    <script src="{{ ('assets/plugins/bootstrap-select/js/bootstrap-select.js') }}"></script>
+    <script src="{{ URL::to('assets/plugins/bootstrap-select/js/bootstrap-select.js') }}"></script>
 
     <!-- Slimscroll Plugin Js -->
-    <script src="{{ ('assets/plugins/jquery-slimscroll/jquery.slimscroll.js') }}"></script>
+    <script src="{{ URL::to('assets/plugins/jquery-slimscroll/jquery.slimscroll.js') }}"></script>
 
     <!-- Waves Effect Plugin Js -->
-    <script src="{{ ('assets/plugins/node-waves/waves.js') }}"></script>
+    <script src="{{ URL::to('assets/plugins/node-waves/waves.js') }}"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="{{ URL::to('assets/plugins/bootstrap-select/js/bootstrap-select.js') }}"></script>
 
     <!-- Custom Js -->
-    <script src="{{ ('assets/js/admin.js') }}"></script>
+    <script src="{{ URL::to('assets/js/admin.js') }}"></script>
 
     <!-- Demo Js -->
-    <script src="{{ ('assets/js/demo.js') }}"></script>
+    <script src="{{ URL::to('assets/js/demo.js') }}"></script>
 
-    <script src="{{ ('assets/js/SimpleStarRating.js') }}"></script>
+    <script src="{{ URL::to('assets/js/SimpleStarRating.js') }}"></script>
         <script>
             var ratings = document.getElementsByClassName('rating');
 

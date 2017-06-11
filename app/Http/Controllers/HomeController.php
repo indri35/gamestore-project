@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use App\MasterData;
 use App\User;
+use App\Rate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
@@ -77,6 +78,20 @@ class HomeController extends Controller
 		$masterdata->category = Input::get('category');
 		$masterdata->price = Input::get('price');
 		$masterdata->save();
+		
+		return $this->index()->withMessage('Game saved!');
+	}
+
+	public function addreviewgame(Request $request)
+		        {
+		$rate = new Rate;
+		$rate->id_game = Input::get('id_game');
+		$rate->id_user = Input::get('id_user');
+		$rate->rate = Input::get('rate');
+		$rate->user_name = Input::get('user_name');
+		$rate->email = Input::get('email');
+		$rate->comment = Input::get('comment');
+		$rate->save();
 		
 		return $this->index()->withMessage('Game saved!');
 	}

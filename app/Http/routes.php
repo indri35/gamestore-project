@@ -30,6 +30,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/addgamesports', 'HomeController@addgamesports');
 	Route::get('/addgame', 'HomeController@addgame');
 	Route::post('/adddatagame', 'HomeController@adddatagame');
+	Route::post('/addreviewgame', 'HomeController@addreviewgame');
 
 });
 

@@ -12,21 +12,24 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
+    <!-- Bootstrap Select Css -->
+    <link href="{{ URL::to('assets/plugins/bootstrap-select/css/bootstrap-select.css') }}" rel="stylesheet" />
+    
     <!-- Bootstrap Core Css -->
-    <link href="{{ ('assets/plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ URL::to('assets/plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
 
     <!-- Waves Effect Css -->
-    <link href="{{ ('assets/plugins/node-waves/waves.css') }}" rel="stylesheet" />
+    <link href="{{ URL::to('assets/plugins/node-waves/waves.css') }}" rel="stylesheet" />
 
     <!-- Animation Css -->
-    <link href="{{ ('assets/plugins/animate-css/animate.css') }}" rel="stylesheet" />
+    <link href="{{ URL::to('assets/plugins/animate-css/animate.css') }}" rel="stylesheet" />
 
     <!-- Custom Css -->
-    <link href="{{ ('assets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ URL::to('assets/css/style.css') }}" rel="stylesheet">
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
-    <link href="{{ ('assets/css/themes/all-themes.css') }}" rel="stylesheet" />
-    <link rel="stylesheet" href="{{ ('assets/css/SimpleStarRating.css') }}">
+    <link href="{{ URL::to('assets/css/themes/all-themes.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ URL::to('assets/css/SimpleStarRating.css') }}">
         <style>
             body {
                 background-color: #999;
@@ -97,9 +100,9 @@
                     <!-- Call Search -->
                     <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
                     @if(!Auth::user())
-                      <li><a href="{{ url('/login') }}"><i class="material-icons">person</i></a></li>
+                      <li class="pull-right"><a href="{{ url('/login') }}"><i class="material-icons" title="Login">input</i></a></li>
+                      <li class="pull-right"><a href="{{ url('/register') }}"><i class="material-icons" title="Register">person_add</i></a></li>
                     @endif
-                    <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
                 </ul>
             </div>
         </div>
