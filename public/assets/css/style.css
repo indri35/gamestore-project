@@ -43,7 +43,7 @@
   top: 0;
   margin-left: 100px;
   z-index: 12;
-  width: 80%; 
+  width: 84.5%; 
   }
   .navbar .navbar-brand {
     white-space: nowrap;
@@ -6676,8 +6676,7 @@ fieldset[disabled] .form-control {
   top: 0;
   border-radius:10%;
   left: 0;
-  z-index: 12;
-  width: 85%; }
+  z-index: 12; }
   .navbar .navbar-brand {
     white-space: nowrap;
     -ms-text-overflow: ellipsis;
