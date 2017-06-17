@@ -15,7 +15,7 @@
                         </div>
                         <div class="body">
                             <div class="row">
-                            @foreach($master_datas as $master_datum)
+                            @foreach($most_played as $master_datum)
                                 <div class="col-sm-6 col-md-3">
                                     <div class="thumbnail">
                                         <a href="{{ route('detail.id', ['id' => $master_datum->id]) }}" ><img src="{{ asset($master_datum->img) }}"></a>
@@ -29,7 +29,6 @@
                                                 <span class="rating" data-default-rating="{{ $master_datum->avg_rate }}" disabled></span>
                                                 ({{ $master_datum->user_rate }})<br/>
                                                 <?php } ?>
-                                                <span class="col-red" >IDR{{ number_format($master_datum->price,0) }}</span>
                                             </p>
                                         </div>
                                     </div>
