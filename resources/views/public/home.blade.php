@@ -27,7 +27,6 @@
                                         </a>
                                     </li>
                                     </ul>
-                                    <!-- Tab panes -->
                                     <div class="tab-content">
                                         <div role="tabpanel" class="tab-pane fade in active" id="new-games">
                                             @foreach($new_game as $new_game)
@@ -35,7 +34,7 @@
                                                 <div class="thumbnail">
                                                     <div class="container">
                                                         <a href="{{ route('detail.id', ['id' => $new_game->id]) }}" ><img src="{{ asset($new_game->img) }}" class="image" width="900px" height="900px">
-                                                        <div class="bottomright"><button type="button" class="btn bg-black waves-effect waves-light">{{ $new_game->category }}</button></div>
+                                                        <div class="bottomright"><button type="button" class="btn bg-black waves-effect waves-light">{{ $new_game->category }}<br/><img src="{{ ('assets/images/icon-coin-sm.png') }}">{{ $new_game->coint }}</button></div>
                                                         <div class="overlay1">
                                                             <div class="text">
                                                                 <h3>{{ $new_game->name }}</h3>
@@ -61,7 +60,7 @@
                                                 <div class="thumbnail">
                                                     <div class="container">
                                                         <a href="{{ route('detail.id', ['id' => $most_played->id]) }}" ><img src="{{ asset($most_played->img) }}" class="image" width="900px" height="900px">
-                                                        <div class="bottomright"><button type="button" class="btn bg-black waves-effect waves-light">{{ $most_played->category }}</button></div>
+                                                        <div class="bottomright"><button type="button" class="btn bg-black waves-effect waves-light">{{ $most_played->category }}<br/><img src="{{ ('assets/images/icon-coin-sm.png') }}">{{ $most_played->coint }}</button></div>
                                                         <div class="overlay1">
                                                             <div class="text">
                                                                 <h3>{{ $most_played->name }}</h3>
@@ -87,7 +86,7 @@
                                                 <div class="thumbnail">
                                                     <div class="container">
                                                         <a href="{{ route('detail.id', ['id' => $most_rated->id]) }}" ><img src="{{ asset($most_rated->img) }}" class="image" width="900px" height="900px">
-                                                        <div class="bottomright"><button type="button" class="btn bg-black waves-effect waves-light">{{ $most_rated->category }}</button></div>
+                                                        <div class="bottomright"><button type="button" class="btn bg-black waves-effect waves-light">{{ $most_rated->category }}<br/><img src="{{ ('assets/images/icon-coin-sm.png') }}">{{ $most_rated->coint }}</button></div>
                                                         <div class="overlay1">
                                                             <div class="text">
                                                                 <h3>{{ $most_rated->name }}</h3>
