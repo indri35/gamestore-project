@@ -41,9 +41,10 @@
   border: none;
   position: fixed;
   top: 0;
-  left: 0;
+  margin-left: 100px;
   z-index: 12;
-  width: 100%; }
+  width: 80%; 
+  }
   .navbar .navbar-brand {
     white-space: nowrap;
     -ms-text-overflow: ellipsis;
@@ -6673,9 +6674,10 @@ fieldset[disabled] .form-control {
   border: none;
   position: fixed;
   top: 0;
+  border-radius:10%;
   left: 0;
   z-index: 12;
-  width: 100%; }
+  width: 85%; }
   .navbar .navbar-brand {
     white-space: nowrap;
     -ms-text-overflow: ellipsis;
