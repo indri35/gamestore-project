@@ -7742,7 +7742,7 @@ fieldset[disabled] .form-control {
 
 /* Login Page ================================== */
 .login-page {
-  background-color: #00BCD4;
+  background-color: #999;
   padding-left: 0;
   max-width: 360px;
   margin: 5% auto;
@@ -7772,9 +7772,9 @@ fieldset[disabled] .form-control {
 
 /* Sign Up Page ================================ */
 .signup-page {
-  background-color: #00BCD4;
+  background-color: #999;
   padding-left: 0;
-  max-width: 360px;
+  max-width: 550px;
   margin: 5% auto;
   overflow-x: hidden; }
   .signup-page .signup-box .msg {
@@ -7784,7 +7784,7 @@ fieldset[disabled] .form-control {
   .signup-page .signup-box a {
     font-size: 14px;
     text-decoration: none;
-    color: #00BCD4; }
+    color: #999; }
   .signup-page .signup-box .logo {
     margin-bottom: 20px; }
     .signup-page .signup-box .logo a {
