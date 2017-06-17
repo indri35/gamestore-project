@@ -78,6 +78,7 @@ class AuthController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'img' => 'required|mimes:jpeg,bmp,jpg,png'
         ]);
     }
 
@@ -94,6 +95,7 @@ class AuthController extends Controller
             $file1 = $file->move(public_path().'/img_profil/',$file->GetClientOriginalName());
             $image = $file->GetClientOriginalName();
          }
+
         return User::create([
             'name' => $data['name'],
             'role' => '2',
