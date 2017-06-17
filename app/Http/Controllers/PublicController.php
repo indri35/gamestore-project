@@ -78,8 +78,8 @@ class PublicController extends Controller
 
 			if(!Auth::user()){
                 return redirect()->guest('login');
-			}else if(!$master_datas){
-				$this->index();
+			}else if($master_datas->count()>0){
+				return $this->index();
 			}else{
 				$user=Auth::user();
 				
@@ -286,10 +286,10 @@ class PublicController extends Controller
 						        ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games.img_slider'))
 						        ->orderBy('t_games.count_play','DESC')
 						        ->paginate(10);
-			if($master_datas){
+			if($master_datas->count() > 0){
 				return view('public.detail', compact('master_datas','slider','top_games'));
 			}else{
-				$this->index();
+				return $this->index();
 			}
 	}
 	
