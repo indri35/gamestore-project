@@ -454,6 +454,7 @@ $(function () {
     $.AdminBSB.input.activate();
     $.AdminBSB.select.activate();
     $.AdminBSB.search.activate();
-
+    $('[data-toggle="tooltip"]').tooltip(); 
+    
     setTimeout(function () { $('.page-loader-wrapper').fadeOut(); }, 50);
 });

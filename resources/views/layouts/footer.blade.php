@@ -32,6 +32,7 @@
                     console.log('Rating: ' + e.detail);
                 });
             }
+            
         </script>
 </body>
 
