@@ -139,11 +139,11 @@
                     <!-- Call Search -->
                     <!--<li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li> -->
                     @if(!Auth::user())
-                      <li data-toggle="tooltip" title="Login" class="pull-right"><a href="{{ url('/login') }}"><i class="material-icons" title="Login">input</i></a></li>
-                      <li data-toggle="tooltip" title="Register" class="pull-right"><a href="{{ url('/register') }}"><i class="material-icons" title="Register">person_add</i></a></li>
+                      <li data-toggle="tooltip" title="Signup" class="pull-right"><a href="{{ url('/login') }}"><i class="material-icons" title="Login">input</i>Signup</a></li>
+                      <li data-toggle="tooltip" title="Signin" class="pull-right"><a href="{{ url('/register') }}"><i class="material-icons" title="Register">person_add</i>Signin</a></li>
                     @else
-                        <li data-toggle="tooltip" title="Login" class="pull-right"><a href="{{ url('/logout') }}"><i class="material-icons">input</i>Sign Out</a></li>
-                         <li data-toggle="tooltip" title="Login" class="pull-right"><a href=""><i class="material-icons" title="User">person</i>  {{ Auth::user()->name}}</a> </li>
+                        <li data-toggle="tooltip" title="Signout" class="pull-right"><a href="{{ url('/logout') }}"><i class="material-icons">input</i>Sign Out</a></li>
+                        <li data-toggle="tooltip" title="User" class="pull-right"><a href=""><i class="material-icons" title="User">person</i>  {{ Auth::user()->name}}</a> </li>
                     @endif
                 </ul>
             </div>
