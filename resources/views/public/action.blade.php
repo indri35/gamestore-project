@@ -112,12 +112,31 @@
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="list-group">
                                         <div class="list-group-item active">
-                                                Top Games
-                                            </div>
-                                            @foreach($top_games as $top_games)
-                                            <a href="{{ route('detail.id', ['id' => $top_games->id]) }}" class="list-group-item"><h4><img class="img-circle" src="{{ asset($top_games->img) }}" width="50" height="50" >&emsp;{{ $top_games->name }}</h4></a>
-                                            @endforeach
+                                            Top Games
                                         </div>
+                                        @foreach($top_games as $top_games)
+                                        <a href="{{ route('detail.id', ['id' => $top_games->id]) }}" class="list-group-item"><h4><img class="img-circle" src="{{ asset($top_games->img) }}" width="50" height="50" >&emsp;{{ $top_games->name }}</h4></a>
+                                        @endforeach
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <p><center><b><div class="font-32">Best users</div></b><div class="font-24">This are the best users. Can you beat them?</div></center></p>
+                                    <div class="col-xs-5 col-sm-2 col-md-1 col-lg-1">
+                                    </div>
+                                    <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                        <button type="button" class="btn bg-red btn-block btn-lg waves-effect">DAY</button>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                        <button type="button" class="btn bg-red btn-block btn-lg waves-effect">WEEK</button>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                        <button type="button" class="btn bg-red btn-block btn-lg waves-effect">MONTH</button>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                        <button type="button" class="btn bg-red btn-block btn-lg waves-effect">YEAR</button>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                        <button type="button" class="btn bg-red btn-block btn-lg waves-effect">EVER</button>
                                     </div>
                                 </div>
                             </div>
