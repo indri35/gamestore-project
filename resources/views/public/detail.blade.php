@@ -27,7 +27,7 @@
                                                 </p>
                                                 <?php } ?>
                                                 <p>
-                                                   <a href="{{ url('/play') }}">
+                                                   <a href="{{ url('play', $master_datum->id) }}">
                                                         <img class="media-object" src="{{ asset('/img_game/play.png') }}" width="50" height="50">
                                                    </a>
                                                 </p>

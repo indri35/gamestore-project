@@ -62,27 +62,66 @@
                 color: #f11;
                 font-size: 50px;
             }
-        </style>
+            .container {
+              position: relative;
+              width: 100%;
+            }
+
+            .image {
+              display: block;
+              width: 100%;
+              height: auto;
+            }
+
+            .bottomright {
+                position: absolute;
+                bottom: 5px;
+                right: 25px;
+                font-size: 18px;
+            }
+
+            .overlay1 {
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              height: 100%;
+              width: 100%;
+              opacity: 0;
+              transition: .5s ease;
+              background-color:rgba(255,0,0,1);
+            }
+
+            .container:hover .overlay1 {
+              opacity: 1;
+            }
+
+            .text {
+              color: white;
+              font-size: 20px;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              -ms-transform: translate(-50%, -50%);
+            }
+            .img-circle {
+                border-radius: 50%;
+                border-width: 1px;
+                border-color: Black;
+            }
+            .border-radius {
+                border: 2px solid #CC0000;
+                padding: 5px 40px; 
+                background: #e50000;
+                width: 150px;
+                border-radius: 25px;
+            }
+            </style>
 </head>
 
 <body class="theme-red">
-    <!-- Page Loader -->
-    <div class="page-loader-wrapper">
-        <div class="loader">
-            <div class="preloader">
-                <div class="spinner-layer pl-red">
-                    <div class="circle-clipper left">
-                        <div class="circle"></div>
-                    </div>
-                    <div class="circle-clipper right">
-                        <div class="circle"></div>
-                    </div>
-                </div>
-            </div>
-            <p>Please wait...</p>
-        </div>
-    </div>
-    <!-- #END# Page Loader -->
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
     <!-- #END# Overlay For Sidebars -->
@@ -98,93 +137,44 @@
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Call Search -->
-                    <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
+                    <!--<li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li> -->
                     @if(!Auth::user())
-                      <li class="pull-right"><a href="{{ url('/login') }}"><i class="material-icons" title="Login">input</i></a></li>
-                      <li class="pull-right"><a href="{{ url('/register') }}"><i class="material-icons" title="Register">person_add</i></a></li>
+                      <li data-toggle="tooltip" title="Login" class="pull-right"><a href="{{ url('/login') }}"><i class="material-icons" title="Login">input</i></a></li>
+                      <li data-toggle="tooltip" title="Register" class="pull-right"><a href="{{ url('/register') }}"><i class="material-icons" title="Register">person_add</i></a></li>
                     @endif
                 </ul>
             </div>
         </div>
     </nav>
     <!-- #Top Bar -->
-    <section>
-        <!-- Left Sidebar -->
-        <aside id="leftsidebar" class="sidebar">
-          @if(Auth::user())
-              <div class="user-info">
-                <div class="image">
-                    <img src="{{ asset(Auth::user()->img) }}" width="48" height="48" alt="User" />
-                </div>
-                <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ (Auth::user()->name) }}</div>
-                    <div class="email">{{ (Auth::user()->email) }}</div>
-                    <div class="btn-group user-helper-dropdown">
-                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
-                        <ul class="dropdown-menu pull-right">
-                            <li><a href="{{ url('/logout') }}"><i class="material-icons">input</i>Sign Out</a></li>
-                        </ul>
-                    </div>
-                </div>
+    <section class="content1">
+            <!-- Custom Content -->
+            <div class="body">
             </div>
-            @endif
-            <!-- Menu -->
-            <div class="menu">
-                <ul class="list">
-                    <li class="header">MAIN NAVIGATION</li>
-                    <li class="active" >
-                        <a href="{{ url('/') }}">
-                            <i class="material-icons">select_all</i>
-                            <span>All</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/action') }}">
-                            <i class="material-icons">videogame_asset</i>
-                            <span>Action</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/casino') }}">
-                            <i class="material-icons">videogame_asset</i>
-                            <span>Casino</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/adventure') }}">
-                            <i class="material-icons">videogame_asset</i>
-                            <span>Adventure</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/puzzle') }}">
-                            <i class="material-icons">videogame_asset</i>
-                            <span>Puzzle</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/sports') }}">
-                            <i class="material-icons">videogame_asset</i>
-                            <span>Sports</span>
-                        </a>
-                    </li>
-                </ul>
+            <div class="topnav" id="myTopnav">
+                <a href="{{ url('/') }}">
+                    <i class="material-icons">select_all</i>
+                    <span>All</span>
+                </a>
+                <a href="{{ url('/action') }}">
+                    <i class="material-icons">videogame_asset</i>
+                    <span>Action</span>
+                </a>
+                <a href="{{ url('/casino') }}">
+                    <i class="material-icons">videogame_asset</i>
+                    <span>Casino</span>
+                </a>
+                <a href="{{ url('/adventure') }}">
+                    <i class="material-icons">videogame_asset</i>
+                    <span>Adventure</span>
+                </a>
+                <a href="{{ url('/puzzle') }}">
+                    <i class="material-icons">videogame_asset</i>
+                    <span>Puzzle</span>
+                </a>
+                <a href="{{ url('/sports') }}">
+                    <i class="material-icons">videogame_asset</i>
+                    <span>Sports</span>
+                </a>
             </div>
-            <!-- #Menu -->
-            <!-- Footer -->
-            <div class="legal">
-                <div class="copyright">
-                    &copy; 2017 <a href="javascript:void(0);">Game Store</a>.
-                </div>
-                <div class="version">
-                    <b>Version: </b> 1.0.4
-                </div>
-            </div>
-            <!-- #Footer -->
-        </aside>
-        <!-- #END# Left Sidebar -->
-        <!-- Right Sidebar -->
-        <aside id="rightsidebar" class="right-sidebar">
-        </aside>
-        <!-- #END# Right Sidebar -->
-    </section>
+    
