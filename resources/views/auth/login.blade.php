@@ -28,7 +28,7 @@
 <body class="login-page">
     <div class="login-box">
         <div class="logo">
-            <a href="javascript:void(0);">Admin<b>Games</b></a>
+            <a href="javascript:void(0);">Signin</b></a>
             <small>Admin Game Store - Material Design</small>
         </div>
         <div class="card">
