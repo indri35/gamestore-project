@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-use App\MasterData;
+use App\Models\MasterData;
 use App\User;
+use App\Models\Games;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
@@ -73,10 +74,17 @@ class PublicController extends Controller
 						->where('idgames',$id)
 						->paginate(10);
 
+						
+
 			if(!Auth::user()){
                 return redirect()->guest('login');
 			}else{
 				$user=Auth::user();
+				
+				$games = Games::Where('id',$id)->first();
+				$games->count_play +=1;
+				$games->save();				
+				
 				return view('public.play', compact('user','master_datas','top_games'));
 			}
 	}
