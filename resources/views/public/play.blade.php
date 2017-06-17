@@ -69,7 +69,7 @@
                                             <h4> Top Players </h4>
                                         </div>
                                         @foreach($top_games as $top_games)
-                                        <a href="{{ route('detail.id', ['id' => $top_games->id]) }}" class="list-group-item"><h4><img class="img-circle" src="{{ asset($top_games->img) }}" width="50" height="50" >&emsp;  {{ $top_games->name }} <div class="pull-right"> ({{ $top_games->score }})</div></h4></a>
+                                        <a href="{{ url('play', $top_games->id) }}" class="list-group-item"><h4><img class="img-circle" src="{{ asset($top_games->img) }}" width="50" height="50" >&emsp;  {{ $top_games->name }} <div class="pull-right"> ({{ $top_games->score }})</div></h4></a>
                                         @endforeach
                                     </div>
                                 </div>

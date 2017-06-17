@@ -78,7 +78,7 @@ class PublicController extends Controller
 
 			if(!Auth::user()){
                 return redirect()->guest('login');
-			}else if($master_datas->count()>0){
+			}else if($master_datas->count() < 0){
 				return $this->index();
 			}else{
 				$user=Auth::user();
