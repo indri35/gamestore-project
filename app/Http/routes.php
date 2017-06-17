@@ -19,7 +19,7 @@ Route::get('/adventure', 'PublicController@adventure');
 Route::get('/home', 'PublicController@index');
 Route::get('/puzzle', 'PublicController@puzzle');
 Route::get('/sports', 'PublicController@sports');
-Route::get('/play', 'PublicController@play');
+Route::get('/play/{id}', 'PublicController@play');
 
 Route::group(['middleware' => 'auth'], function(){
 

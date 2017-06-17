@@ -1,4 +1,13 @@
-@include('layouts.header-public')
+        @include('layouts.header')
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                         <div class="body">
+                        Play
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
@@ -14,7 +23,7 @@
                                                 </a>
                                             </div>
                                             <div class="media-body">
-                                                <h4 class="media-heading"> {{ $master_datum->name }}</h4>
+                                                <h4 class="media-heading">Category : {{ $master_datum->category }}</h4>
                                                 <p>
                                                    {{ $master_datum->desc }} 
                                                 </p>
@@ -27,8 +36,8 @@
                                                 </p>
                                                 <?php } ?>
                                                 <p>
-                                                   <a href="{{ url('play', $master_datum->id) }}">
-                                                        <img ata-toggle="tooltip" title="Play" class="media-object" src="{{ asset('/img_game/play.png') }}" width="50" height="50">
+                                                   <a href="">
+                                                        <img class="media-object" src="{{ asset('/img_game/play.png') }}" width="50" height="50">
                                                    </a>
                                                 </p>
                                             </div>
@@ -57,10 +66,10 @@
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="list-group">
                                         <div class="list-group-item active">
-                                            Top Games
+                                            <h4> Top Players </h4>
                                         </div>
                                         @foreach($top_games as $top_games)
-                                        <a href="{{ route('detail.id', ['id' => $top_games->id]) }}" class="list-group-item"><h4><img class="img-circle" src="{{ asset($top_games->img) }}" width="50" height="50" >&emsp;  {{ $top_games->name }} </h4></a>
+                                        <a href="{{ route('detail.id', ['id' => $top_games->id]) }}" class="list-group-item"><h4><img class="img-circle" src="{{ asset($top_games->img) }}" width="50" height="50" >&emsp;  {{ $top_games->name }} <div class="pull-right"> ({{ $top_games->score }})</div></h4></a>
                                         @endforeach
                                     </div>
                                 </div>

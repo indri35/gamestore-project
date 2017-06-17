@@ -19,8 +19,7 @@
     <!-- Custom Js -->
     <script src="{{ URL::to('assets/js/admin.js') }}"></script>
 
-    <!-- Demo Js -->
-    <script src="{{ URL::to('assets/js/demo.js') }}"></script>
+    <!--<script src="{{ URL::to('assets/js/demo.js') }}"></script> -->
 
     <script src="{{ URL::to('assets/js/SimpleStarRating.js') }}"></script>
         <script>
@@ -33,6 +32,7 @@
                     console.log('Rating: ' + e.detail);
                 });
             }
+            
         </script>
 </body>
 

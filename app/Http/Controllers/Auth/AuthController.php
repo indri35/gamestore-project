@@ -97,9 +97,10 @@ class AuthController extends Controller
         return User::create([
             'name' => $data['name'],
             'role' => '2',
+            'activated'=> 1,
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'img' => '/img_game/'.$image
+            'img' => '/img_profil/'.$image
         ]);
     }
 

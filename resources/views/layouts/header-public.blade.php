@@ -139,8 +139,11 @@
                     <!-- Call Search -->
                     <!--<li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li> -->
                     @if(!Auth::user())
-                      <li data-toggle="tooltip" title="Login" class="pull-right"><a href="{{ url('/login') }}"><i class="material-icons" title="Login">input</i></a></li>
-                      <li data-toggle="tooltip" title="Register" class="pull-right"><a href="{{ url('/register') }}"><i class="material-icons" title="Register">person_add</i></a></li>
+                      <li data-toggle="tooltip" title="Signin" class="pull-right"><a href="{{ url('/login') }}"><i class="material-icons" title="Login">input</i> Signin</a></li>
+                      <li data-toggle="tooltip" title="Signup" class="pull-right"><a href="{{ url('/register') }}"><i class="material-icons" title="Register">person_add</i> Signup</a></li>
+                    @else
+                        <li data-toggle="tooltip" title="Signout" class="pull-right"><a href="{{ url('/logout') }}"><i class="material-icons">input</i> Signout</a></li>
+                        <li data-toggle="tooltip" title="User" class="pull-right"><a href=""><i class="material-icons" title="User">person</i>  {{ Auth::user()->name}}</a> </li>
                     @endif
                 </ul>
             </div>
@@ -150,6 +153,35 @@
     <section class="content1">
             <!-- Custom Content -->
             <div class="body">
+                <div id="carousel-example-generic_2" class="carousel slide" data-ride="carousel">
+                   <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic_2" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic_2" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic_2" data-slide-to="2"></li>
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="{{ asset($slider[0]->img_slider) }}" />
+                        </div>
+                        <div class="item">
+                            <img src="{{ asset($slider[1]->img_slider) }}" />
+                        </div>
+                        <div class="item">
+                            <img src="{{ asset($slider[2]->img_slider) }}" />
+                        </div>
+                    </div>
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic_2" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic_2" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
             </div>
             <div class="topnav" id="myTopnav">
                 <a href="{{ url('/') }}">
