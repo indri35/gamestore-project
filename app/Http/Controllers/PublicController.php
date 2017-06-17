@@ -277,7 +277,7 @@ class PublicController extends Controller
 				                ->join('t_rate', 't_rate.id_game', '=', 't_games.id','left outer')
 				                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate, t_rate.user_name,t_rate.rate,t_rate.comment,t_rate.created_at'))
 				                ->where('t_games.id',$id)
-				                ->get();
+				                ->paginate();
 		$slider = DB::table('t_games')
 						        ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games.img_slider'))
 						        ->orderBy('t_games.count_play','DESC')
