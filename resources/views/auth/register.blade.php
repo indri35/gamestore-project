@@ -111,6 +111,12 @@
                                             <div class="form-group">
                                                 <div >
                                                     <input type="file" id="img" name="img" accept="image/x-png,image/gif,image/jpeg">
+                                                    @if ($errors->has('img'))
+                                                        <span class="help-block">
+                                                            <strong>{{ $errors->first('img') }}</strong>
+                                                        </span>
+                                                    @endif
+
                                                 </div>
                                             </div>
                                         </div>
