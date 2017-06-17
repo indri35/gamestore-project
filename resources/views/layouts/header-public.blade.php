@@ -75,8 +75,8 @@
 
             .bottomright {
                 position: absolute;
-                bottom: 8px;
-                right: 16px;
+                bottom: 5px;
+                right: 25px;
                 font-size: 18px;
             }
 

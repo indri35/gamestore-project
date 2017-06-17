@@ -29,7 +29,7 @@
                                                 <div class="thumbnail">
                                                     <div class="container">
                                                         <a href="{{ route('detail.id', ['id' => $new_game->id]) }}" ><img src="{{ asset($new_game->img) }}" class="image" width="900px" height="900px">
-                                                        <div class="bottomright"><button type="button" class="btn bg-black waves-effect waves-light">{{ $new_game->category }}<br/><img src="{{ ('assets/images/icon-coin-sm.png') }}">{{ $new_game->coint }}</button></div>
+                                                        <div class="bottomright"><button type="button" class="btn bg-black waves-effect waves-light">{{ $new_game->category }}<br/><img src="{{ ('assets/images/icon-coin-sm.png') }}"> {{ $new_game->coint }}</button></div>
                                                         <div class="overlay1">
                                                             <div class="text">
                                                                 <h3>{{ $new_game->name }}</h3>
