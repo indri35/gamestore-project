@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\MasterData;
 use App\User;
 use App\Models\Games;
+use App\Models\Plays;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
@@ -81,8 +82,17 @@ class PublicController extends Controller
 			}else if($master_datas->count() < 0){
 				return $this->index();
 			}else{
-				$user=Auth::user();
-				
+				$user=Auth::user();				
+				$plays = Plays::Where('idgames',$id)->Where('idplayer',$user->id)->first();
+				if($plays==null){
+					$plays = new Plays();
+					$plays->idplayer = $user->id;
+					$plays->idgames = $id;
+					$plays->score = 0;
+					$plays->subscription = 5;
+					$plays->save();
+				}
+
 				$games = Games::Where('id',$id)->first();
 				$games->count_play +=1;
 				$games->save();				
