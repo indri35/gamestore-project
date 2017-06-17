@@ -99,7 +99,7 @@ class AuthController extends Controller
             'role' => '2',
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'img' => '/img_game/'.$image
+            'img' => '/img_profil/'.$image
         ]);
     }
 
