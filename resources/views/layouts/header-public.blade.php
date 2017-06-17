@@ -141,6 +141,9 @@
                     @if(!Auth::user())
                       <li data-toggle="tooltip" title="Login" class="pull-right"><a href="{{ url('/login') }}"><i class="material-icons" title="Login">input</i></a></li>
                       <li data-toggle="tooltip" title="Register" class="pull-right"><a href="{{ url('/register') }}"><i class="material-icons" title="Register">person_add</i></a></li>
+                    @else
+                        <li data-toggle="tooltip" title="Login" class="pull-right"><a href="{{ url('/logout') }}"><i class="material-icons">input</i>Sign Out</a></li>
+                         <li data-toggle="tooltip" title="Login" class="pull-right"><a href=""><i class="material-icons" title="User">person</i>  {{ Auth::user()->name}}</a> </li>
                     @endif
                 </ul>
             </div>

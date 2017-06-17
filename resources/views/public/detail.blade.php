@@ -14,7 +14,7 @@
                                                 </a>
                                             </div>
                                             <div class="media-body">
-                                                <h4 class="media-heading">Category : {{ $master_datum->category }}</h4>
+                                                <h4 class="media-heading"> {{ $master_datum->name }}</h4>
                                                 <p>
                                                    {{ $master_datum->desc }} 
                                                 </p>
@@ -28,7 +28,7 @@
                                                 <?php } ?>
                                                 <p>
                                                    <a href="{{ url('play', $master_datum->id) }}">
-                                                        <img class="media-object" src="{{ asset('/img_game/play.png') }}" width="50" height="50">
+                                                        <img ata-toggle="tooltip" title="Play" class="media-object" src="{{ asset('/img_game/play.png') }}" width="50" height="50">
                                                    </a>
                                                 </p>
                                             </div>
