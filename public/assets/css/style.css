@@ -41,9 +41,9 @@
   border: none;
   position: fixed;
   top: 0;
-  margin-left: 100px;
+  margin-left: 10px;
   z-index: 12;
-  width: 84.5%; 
+  width: 98%; 
   }
   .navbar .navbar-brand {
     white-space: nowrap;
