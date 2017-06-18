@@ -1,5 +1,5 @@
 @include('admin.layout.header')
-    <section class="content">
+    <section class="content-addgames">
         <div class="container-fluid">
             <!-- Custom Content -->
             <div class="row clearfix">

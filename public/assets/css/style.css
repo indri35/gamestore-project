@@ -2401,6 +2401,15 @@ section.content1 {
   -webkit-transition: 0.5s;
   transition: 0.5s; }
 
+
+section.content-addgames {
+  margin: 0px 15px 0 315px;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s; }
+
+
 /* Dashboard =================================== */
 .dashboard-flot-chart {
   height: 275px; }
