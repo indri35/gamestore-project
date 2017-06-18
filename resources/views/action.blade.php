@@ -14,23 +14,28 @@
                             </h2>
                         </div>
                         <div class="body">
+                            <div class="tooltip">Hover over me
+  <span class="tooltiptext">Tooltip text</span>
                             <div class="row">
-                            @foreach($most_played as $master_datum)
-                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                            @foreach($most_played as $most_played)
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
                                     <div class="thumbnail">
-                                        <a href="{{ route('detail.id', ['id' => $master_datum->id]) }}" ><img src="{{ asset($master_datum->img) }}"></a>
-                                        <div class="caption">
-                                            <h3>{{ $master_datum->name }}</h3>
-                                            <p>
-                                                <b>Category : </b> {{ $master_datum->category }}<br/>
-                                                <?php if($master_datum->user_rate==NULL){ ?>
-                                                <div class="font-15">No Review</div>
-                                                <?php }else{ ?>
-                                                <span class="rating" data-default-rating="{{ $master_datum->avg_rate }}" disabled></span>
-                                                ({{ $master_datum->user_rate }})<br/>
-                                                <?php } ?>
-                                            </p>
-                                        </div>
+                                        <a href="{{ route('detail.id', ['id' => $most_played->id]) }}" ><img src="{{ asset($most_played->img) }}" class="image" width="900px" height="900px">
+                                            <div class="bottomright"><button type="button" class="btn bg-black waves-effect waves-light">{{ $most_played->category }}<br/><img src="{{ ('assets/images/icon-coin-sm.png') }}">{{ $most_played->coint }}</button></div>
+                                            <div class="overlay1">
+                                                <div class="text">
+                                                    <h3>{{ $most_played->name }}</h3>
+                                                    <p>
+                                                        <?php if($most_played->user_rate==NULL){ ?>
+                                                        <div class="font-15">No Review</div>
+                                                        <?php }else{ ?>
+                                                        <span class="rating" data-default-rating="{{ $most_played->avg_rate }}" disabled></span>
+                                                        ({{ $most_played->user_rate }})<br/>
+                                                        <?php } ?>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             @endforeach

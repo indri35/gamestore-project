@@ -24,6 +24,9 @@
     <!-- Custom Css -->
     <link href="{{ ('assets/css/style.css') }}" rel="stylesheet">
 
+    <!-- Bootstrap Select Css -->
+    <link href="{{ ('assets/plugins/bootstrap-select/css/bootstrap-select.css') }}" rel="stylesheet" />
+
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{{ ('assets/css/themes/all-themes.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ ('assets/css/SimpleStarRating.css') }}">

@@ -1,5 +1,5 @@
 @include('admin.layout.header')
-    <section class="content-addgames">
+    <section class="content">
         <div class="container-fluid">
             <!-- Custom Content -->
             <div class="row clearfix">
@@ -46,7 +46,7 @@
                                                 </div>
                                                 <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                                     <div class="form-group">
-                                                            <select class="form-control" name="category">
+                                                            <select class="form-control show-tick" name="category">
                                                                 <option value="">-- Please select --</option>
                                                                 <option value="Adventure">Adventure</option>
                                                                 <option value="Action">Action</option>

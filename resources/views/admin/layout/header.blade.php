@@ -18,11 +18,17 @@
     <!-- Waves Effect Css -->
     <link href="{{ ('assets/plugins/node-waves/waves.css') }}" rel="stylesheet" />
 
+    <!-- JQuery DataTable Css -->
+    <link href="{{ ('assets/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css') }}" rel="stylesheet">
+
     <!-- Animation Css -->
     <link href="{{ ('assets/plugins/animate-css/animate.css') }}" rel="stylesheet" />
 
     <!-- Custom Css -->
     <link href="{{ ('assets/css/style.css') }}" rel="stylesheet">
+
+    <!-- Bootstrap Select Css -->
+    <link href="{{ ('assets/plugins/bootstrap-select/css/bootstrap-select.css') }}" rel="stylesheet" />
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{{ ('assets/css/themes/all-themes.css') }}" rel="stylesheet" />
@@ -133,37 +139,7 @@
                     <li class="active" >
                         <a href="{{ url('/') }}">
                             <i class="material-icons">select_all</i>
-                            <span>All</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/action') }}">
-                            <i class="material-icons">videogame_asset</i>
-                            <span>Action</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/casino') }}">
-                            <i class="material-icons">videogame_asset</i>
-                            <span>Casino</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/adventure') }}">
-                            <i class="material-icons">videogame_asset</i>
-                            <span>Adventure</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/puzzle') }}">
-                            <i class="material-icons">videogame_asset</i>
-                            <span>Puzzle</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/sports') }}">
-                            <i class="material-icons">videogame_asset</i>
-                            <span>Sports</span>
+                            <span>Dashboard</span>
                         </a>
                     </li>
                 </ul>
@@ -330,47 +306,3 @@
         </aside>
         <!-- #END# Right Sidebar -->
     </section>
-
-    <section class="content">
-        <div class="container-fluid">
-            <!-- Custom Content -->
-            <!-- #END# Custom Content -->
-        </div>
-    </section>
-
-    <!-- Jquery Core Js -->
-    <script src="{{ ('assets/plugins/jquery/jquery.min.js') }}"></script>
-
-    <!-- Bootstrap Core Js -->
-    <script src="{{ ('assets/plugins/bootstrap/js/bootstrap.js') }}"></script>
-
-    <!-- Select Plugin Js -->
-    <script src="{{ ('assets/plugins/bootstrap-select/js/bootstrap-select.js') }}"></script>
-
-    <!-- Slimscroll Plugin Js -->
-    <script src="{{ ('assets/plugins/jquery-slimscroll/jquery.slimscroll.js') }}"></script>
-
-    <!-- Waves Effect Plugin Js -->
-    <script src="{{ ('assets/plugins/node-waves/waves.js') }}"></script>
-
-    <!-- Custom Js -->
-    <script src="{{ ('assets/js/admin.js') }}"></script>
-
-    <!-- Demo Js -->
-    <script src="{{ ('assets/js/demo.js') }}"></script>
-
-    <script src="{{ ('assets/js/SimpleStarRating.js') }}"></script>
-        <script>
-            var ratings = document.getElementsByClassName('rating');
-
-            for (var i = 0; i < ratings.length; i++) {
-                var r = new SimpleStarRating(ratings[i]);
-
-                ratings[i].addEventListener('rate', function(e) {
-                    console.log('Rating: ' + e.detail);
-                });
-            }
-        </script>
-</body>
-
-</html>
