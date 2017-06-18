@@ -16,7 +16,7 @@
                         <div class="body">
                             <div class="row">
                             @foreach($most_played as $master_datum)
-                                <div class="col-sm-6 col-md-3">
+                                <div class="ccol-lg-4 col-md-4 col-sm-6 col-xs-6>
                                     <div class="thumbnail">
                                         <a href="{{ route('detail.id', ['id' => $master_datum->id]) }}" ><img src="{{ asset($master_datum->img) }}"></a>
                                         <div class="caption">
