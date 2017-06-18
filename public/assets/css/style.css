@@ -28,45 +28,6 @@
     background-color: #4CAF50;
     color: white;
 }
-.navbar {
-  font-family: "Roboto", sans-serif;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  border-radius: 0;
-  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-  -ms-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-  border: none;
-  position: fixed;
-  top: 0;
-  margin-left: 15px;
-  margin-right: 15px;
-  z-index: 12;
-  width: 100%; 
-  }
-  .navbar .navbar-brand {
-    white-space: nowrap;
-    -ms-text-overflow: ellipsis;
-    -o-text-overflow: ellipsis;
-    text-overflow: ellipsis;
-    overflow: hidden; }
-  .navbar .navbar-custom-right-menu {
-    float: right; }
-  .navbar .navbar-toggle {
-    text-decoration: none;
-    color: #fff;
-    width: 20px;
-    height: 20px;
-    margin-top: -4px;
-    margin-right: 17px; }
-    .navbar .navbar-toggle:before {
-      content: '\E8D5';
-      font-family: 'Material Icons';
-      font-size: 26px; }
-  .navbar .navbar-collapse.in {
-    overflow: visible; }
 
 .ls-closed .sidebar {
   margin-left: -300px; }
@@ -6667,7 +6628,7 @@ fieldset[disabled] .form-control {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
-  border-radius: 0;
+  border-radius: 10%;
   -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   -ms-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
@@ -6675,9 +6636,13 @@ fieldset[disabled] .form-control {
   border: none;
   position: fixed;
   top: 0;
-  border-radius:10%;
   left: 0;
-  z-index: 12; }
+  width:100%;
+  z-index: 12; 
+    margin-right: 15px; 
+    margin-left: 15px; 
+  }
+
   .navbar .navbar-brand {
     white-space: nowrap;
     -ms-text-overflow: ellipsis;
@@ -6692,13 +6657,16 @@ fieldset[disabled] .form-control {
     width: 20px;
     height: 20px;
     margin-top: -4px;
-    margin-right: 17px; }
+    margin-right: 15px; 
+    margin-left: 15px; 
+    }
     .navbar .navbar-toggle:before {
       content: '\E8D5';
       font-family: 'Material Icons';
       font-size: 26px; }
   .navbar .navbar-collapse.in {
-    overflow: visible; }
+    overflow: visible;
+     }
 
 .ls-closed .sidebar {
   margin-left: -300px; }
