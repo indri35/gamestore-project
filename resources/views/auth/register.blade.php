@@ -27,8 +27,11 @@
     <body class="signup-page">
         <div class="signup-box">
             <div class="logo">
-                <a href="javascript:void(0);">Register</b></a>
-                <small>Admin Game Store - Material Design</small>
+            <div class="login-box-msg">
+                <img src="{{ asset('img_game/logo.png') }}" width="100" height="100" alt="User Image">
+            </div>
+            <a href="javascript:void(0);">Signup</b></a>
+            <small>Kujang Games - Happy to Play</small>
                 </div>
                 <div class="row clearfix">
                         <div class="card">

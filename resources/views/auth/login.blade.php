@@ -28,8 +28,11 @@
 <body class="login-page">
     <div class="login-box">
         <div class="logo">
+            <div class="login-box-msg">
+                <img src="{{ asset('img_game/logo.png') }}" width="100" height="100" alt="User Image">
+            </div>
             <a href="javascript:void(0);">Signin</b></a>
-            <small>Admin Game Store - Material Design</small>
+            <small>Kujang Games - Happy to Play</small>
         </div>
         <div class="card">
             <div class="body">

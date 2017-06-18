@@ -6643,6 +6643,13 @@ fieldset[disabled] .form-control {
     margin-left: 15px; 
   }
 
+.login-box-msg,
+.register-box-msg {
+  margin: 0;
+  text-align: center;
+  padding: 0 20px 20px 20px;
+}
+
   .navbar .navbar-brand {
     white-space: nowrap;
     -ms-text-overflow: ellipsis;
