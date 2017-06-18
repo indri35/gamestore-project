@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Game Store - Project</title>
+    <title>Game Store</title>
     <!-- Favicon-->
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 
@@ -90,7 +90,7 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="{{ url('/') }}">GAME STORE Project</a>
+                <a class="navbar-brand" href="{{ url('/') }}">GAME STORE</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -115,7 +115,7 @@
                     <img src="{{ asset(Auth::user()->img) }}" width="48" height="48" alt="User" />
                 </div>
                 <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ (Auth::user()->name) }}</div>
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ (Auth::user()->name) }} (Role {{ Auth::user()->role }})</div>
                     <div class="email">{{ (Auth::user()->email) }}</div>
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
@@ -130,7 +130,7 @@
             <div class="menu">
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
-                    <li >
+                    <li class="active" >
                         <a href="{{ url('/') }}">
                             <i class="material-icons">select_all</i>
                             <span>All</span>
@@ -160,7 +160,7 @@
                             <span>Puzzle</span>
                         </a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="{{ url('/sports') }}">
                             <i class="material-icons">videogame_asset</i>
                             <span>Sports</span>
@@ -183,11 +183,14 @@
         <!-- #END# Left Sidebar -->
         <!-- Right Sidebar -->
         <aside id="rightsidebar" class="right-sidebar">
+                                        <!--
+
             <ul class="nav nav-tabs tab-nav-right" role="tablist">
                 <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>
                 <li role="presentation"><a href="#settings" data-toggle="tab">SETTINGS</a></li>
             </ul>
             <div class="tab-content">
+
                 <div role="tabpanel" class="tab-pane fade in active in active" id="skins">
                     <ul class="demo-choose-skin">
                         <li data-theme="red" class="active">
@@ -321,6 +324,8 @@
                         </ul>
                     </div>
                 </div>
+                                    -->
+
             </div>
         </aside>
         <!-- #END# Right Sidebar -->
@@ -329,42 +334,6 @@
     <section class="content">
         <div class="container-fluid">
             <!-- Custom Content -->
-            <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="header">
-                            <a href="{{ url('/addgamesports') }}" ><button type="button" class="btn bg-deep-orange waves-effect font-italic"><h2>Add Games</h2></button></a>
-                            <h2>
-                                <br/>Category : Sports
-                            </h2>
-                        </div>
-                        <div class="body">
-                            <div class="row">
-                            @foreach($master_datas as $master_datum)
-                                <div class="col-sm-6 col-md-3">
-                                    <div class="thumbnail">
-                                        <a href="{{ route('detail.id', ['id' => $master_datum->id]) }}" ><img src="{{ asset($master_datum->img) }}"></a>
-                                        <div class="caption">
-                                            <h3>{{ $master_datum->name }}</h3>
-                                            <p>
-                                                <b>Category : </b> {{ $master_datum->category }}<br/>
-                                                <?php if($master_datum->user_rate==NULL){ ?>
-                                                <div class="font-15">No Review</div>
-                                                <?php }else{ ?>
-                                                <span class="rating" data-default-rating="{{ $master_datum->avg_rate }}" disabled></span>
-                                                ({{ $master_datum->user_rate }})<br/>
-                                                <?php } ?>
-                                                <span class="col-red" >IDR{{ number_format($master_datum->price,0) }}</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <!-- #END# Custom Content -->
         </div>
     </section>

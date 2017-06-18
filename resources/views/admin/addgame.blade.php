@@ -1,4 +1,4 @@
-@include('layouts.header')
+@include('admin.layout.header')
     <section class="content">
         <div class="container-fluid">
             <!-- Custom Content -->

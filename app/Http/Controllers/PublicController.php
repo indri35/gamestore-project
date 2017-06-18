@@ -29,6 +29,7 @@ class PublicController extends Controller
 	
 	public function index()
 			{
+			$master_datas = Games::orderBy('created_at','DESC')->paginate();
 			$new_game = DB::table('t_games')
 						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate'))
@@ -55,7 +56,7 @@ class PublicController extends Controller
 			if(!Auth::user()){
 				return view('public.home', compact('new_game','most_played','most_rated','slider','top_games'));
 			}else{
-				return view('public.home', compact('new_game','most_played','most_rated','slider','top_games'));	
+				return view('admin.home-admin', compact('master_datas','new_game','most_played','most_rated','slider','top_games'));	
 			}
 	}
 	
@@ -103,6 +104,7 @@ class PublicController extends Controller
 
 	public function adventure()
 		    {
+			$master_datas = Games::Where('category','Adventure')->orderBy('created_at','DESC')->paginate();
 			$new_game = DB::table('t_games')
 						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate'))
@@ -132,13 +134,15 @@ class PublicController extends Controller
 			if(!Auth::user()){
 				return view('public.adventure', compact('new_game','most_played','most_rated','slider','top_games'));
 			}else{
-				return view('public.adventure', compact('new_game','most_played','most_rated','slider','top_games'));	
+				return view('admin.adventure-admin', compact('master_datas','new_game','most_played','most_rated','slider','top_games'));	
 			}
 	}
 	
 
 	public function action()
 		    {
+			$master_datas = Games::Where('category','Action')->orderBy('created_at','DESC')->paginate();
+
 			$new_game = DB::table('t_games')
 						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate'))
@@ -168,7 +172,7 @@ class PublicController extends Controller
 			if(!Auth::user()){
 				return view('public.action', compact('new_game','most_played','most_rated','slider','top_games'));
 			}else{
-				return view('public.action', compact('new_game','most_played','most_rated','slider','top_games'));	
+				return view('admin.action-admin', compact('master_datas','new_game','most_played','most_rated','slider','top_games'));	
 			}
 	}
 	
@@ -176,6 +180,8 @@ class PublicController extends Controller
 	
 	public function casino()
 		    {
+			$master_datas = Games::Where('category','Casino')->orderBy('created_at','DESC')->paginate();
+
 			$new_game = DB::table('t_games')
 						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate'))
@@ -205,12 +211,15 @@ class PublicController extends Controller
 			if(!Auth::user()){
 				return view('public.casino', compact('new_game','most_played','most_rated','slider','top_games'));
 			}else{
-				return view('public.casino', compact('new_game','most_played','most_rated','slider','top_games'));	
+				return view('admin.action-admin', compact('master_datas','new_game','most_played','most_rated','slider','top_games'));	
 			}
 	}
 	
 	public function sports()
 		    {
+
+			$master_datas = Games::Where('category','Sports')->orderBy('created_at','DESC')->paginate();
+	
 			$new_game = DB::table('t_games')
 						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate'))
@@ -240,12 +249,15 @@ class PublicController extends Controller
 			if(!Auth::user()){
 				return view('public.sports', compact('new_game','most_played','most_rated','slider','top_games'));
 			}else{
-				return view('public.sports', compact('new_game','most_played','most_rated','slider','top_games'));
+				return view('admin.sports-admin', compact('master_datas','new_game','most_played','most_rated','slider','top_games'));	
 			}
 	}
 	
 	public function puzzle()
 		    {
+		
+			$master_datas = Games::Where('category','Puzzle')->orderBy('created_at','DESC')->paginate();
+
 			$new_game = DB::table('t_games')
 						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate'))
@@ -275,7 +287,7 @@ class PublicController extends Controller
 			if(!Auth::user()){
 				return view('public.puzzle', compact('new_game','most_played','most_rated','slider','top_games'));
 			}else{
-				return view('puzzle', compact('new_game','most_played','most_rated','slider','top_games'));	
+				return view('admin.puzzle-admin', compact('master_datas','new_game','most_played','most_rated','slider','top_games'));	
 			}
 	}
 	

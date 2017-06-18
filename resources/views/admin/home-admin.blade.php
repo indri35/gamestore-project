@@ -85,7 +85,7 @@
     <!-- #END# Overlay For Sidebars -->
     <!-- #END# Search Bar -->
     <!-- Top Bar -->
-    <nav class="navbar">
+    <nav class="navbar-admin">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
@@ -183,11 +183,14 @@
         <!-- #END# Left Sidebar -->
         <!-- Right Sidebar -->
         <aside id="rightsidebar" class="right-sidebar">
+                                        <!--
+
             <ul class="nav nav-tabs tab-nav-right" role="tablist">
                 <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>
                 <li role="presentation"><a href="#settings" data-toggle="tab">SETTINGS</a></li>
             </ul>
             <div class="tab-content">
+
                 <div role="tabpanel" class="tab-pane fade in active in active" id="skins">
                     <ul class="demo-choose-skin">
                         <li data-theme="red" class="active">
@@ -321,6 +324,8 @@
                         </ul>
                     </div>
                 </div>
+                                    -->
+
             </div>
         </aside>
         <!-- #END# Right Sidebar -->

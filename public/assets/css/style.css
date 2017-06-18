@@ -6643,6 +6643,25 @@ fieldset[disabled] .form-control {
     margin-left: 15px; 
   }
 
+.navbar-admin {
+  font-family: "Roboto", sans-serif;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0%;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  border: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  background-color: #F44336;
+  z-index: 12; 
+  }
+
 .login-box-msg,
 .register-box-msg {
   margin: 0;
@@ -7465,7 +7484,8 @@ fieldset[disabled] .form-control {
 
 .overlay-open .sidebar {
   margin-left: 0;
-  z-index: 99999999; }
+  z-index: 99999999; 
+  }
 
 .sidebar {
   -moz-transition: all 0.5s;
@@ -7480,6 +7500,7 @@ fieldset[disabled] .form-control {
   height: calc(100vh - 70px);
   position: fixed;
   top: 70px;
+  margin-top: 30px;
   left: 0;
   -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
