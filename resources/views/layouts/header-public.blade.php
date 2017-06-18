@@ -163,13 +163,13 @@
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
-                            <img src="{{ asset($slider[0]->img_slider) }}" />
+                            <img class="img-responsive center-block" src="{{ asset($slider[0]->img_slider) }}" />
                         </div>
                         <div class="item">
-                            <img src="{{ asset($slider[1]->img_slider) }}" />
+                            <img  class="img-responsive center-block" src="{{ asset($slider[1]->img_slider) }}" />
                         </div>
                         <div class="item">
-                            <img src="{{ asset($slider[2]->img_slider) }}" />
+                            <img class="img-responsive center-block" src="{{ asset($slider[2]->img_slider) }}" />
                         </div>
                     </div>
                     <!-- Controls -->

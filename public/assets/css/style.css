@@ -41,9 +41,9 @@
   border: none;
   position: fixed;
   top: 0;
-  margin-left: 10px;
+  margin-left: 55px;
   z-index: 12;
-  width: 98%; 
+  width: 91.5%; 
   }
   .navbar .navbar-brand {
     white-space: nowrap;
@@ -2433,7 +2433,7 @@ section.content {
   transition: 0.5s; }
 
 section.content1 {
-  margin: 75px 15px 0 15px;
+  margin: 75px 55px 0 55px;
   -moz-transition: 0.5s;
   -o-transition: 0.5s;
   -webkit-transition: 0.5s;
