@@ -2433,7 +2433,7 @@ section.content {
   transition: 0.5s; }
 
 section.content1 {
-  margin: 75px 100px 0 100px;
+  margin: 75px 15px 0 15px;
   -moz-transition: 0.5s;
   -o-transition: 0.5s;
   -webkit-transition: 0.5s;
