@@ -9,9 +9,9 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="card">
                                     <div class="header">
-                                        <h2>
+                                        <h4>
                                             Add Game
-                                        </h2>
+                                        </h4>
                                     </div>
                                     <div class="body">
                                         <form  role="form" method="POST" action="{{ url('/adddatagame') }}" enctype="multipart/form-data">

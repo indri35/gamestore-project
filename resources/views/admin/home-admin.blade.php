@@ -45,7 +45,7 @@
                         <div class="body">
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12col-xs-12">
-                                    <a href="{{ url('/addgame') }}" ><button type="button" class="btn bg-deep-orange waves-effect font-italic"><h2>Add Games</h2></button></a>
+                                    <a href="{{ url('/addgame') }}" ><button type="button" class="btn bg-deep-orange waves-effect font-italic"><h6>Add Games</h6></button></a>
                                     <ul class="nav nav-tabs tab-nav-right" role="tablist">
                                     <li role="presentation" class="active">
                                         <a href="#all-category" data-toggle="tab">
@@ -81,7 +81,7 @@
                                     <!-- Tab panes -->
                                     <div class="tab-content">
                                         <div role="tabpanel" class="tab-pane fade in active" id="all-cattegory">
-                                            <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                            <table class="table table-bordered table-striped table-hover js-basic-example">
                                                 <thead>
                                                     <tr>
                                                         <th>Name</th>
