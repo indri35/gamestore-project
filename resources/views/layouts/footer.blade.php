@@ -19,6 +19,10 @@
     <!-- Custom Js -->
     <script src="{{ URL::to('assets/js/admin.js') }}"></script>
 
+    <!-- Chart Plugins Js -->
+    <script src="{{ URL::to('assets/plugins/chartjs/Chart.bundle.js') }}"></script>
+    <script src="{{ URL::to('assets/js/pages/charts/chartjs.js') }}"></script>
+
     <!-- Jquery CountTo Plugin Js -->
     <script src="{{ URL::to('assets/plugins/jquery-countto/jquery.countTo.js') }}"></script>
     <script src="{{ URL::to('assets/js/pages/widgets/infobox/infobox-5.js') }}"></script>
@@ -36,7 +40,7 @@
 
     <script src="{{ URL::to('assets/js/pages/tables/jquery-datatable.js') }}"></script>
 
-    <!--<script src="{{ URL::to('assets/js/demo.js') }}"></script> -->
+    <script src="{{ URL::to('assets/js/demo.js') }}"></script> 
 
     <script src="{{ URL::to('assets/js/SimpleStarRating.js') }}"></script>
         <script>

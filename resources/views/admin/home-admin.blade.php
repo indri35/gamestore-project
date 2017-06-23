@@ -40,13 +40,38 @@
                     </div>
                 </div>
             </div>
+            <div class="row clearfix">
+                <!-- Line Chart -->
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>LINE CHART</h2>
+                        </div>
+                        <div class="body">
+                            <canvas id="line_chart" height="150"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Line Chart -->
+                <!-- Bar Chart -->
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>BAR CHART</h2>
+                        </div>
+                        <div class="body">
+                            <canvas id="bar_chart" height="150"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Bar Chart -->
+            </div>
             <!-- #END# Counter Examples -->
                     <div class="card">
                         <div class="body">
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12col-xs-12">
-                                    <a href="{{ url('/addgame') }}" ><button type="button" class="btn bg-deep-orange waves-effect font-italic"><h6>Add Games</h6></button></a>
-                                    <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                                <ul class="nav nav-tabs tab-nav-right" role="tablist">
                                     <li role="presentation" class="active">
                                         <a href="#all-category" data-toggle="tab">
                                             All Category
@@ -80,7 +105,7 @@
                                     </ul>
                                     <!-- Tab panes -->
                                     <div class="tab-content">
-                                        <div role="tabpanel" class="tab-pane fade in active" id="all-cattegory">
+                                        <div role="tabpanel" class="tab-pane fade in active" id="all-category">
                                             <table class="table table-bordered table-striped table-hover js-basic-example">
                                                 <thead>
                                                     <tr>

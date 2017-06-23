@@ -27,6 +27,12 @@ class PublicController extends Controller
 		//$		this->middleware('auth');
 	}
 	
+	public function getDataBarChart()
+	    {
+			$bar_chart =  DB::table('t_games')->get();
+			return $bar_chart;
+		}
+
 	public function index()
 			{
 			$master_datas = Games::orderBy('created_at','DESC')->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')->paginate();

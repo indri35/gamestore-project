@@ -40,22 +40,6 @@
                 margin: 0;
             }
 
-            main {
-                background-color: white;
-                width: 80%;
-                margin: 0 auto;
-                padding: 50px;
-                text-align: center;
-            }
-
-            table {
-                display: inline-block;
-            }
-
-            td {
-                padding: 1em;
-            }
-
             .golden {
                 color: #ee0;
                 background-color: #444;
@@ -140,6 +124,12 @@
                         <a href="{{ url('/') }}">
                             <i class="material-icons">select_all</i>
                             <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="{{ url('/addgame') }}">
+                            <i class="material-icons">playlist_add</i>
+                            <span>Add Game</span>
                         </a>
                     </li>
                 </ul>
