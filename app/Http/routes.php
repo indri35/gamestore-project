@@ -14,6 +14,7 @@
 Route::get('/', 'PublicController@index');
 Route::get('/detail/{id}', ['as'=>'detail.id','uses'=>'PublicController@detail']);
 Route::get('/action', 'PublicController@action');
+Route::get('/listgames', 'PublicController@listgames');
 Route::get('/casino', 'PublicController@casino');
 Route::get('/adventure', 'PublicController@adventure');
 Route::get('/home', 'PublicController@index');

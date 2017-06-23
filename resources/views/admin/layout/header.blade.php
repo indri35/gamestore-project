@@ -127,6 +127,12 @@
                         </a>
                     </li>
                     <li >
+                        <a href="{{ url('/listgames') }}">
+                            <i class="material-icons">playlist_add</i>
+                            <span>List Games</span>
+                        </a>
+                    </li>
+                    <li >
                         <a href="{{ url('/addgame') }}">
                             <i class="material-icons">playlist_add</i>
                             <span>Add Game</span>

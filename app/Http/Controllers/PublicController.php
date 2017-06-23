@@ -89,10 +89,71 @@ class PublicController extends Controller
 			if(!Auth::user()||Auth::user()->role==2){
 				return view('public.home', compact('new_game','most_played','most_rated','slider','top_games'));
 			}else{
+				return view('admin.board-admin', compact('master_datas','dashboard_count','player_count','action','adventure','casino','puzzle','sports'));	
+			}
+	}
+
+	public function listgames()
+			{
+			$master_datas = Games::orderBy('created_at','DESC')->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')->paginate();
+			$dashboard_count = DB::table('t_games')
+						                ->select(DB::raw('count(t_games.id) as games,sum(t_games.count_play) as played'))
+						                ->paginate();
+			$player_count = DB::table('users')
+						                ->select(DB::raw('COUNT(users.id) as player'))
+						                ->WHERE('users.role',2)
+						                ->paginate();
+			$action = Games::orderBy('created_at','DESC')
+										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
+										->WHERE('t_games.category','Action')
+										->paginate();
+			$adventure = Games::orderBy('created_at','DESC')
+										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
+										->WHERE('t_games.category','Adventure')
+										->paginate();
+			$casino = Games::orderBy('created_at','DESC')
+										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
+										->WHERE('t_games.category','Casino')
+										->paginate();
+			$puzzle = Games::orderBy('created_at','DESC')
+										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
+										->WHERE('t_games.category','Puzzle')
+										->paginate();
+			$sports = Games::orderBy('created_at','DESC')
+										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
+										->WHERE('t_games.category','Sports')
+										->paginate();							
+			$new_game = DB::table('t_games')
+						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
+						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate'))
+						                ->orderBy('t_games.id','DESC')
+						                ->paginate();
+			$most_played = DB::table('t_games')
+						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
+						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate'))
+						                ->orderBy('t_games.count_play','DESC')
+						                ->paginate();
+			$most_rated = DB::table('t_games')
+						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
+						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate'))
+						                ->orderBy('t_games_rate.user_rate','DESC')
+						                ->paginate();
+			$slider = DB::table('t_games')
+						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games.img_slider'))
+						                ->orderBy('t_games.count_play','DESC')
+						                ->paginate(3);
+			$top_games = DB::table('t_games')
+						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games.img_slider'))
+						                ->orderBy('t_games.count_play','DESC')
+						                ->paginate(10);
+			if(!Auth::user()||Auth::user()->role==2){
+				return view('public.home', compact('new_game','most_played','most_rated','slider','top_games'));
+			}else{
 				return view('admin.home-admin', compact('master_datas','dashboard_count','player_count','action','adventure','casino','puzzle','sports'));	
 			}
 	}
 	
+
 		
 	public function play($id)
 		    {
