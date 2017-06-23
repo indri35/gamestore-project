@@ -24,6 +24,11 @@
                                                     <div class="form-group">
                                                         <div class="form-line">
                                                             <input id="name" type="text" class="form-control" name="name" placeholder="Input Your Game Name">
+                                                            @if ($errors->has('name'))
+                                                                <span class="help-block">
+                                                                    <strong>{{ $errors->first('name') }}</strong>
+                                                                </span>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>
@@ -36,6 +41,12 @@
                                                     <div class="form-group">
                                                         <div class="form-line">
                                                             <textarea id="desc" type="text" class="form-control" name="desc" placeholder="Input Your Game Description"></textarea>
+                                                            @if ($errors->has('desc'))
+                                                                <span class="help-block">
+                                                                    <strong>{{ $errors->first('desc') }}</strong>
+                                                                </span>
+                                                            @endif
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -54,17 +65,28 @@
                                                                 <option value="Puzzle">Puzzle</option>
                                                                 <option value="Sports">Sports</option>
                                                             </select>
-                                                    </div>
+                                                            </div>      
+                                                            @if ($errors->has('category'))
+                                                                <span class="help-block">
+                                                                    <strong>{{ $errors->first('category') }}</strong>
+                                                                </span>
+                                                            @endif
                                                 </div>
                                             </div>
                                             <div class="row clearfix">
                                                 <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                                    <label for="price">Game Price</label>
+                                                    <label for="price">Game Point</label>
                                                 </div>
                                                 <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                                     <div class="form-group">
                                                         <div class="form-line">
                                                             <input id="price" type="text" class="form-control" name="price" placeholder="Input Your Game Price">
+                                                                @if ($errors->has('price'))
+                                                                <span class="help-block">
+                                                                    <strong>{{ $errors->first('price') }}</strong>
+                                                                </span>
+                                                            @endif
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -77,6 +99,12 @@
                                                     <div class="form-group">
                                                         <div >
                                                             <input type="file" id="img" name="img" accept="image/x-png,image/gif,image/jpeg">
+                                                            @if ($errors->has('img'))
+                                                                <span class="help-block">
+                                                                    <strong>{{ $errors->first('img') }}</strong>
+                                                                </span>
+                                                            @endif
+
                                                         </div>
                                                     </div>
                                                 </div>

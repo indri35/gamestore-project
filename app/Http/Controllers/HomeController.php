@@ -58,7 +58,11 @@ class HomeController extends Controller
 	public function adddatagame(Request $request)
 		        {
 		$this->validate($request, [
-				                    'img' => 'required'
+									'name'=> 'required|max:15',
+									'category'=> 'required',
+									'desc'=> 'required',
+									'price'=> 'required',
+				                    'img' => 'required|mimes:jpeg,bmp,jpg,png'
 				                ]);
 		
 		$max = DB::table('t_games')        
@@ -98,6 +102,7 @@ class HomeController extends Controller
 	
 	public function addgameadventure()
 		    {
+				
 		$user = Auth::user();
 		return view('admin.addgameadventure');
 	}

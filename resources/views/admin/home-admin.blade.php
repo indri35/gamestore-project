@@ -8,7 +8,7 @@
                             <i class="material-icons col-indigo">person</i>
                         </div>
                         <div class="content">
-                            <div class="text">PLAYER</div>
+                            <div class="text">Player</div>
                             @foreach($player_count as $player_count)
                             <div class="number count-to" data-from="0" data-to="{{ $player_count->player }}" data-speed="1000" data-fresh-interval="20">{{ $player_count->player }}</div>
                             @endforeach
