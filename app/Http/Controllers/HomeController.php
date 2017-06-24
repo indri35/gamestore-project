@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-use App\MasterData;
+use App\Models\MasterData;
 use App\User;
-use App\Rate;
+use App\Models\Rate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
@@ -63,7 +63,7 @@ class HomeController extends Controller
 									'desc'=> 'required',
 									'price'=> 'required',
 				                    'img' => 'required|mimes:jpeg,bmp,jpg,png|max:2000|dimensions:width=512,height=512',
-				                    'banner' => 'required|mimes:jpeg,bmp,jpg,pngmax:2000|dimensions:width=1024,height=320'
+				                    'banner' => 'required|mimes:jpeg,bmp,png,jpg,pngmax:2000|dimensions:min_width=1024,min_height=270'
 				                ]);
 		
 		$max = DB::table('t_games')        
