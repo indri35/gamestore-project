@@ -30,6 +30,7 @@
                                                    <a href="{{ url('play', $master_datum->id) }}">
                                                         <img ata-toggle="tooltip" title="Play" class="media-object" src="{{ asset('/img_game/play.png') }}" width="50" height="50">
                                                    </a>
+                                                   
                                                 </p>
                                             </div>
                                         </div>
