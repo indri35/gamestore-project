@@ -21,6 +21,7 @@ Route::get('/home', 'PublicController@index');
 Route::get('/puzzle', 'PublicController@puzzle');
 Route::get('/sports', 'PublicController@sports');
 Route::get('/play/{id}', 'PublicController@play');
+Route::get('/dashboard', 'DashboardController@dashboard');
 Route::get('/getDataBarChart', 'PublicController@getDataBarChart');
 
 Route::group(['middleware' => 'auth'], function(){
