@@ -109,6 +109,25 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="row clearfix">
+                                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                                    <label for="price">Game Banner</label>
+                                                </div>
+                                                <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                                    <div class="form-group">
+                                                        <div >
+                                                            <input type="file" id="banner" name="banner" accept="image/x-png,image/gif,image/jpeg">
+                                                            @if ($errors->has('banner'))
+                                                                <span class="help-block">
+                                                                    <strong>{{ $errors->first('banner') }}</strong>
+                                                                </span>
+                                                            @endif
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                             <div class="form-group">
                                                 <div class="col-md-9 col-md-offset-3">
                                                     <button type="submit" class="btn btn-primary">

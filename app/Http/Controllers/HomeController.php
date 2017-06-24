@@ -62,7 +62,8 @@ class HomeController extends Controller
 									'category'=> 'required',
 									'desc'=> 'required',
 									'price'=> 'required',
-				                    'img' => 'required|mimes:jpeg,bmp,jpg,png'
+				                    'img' => 'required|mimes:jpeg,bmp,jpg,png|max:2000|dimensions:width=512,height=512',
+				                    'banner' => 'required|mimes:jpeg,bmp,jpg,pngmax:2000|dimensions:width=1024,height=320'
 				                ]);
 		
 		$max = DB::table('t_games')        
@@ -75,8 +76,16 @@ class HomeController extends Controller
 				                $request->file('img')->getClientOriginalName();
 		$path = base_path() . '/public/img_game/';
 		$request->file('img')->move($path , $imageName);
+
+		$imagebannerName = 'game_icon'.-$max. 
+				                $request->file('banner')->getClientOriginalName();
+		$path = base_path() . '/public/img_game/';
+		$request->file('banner')->move($path , $imagebannerName);
+
 		$masterdata = new MasterData;
+
 		$masterdata->img = '/img_game/'.$imageName;
+		$masterdata->banner = '/img_game/'.$imagebannerName;
 		$masterdata->name = Input::get('name');
 		$masterdata->desc = Input::get('desc');
 		$masterdata->category = Input::get('category');
