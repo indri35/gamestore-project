@@ -171,6 +171,11 @@ class PublicController extends Controller
 						->where('idgames',$id)
 						->paginate(10);
 
+				$slider = DB::table('t_games')
+						        ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games.img_slider'))
+						        ->orderBy('t_games.count_play','DESC')
+						        ->paginate(3);
+
 						
 
 			if(!Auth::user()){
@@ -193,7 +198,7 @@ class PublicController extends Controller
 				$games->count_play +=1;
 				$games->save();				
 				
-				return view('public.play', compact('user','master_datas','top_games'));
+				return view('public.play', compact('user','master_datas','top_games','slider'));
 			}
 	}
 

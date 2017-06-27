@@ -1,4 +1,4 @@
-@include('layouts.header')
+@include('layouts.header-public')
     <section class="content">
         <div class="container-fluid">
             <!-- Custom Content -->
