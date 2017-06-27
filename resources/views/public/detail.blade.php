@@ -15,6 +15,8 @@
                                             </div>
                                             <div class="media-body">
                                                 <h4 class="media-heading"> {{ $master_datum->name }}</h4>
+                                                <div class="algin-left">Category : {{ $master_datum->category }}</div>
+                                                </br>
                                                 <p>
                                                    {{ $master_datum->desc }} 
                                                 </p>
