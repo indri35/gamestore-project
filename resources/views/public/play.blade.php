@@ -54,6 +54,7 @@
                                         </h2>
                                     </div>
                                     <div class="body">
+                                        @foreach($master_datas as $master_datum)
                                                 <?php if($master_datum->user_rate==0){ ?>
                                                     <p> No Review </p>
                                                 <?php }else{ ?>
@@ -62,6 +63,7 @@
                                                 {{ $master_datum->comment }} <br/>
                                                 <hr>
                                                 <?php } ?> 
+                                        @endforeach   
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
