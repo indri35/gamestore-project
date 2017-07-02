@@ -3,7 +3,11 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                          <div class="body">
-                        Play
+                            <div class="iframe-wrapper">
+                            <iframe src="http://www.tapcubestudios.com/games/brickout/" name="bestgameever"  width="100%" height="800" frameborder="1" scrolling="no">   
+                            <p>Your browser does not support iframes.</p>
+                            </iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
