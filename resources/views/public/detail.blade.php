@@ -20,6 +20,9 @@
                                                 <p>
                                                    {{ $master_datum->desc }} 
                                                 </p>
+                                                <p>
+                                                <img src="{{ URL::to('assets/images/icon-coin-sm.png') }}"> {{ $master_datum->coint }}
+                                                </p>
                                                 <?php if($master_datum->user_rate==0){ ?>
                                                 <p> No Review </p>
                                                 <?php }else{ ?>
