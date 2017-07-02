@@ -193,11 +193,11 @@ class PublicController extends Controller
 					$plays->subscription = 5;
 					$plays->save();
 				}
-
 				$games = Games::Where('id',$id)->first();
 				$games->count_play +=1;
 				$games->save();				
-				
+				$user->coint -=$games->coint;
+				$user->save();				
 				return view('public.play', compact('user','master_datum','top_games','slider'));
 			}
 	}
