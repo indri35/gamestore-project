@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 02, 2017 at 06:08 AM
+-- Generation Time: Jul 02, 2017 at 06:35 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -81,14 +81,14 @@ CREATE TABLE `t_games` (
 --
 
 INSERT INTO `t_games` (`id`, `name`, `desc`, `category`, `img`, `banner`, `img_slider`, `count_play`, `created_at`, `updated_at`, `coint`, `url`) VALUES
-(1, 'Brickout', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.', 'Puzzle', '/img_game/game_icon_1.png', '', '/img_game/firemanfooster.png', 10, '2017-07-02 03:54:48', '0000-00-00 00:00:00', 0, 'http://www.tapcubestudios.com/games/brickout/'),
-(2, 'Funny Soccer', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.', 'Racing', '/img_game/game_icon_2.png', '', '/img_game/superfat.jpg', 10, '2017-07-02 03:55:02', '0000-00-00 00:00:00', 0, 'http://www.tapcubestudios.com/games/funnysoccer/'),
-(3, 'Let''s Park', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.', 'Adventure', '/img_game/game_icon_3.png', '', '/img_game/superfat.jpg', 10, '2017-07-02 03:56:05', '0000-00-00 00:00:00', 0, 'http://www.tapcubestudios.com/games/letspark/'),
-(4, 'Minigolf', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.', 'Action', '/img_game/game_icon_4.png', '', '/img_game/superfat.jpg', 10, '2017-07-02 03:55:19', '0000-00-00 00:00:00', 0, 'http://www.tapcubestudios.com/games/minigolf/'),
-(5, 'Slowdown', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.', 'Sports', '/img_game/game_icon_5.png', '', '/img_game/lumberjack.jpg', 10, '2017-07-02 03:55:38', '0000-00-00 00:00:00', 0, 'http://tapcubestudios.com/games/slowdown/'),
-(6, 'Tank Defender', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.', 'Action', '/img_game/game_icon_6.png', '', '/img_game/superfat.jpg', 10, '2017-07-02 03:55:59', '0000-00-00 00:00:00', 0, 'http://www.tapcubestudios.com/games/tankdefender/'),
-(7, 'Tetris', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.', 'Racing', '/img_game/game_icon_7.png', '', '/img_game/superfat.jpg', 15, '2017-07-02 04:07:17', '2017-07-01 21:07:17', 0, 'http://www.tapcubestudios.com/games/tetris/'),
-(8, 'Indiara and the skull gold', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.', 'Adventure', '/img_game/game_icon_8.png', '', '/img_game/superfat.jpg', 10, '2017-07-02 03:57:18', '0000-00-00 00:00:00', 0, 'http://tapcubestudios.com/games/indiaraandtheskullgold/');
+(1, 'Brickout', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.', 'Puzzle', '/img_game/game_icon_1.png', '', '/img_game/firemanfooster.png', 10, '2017-07-02 04:20:07', '0000-00-00 00:00:00', 10, 'http://www.tapcubestudios.com/games/brickout/'),
+(2, 'Funny Soccer', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.', 'Racing', '/img_game/game_icon_2.png', '', '/img_game/superfat.jpg', 10, '2017-07-02 04:20:09', '0000-00-00 00:00:00', 20, 'http://www.tapcubestudios.com/games/funnysoccer/'),
+(3, 'Let''s Park', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.', 'Adventure', '/img_game/game_icon_3.png', '', '/img_game/superfat.jpg', 11, '2017-07-02 04:20:12', '2017-07-01 21:17:27', 15, 'http://www.tapcubestudios.com/games/letspark/'),
+(4, 'Minigolf', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.', 'Action', '/img_game/game_icon_4.png', '', '/img_game/superfat.jpg', 10, '2017-07-02 04:20:16', '0000-00-00 00:00:00', 10, 'http://www.tapcubestudios.com/games/minigolf/'),
+(5, 'Slowdown', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.', 'Sports', '/img_game/game_icon_5.png', '', '/img_game/lumberjack.jpg', 10, '2017-07-02 04:20:19', '0000-00-00 00:00:00', 35, 'http://tapcubestudios.com/games/slowdown/'),
+(6, 'Tank Defender', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.', 'Action', '/img_game/game_icon_6.png', '', '/img_game/superfat.jpg', 24, '2017-07-02 04:33:34', '2017-07-01 21:33:34', 20, 'http://www.tapcubestudios.com/games/tankdefender/'),
+(7, 'Tetris', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.', 'Racing', '/img_game/game_icon_7.png', '', '/img_game/superfat.jpg', 16, '2017-07-02 04:20:23', '2017-07-01 21:16:03', 10, 'http://www.tapcubestudios.com/games/tetris/'),
+(8, 'Indiara and the skull gold', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.', 'Adventure', '/img_game/game_icon_8.png', '', '/img_game/superfat.jpg', 10, '2017-07-02 04:20:27', '0000-00-00 00:00:00', 35, 'http://tapcubestudios.com/games/indiaraandtheskullgold/');
 
 -- --------------------------------------------------------
 
@@ -127,7 +127,8 @@ INSERT INTO `t_play_games` (`id`, `idplayer`, `idgames`, `created_at`, `updated_
 (3, 6, 3, '2017-06-17 16:18:24', '2017-06-17 16:18:24', 0, 5),
 (4, 1, 3, '2018-02-01 00:00:00', '2018-02-01 00:00:00', 20, 2),
 (5, 6, 1, '2017-07-02 03:45:19', '2017-07-02 03:45:19', 0, 5),
-(6, 6, 7, '2017-07-02 04:01:44', '2017-07-02 04:01:44', 0, 5);
+(6, 6, 7, '2017-07-02 04:01:44', '2017-07-02 04:01:44', 0, 5),
+(7, 6, 6, '2017-07-02 04:16:29', '2017-07-02 04:16:29', 0, 5);
 
 -- --------------------------------------------------------
 
@@ -152,13 +153,13 @@ CREATE TABLE `t_rate` (
 --
 
 INSERT INTO `t_rate` (`id`, `id_game`, `id_user`, `rate`, `user_name`, `email`, `comment`, `created_at`, `updated_at`) VALUES
-(1, 2, 0, '5', 'indri', 'indriy@gmail.com', 'Thank you, Your Game is now live on Appy Pie Game Store', '2017-06-09 19:19:16', '0000-00-00 00:00:00'),
-(2, 2, 0, '3', 'indriaads', 'indrdiyas@gmail.com', 'Thank you', '2017-06-09 19:19:16', '0000-00-00 00:00:00'),
-(3, 4, 0, '2', 'indrids', 'indrisd@gmail.com', 'Thank you', '2017-06-09 19:19:16', '0000-00-00 00:00:00'),
-(4, 2, 0, '3', 'indrids', 'indrdis@gmail.com', 'Thank you', '2017-06-09 19:19:16', '0000-00-00 00:00:00'),
-(16, 1, 1, '3', 'Indiyani', 'indri.cs49@gmail.com', 'Rate for Ticc Tacc Toee', '2017-06-11 01:09:54', '2017-06-11 01:09:54'),
-(17, 3, 1, '1', 'Indiyani', 'indri.cs49@gmail.com', 'rate 1', '2017-06-11 01:10:27', '2017-06-11 01:10:27'),
-(18, 2, 1, '1.25', 'Indiyani', 'indri.cs49@gmail.com', 'Rate decimal', '2017-07-02 03:58:15', '2017-06-11 01:11:20');
+(1, 2, 1, '5', 'indri', 'indriy@gmail.com', 'Thank you, Your Game is now live on Appy Pie Game Store', '2017-07-02 04:17:15', '0000-00-00 00:00:00'),
+(2, 2, 1, '3', 'indriaads', 'indrdiyas@gmail.com', 'Thank you', '2017-07-02 04:17:13', '0000-00-00 00:00:00'),
+(3, 4, 1, '2', 'indrids', 'indrisd@gmail.com', 'Thank you', '2017-07-02 04:17:11', '0000-00-00 00:00:00'),
+(4, 2, 1, '3', 'indrids', 'indrdis@gmail.com', 'Thank you', '2017-07-02 04:17:08', '0000-00-00 00:00:00'),
+(16, 1, 2, '3', 'Indiyani', 'indri.cs49@gmail.com', 'Rate for Ticc Tacc Toee', '2017-07-02 04:21:13', '2017-06-11 01:09:54'),
+(17, 3, 2, '1', 'Indiyani', 'indri.cs49@gmail.com', 'rate 1', '2017-07-02 04:21:16', '2017-06-11 01:10:27'),
+(18, 2, 2, '1.25', 'Indiyani', 'indri.cs49@gmail.com', 'Rate decimal', '2017-07-02 04:21:18', '2017-06-11 01:11:20');
 
 -- --------------------------------------------------------
 
@@ -176,17 +177,18 @@ CREATE TABLE `users` (
   `remember_token` varchar(225) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `activated` varchar(128) NOT NULL
+  `activated` varchar(128) NOT NULL,
+  `coint` int(11) NOT NULL DEFAULT '299'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `img`, `role`, `password`, `remember_token`, `created_at`, `updated_at`, `activated`) VALUES
-(1, 'Indiyani', 'indri.cs49@gmail.com', '/img_profil/indri.jpg', '1', '$2a$04$rDJT81iyK13CoYpxadkIAus.TRCGOoO6fIRhIBtPhWuIB.VAuIxjC', '0tjP6zvM0b74mHcVrYj7VPDfcvgcmNZPDLxSS5U8shKT9vhfIQOJVqTvf76B', '2017-06-11 11:31:55', '2017-06-11 04:31:55', '1'),
-(2, 'dda', 'indriyani.cs49@gmail.com', 'C:\\xampp\\tmp\\php785.tmp', '2', '$2y$10$1c/5xcNjiUUqOvoLuKjEsOMLgijBnSNkgOcnfHpcSQkx5.xvJdAfC', 'GaWhr6fZIfns0HVav9MJNVyHc3w5ojr8qBhq6q1XyL9uR72w23FKlkkt1rvt', '2017-06-11 11:33:00', '2017-06-11 04:33:00', '1'),
-(6, 'Hendrik', 'drikdoank@gmail.com', '/img_profil/Screen Shot 2017-06-17 at 5.43.15 PM.png', '2', '$2y$10$eP1528frOO2tKIYvJFpkxO8RyiKzVyDSahF/uhGVlB5.zrrfalnhO', 'QptC1ke8MBvBdesoHNwzarSRHBFN9XGxhYQyH8qGT9cNZx6qcOEruUYgFjWv', '2017-07-02 03:46:09', '2017-06-24 09:58:00', '1');
+INSERT INTO `users` (`id`, `name`, `email`, `img`, `role`, `password`, `remember_token`, `created_at`, `updated_at`, `activated`, `coint`) VALUES
+(1, 'Indiyani', 'indri.cs49@gmail.com', '/img_profil/indri.jpg', '1', '$2a$04$rDJT81iyK13CoYpxadkIAus.TRCGOoO6fIRhIBtPhWuIB.VAuIxjC', '0tjP6zvM0b74mHcVrYj7VPDfcvgcmNZPDLxSS5U8shKT9vhfIQOJVqTvf76B', '2017-06-11 11:31:55', '2017-06-11 04:31:55', '1', 299),
+(2, 'dda', 'indriyani.cs49@gmail.com', 'C:\\xampp\\tmp\\php785.tmp', '2', '$2y$10$1c/5xcNjiUUqOvoLuKjEsOMLgijBnSNkgOcnfHpcSQkx5.xvJdAfC', 'GaWhr6fZIfns0HVav9MJNVyHc3w5ojr8qBhq6q1XyL9uR72w23FKlkkt1rvt', '2017-06-11 11:33:00', '2017-06-11 04:33:00', '1', 299),
+(6, 'Hendrik', 'drikdoank@gmail.com', '/img_profil/Screen Shot 2017-06-17 at 5.43.15 PM.png', '2', '$2y$10$eP1528frOO2tKIYvJFpkxO8RyiKzVyDSahF/uhGVlB5.zrrfalnhO', 'QptC1ke8MBvBdesoHNwzarSRHBFN9XGxhYQyH8qGT9cNZx6qcOEruUYgFjWv', '2017-07-02 03:46:09', '2017-06-24 09:58:00', '1', 299);
 
 -- --------------------------------------------------------
 
@@ -294,7 +296,7 @@ ALTER TABLE `t_games`
 -- AUTO_INCREMENT for table `t_play_games`
 --
 ALTER TABLE `t_play_games`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `t_rate`
 --
