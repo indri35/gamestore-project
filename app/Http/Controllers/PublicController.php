@@ -158,12 +158,12 @@ class PublicController extends Controller
 		
 	public function play($id)
 		    {
-				$master_datas = DB::table('t_games')
+				$master_datum = DB::table('t_games')
 						->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 						->join('t_rate', 't_rate.id_game', '=', 't_games.id','left outer')
-						->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate, t_rate.user_name,t_rate.rate,t_rate.comment,t_rate.created_at'))
+						->select(DB::raw('t_games.id,t_games.name,t_games.name,t_games.desc,t_games.url,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate, t_rate.user_name,t_rate.rate,t_rate.comment,t_rate.created_at'))
 						->where('t_games.id',$id)
-						->paginate();
+						->first();
 
 				$top_games = DB::table('t_play_games')
 						->join('users', 'users.id', '=', 't_play_games.idplayer','left')						
@@ -180,7 +180,7 @@ class PublicController extends Controller
 
 			if(!Auth::user()){
                 return redirect()->guest('login');
-			}else if($master_datas->count() < 0){
+			}else if($master_datum == null){
 				return $this->index();
 			}else{
 				$user=Auth::user();				
@@ -198,7 +198,7 @@ class PublicController extends Controller
 				$games->count_play +=1;
 				$games->save();				
 				
-				return view('public.play', compact('user','master_datas','top_games','slider'));
+				return view('public.play', compact('user','master_datum','top_games','slider'));
 			}
 	}
 

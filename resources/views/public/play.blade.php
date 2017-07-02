@@ -15,7 +15,6 @@
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
-                    @foreach($master_datas as $master_datum)
                         <div class="body">
                             <div class="row">
                                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
@@ -49,15 +48,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    @if (1==1) @break; @endif
-                                    @endforeach
                                     <div class="header">
                                         <h2>
                                             User Reviews
                                         </h2>
                                     </div>
                                     <div class="body">
-                                        @foreach($master_datas as $master_datum)
                                                 <?php if($master_datum->user_rate==0){ ?>
                                                     <p> No Review </p>
                                                 <?php }else{ ?>
@@ -66,7 +62,6 @@
                                                 {{ $master_datum->comment }} <br/>
                                                 <hr>
                                                 <?php } ?> 
-                                        @endforeach   
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
