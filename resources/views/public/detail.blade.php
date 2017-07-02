@@ -44,7 +44,7 @@
                                             User Reviews
                                         </h2>
                                     </div>
-                                    @if(Auth::user()->role=='2')
+                                    @if(Auth::user()!=null)
                                     <div class="body">
                                         <form  role="form" method="POST" action="{{ url('/addreviewgame') }}">
                                             {{ csrf_field() }}
