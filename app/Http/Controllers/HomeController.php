@@ -179,7 +179,9 @@ class HomeController extends Controller
 		$rate->comment = Input::get('comment');
 		$rate->save();
 		
-		return view('public.detail', compact('master_datas','slider','top_games'))->withMessage('Review saved!');
+		return redirect()->action(
+			'PublicController@detail', ['id' => $id]
+		);
 	}
 		
 	

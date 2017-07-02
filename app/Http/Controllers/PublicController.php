@@ -392,7 +392,7 @@ class PublicController extends Controller
 	}
 	
 		
-	public function detail($id)
+	public function detail($id=null)
 		    {
 		$master_datas = DB::table('t_games')
 				                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
