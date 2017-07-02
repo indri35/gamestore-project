@@ -53,6 +53,25 @@
                                             </div>
                                             <div class="row clearfix">
                                                 <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                                    <label for="desc">URL Games</label>
+                                                </div>
+                                                <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                                    <div class="form-group">
+                                                        <div class="form-line">
+                                                            <textarea id="url" type="text" class="form-control" name="desc" placeholder="Input Your Game URL"></textarea>
+                                                            @if ($errors->has('url'))
+                                                                <span class="help-block">
+                                                                    <strong>{{ $errors->first('url') }}</strong>
+                                                                </span>
+                                                            @endif
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row clearfix">
+                                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                                     <label for="category">Game Category</label>
                                                 </div>
                                                 <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">

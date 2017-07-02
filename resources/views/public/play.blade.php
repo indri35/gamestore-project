@@ -4,7 +4,7 @@
                     <div class="card">
                          <div class="body">
                             <div class="iframe-wrapper">
-                            <iframe src="http://www.tapcubestudios.com/games/brickout/" name="bestgameever"  width="100%" height="800" frameborder="1" scrolling="no">   
+                            <iframe src="{{ $master_datum->url }}" name="bestgameever"  width="100%" height="800" frameborder="1" scrolling="no">   
                             <p>Your browser does not support iframes.</p>
                             </iframe>
                             </div>
