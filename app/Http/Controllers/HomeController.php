@@ -180,7 +180,7 @@ class HomeController extends Controller
 		$rate->save();
 		
 		return redirect()->action(
-			'PublicController@detail', ['id' => $id]
+			'PublicController@play', ['id' => $id]
 		);
 	}
 		
