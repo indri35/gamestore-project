@@ -308,7 +308,7 @@ class PublicController extends Controller
 						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games.img_slider'))
 						                ->orderBy('t_games.count_play','DESC')
 						                ->paginate(10);
-			if(!Auth::user()){
+			if(!Auth::user()||Auth::user()->role==2){
 				return view('public.casino', compact('new_game','most_played','most_rated','slider','top_games'));
 			}else{
 				return view('admin.action-admin', compact('master_datas','new_game','most_played','most_rated','slider','top_games'));	
@@ -384,7 +384,7 @@ class PublicController extends Controller
 						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games.img_slider'))
 						                ->orderBy('t_games.count_play','DESC')
 						                ->paginate(10);
-			if(!Auth::user()){
+			if(!Auth::user()||Auth::user()->role==2){
 				return view('public.puzzle', compact('new_game','most_played','most_rated','slider','top_games'));
 			}else{
 				return view('admin.puzzle-admin', compact('master_datas','new_game','most_played','most_rated','slider','top_games'));	
