@@ -44,6 +44,54 @@
                                             User Reviews
                                         </h2>
                                     </div>
+                                    @if(Auth::user()->role=='2')
+                                    <div class="body">
+                                        <form  role="form" method="POST" action="{{ url('/addreviewgame') }}">
+                                            {{ csrf_field() }}
+                                                <div class="row clearfix">
+                                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                                        <label for="rate">Game Rate</label>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-10 col-sm-8 col-xs-7">
+                                                        <div class="form-group">
+                                                            <select id="rate-field" name="rate">                    
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>                       
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row clearfix">
+                                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                                        <label for="comment">Comment</label>
+                                                    </div>
+                                                    <div class="col-lg-8 col-md-10 col-sm-8 col-xs-7">
+                                                        <div class="form-group">
+                                                            <div class="form-line">
+                                                                <textarea id="comment" rows="5" type="text" class="form-control" name="comment" placeholder="Input Your Comment"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <input type="hidden" name="id_user" value="{{ (Auth::user()->id) }}">
+                                                <input type="hidden" name="user_name" value="{{ (Auth::user()->name) }}">
+                                                <input type="hidden" name="email" value="{{ (Auth::user()->email) }}">
+                                                @foreach($master_datas as $master_datum)
+                                                <input type="hidden" name="id_game" value="{{ $master_datum->id }}">
+                                                @endforeach
+                                                <div class="form-group">
+                                                    <div class="col-md-4 col-md-offset-2">
+                                                        <button type="submit" class="btn btn-primary">
+                                                            <i class="fa fa-btn fa-user"></i> Submit
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                        </form>
+                                    </div>
+                                    @endif
                                     <div class="body">
                                         @foreach($master_datas as $master_datum)
                                                 <?php if($master_datum->user_rate==0){ ?>
