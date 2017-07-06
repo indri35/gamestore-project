@@ -205,7 +205,14 @@ class HomeController extends Controller
 				->orderBy('t_games.count_play','DESC')
 				->paginate(3);
 
-		return view('public.profile',compact('user','slider'));
+		$top_games = DB::table('t_play_games')
+				->join('users', 'users.id', '=', 't_play_games.idplayer','left')						
+				->select(DB::raw('users.id,users.name, users.img as img, count(score) as score'))
+				->groupby('users.id')
+				->orderby('score','desc')
+				->paginate(10);
+
+		return view('public.profile',compact('user','top_games'));
 	}
 	public function editprofile()
 	{
