@@ -158,6 +158,8 @@
 				  <li class="data">{{ $user->sex }} <i class="fa fa-angle-right"></i> 
                     {{ $user->birthdate }} 
 				   </li>
+                    <li class="data"><img src="{{ URL::to('assets/images/icon-coin-sm.png') }}"> {{ $user->coint }}</li>
+
 				</ul>
 	 		</div>
 	 		<div class="col-md-4">				
