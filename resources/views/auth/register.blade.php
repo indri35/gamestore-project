@@ -57,6 +57,44 @@
                                     </div>
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="birhdate">Birth Date</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group{{ $errors->has('birthdate') ? ' has-error' : '' }}">
+                                                <div class="form-line">
+                                                    <input id="birthdate" type="date" class="form-control" name="birthdate">
+                                                        @if ($errors->has('birthdate'))
+                                                        <span class="help-block">
+                                                            <strong>{{ $errors->first('birthdate') }}</strong>
+                                                        </span>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="sex">Sex</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group{{ $errors->has('sex') ? ' has-error' : '' }}">
+                                                <div class="form-line">
+                                                    <select class="form-control show-tick" name="sex">
+                                                        <option value="">-- Please select --</option>
+                                                        <option value="Male">Male</option>
+                                                        <option value="Female">Female</option>
+                                                    </select>
+                                                        @if ($errors->has('sex'))
+                                                        <span class="help-block">
+                                                            <strong>{{ $errors->first('sex') }}</strong>
+                                                        </span>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                             <label for="email">Email</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
@@ -113,6 +151,7 @@
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div >
+                                                    <img class="img-circle" id="avatar" src="http://nanoup.net/assets/userdata/avatar/thumbs/default-avatar.png">
                                                     <input type="file" id="img" name="img" accept="image/x-png,image/gif,image/jpeg">
                                                     @if ($errors->has('img'))
                                                         <span class="help-block">
