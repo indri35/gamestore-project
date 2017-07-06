@@ -178,7 +178,7 @@ class PublicController extends Controller
 							->where('idgames',$id)
 							->groupby('users.id')
 							->orderby('score','desc')
-							->paginate(10);
+							->paginate(5);
 
 
 				$slider = DB::table('t_games')
@@ -417,7 +417,8 @@ class PublicController extends Controller
 		$top_games = DB::table('t_games')
 						        ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games.img_slider'))
 						        ->orderBy('t_games.count_play','DESC')
-						        ->paginate(10);
+						        ->paginate(5);
+
 			if($master_datas->count() > 0){
 				return view('public.detail', compact('master_datas','slider','top_games'));
 			}else{

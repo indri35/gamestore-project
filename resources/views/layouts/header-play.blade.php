@@ -149,8 +149,8 @@
                         <li class="nav-icons hidden-sm pull-right">
                             <a data-toggle="tooltip" data-placement="bottom" title="" href="#" data-original-title="Favorites"><i><img src="http://nanoup.net/assets/img/navbar-favorites.png"></i><span class="text-hidden">  Favorites</span></a>
                         </li>
-                        <li data-toggle="tooltip" title="Coint" class="pull-right"><a href=""><i><img src="http://nanoup.net/assets/img/icon-coin.png"></i> {{ Auth::user()->coint}}</a> </li>
-                        <li data-toggle="tooltip" title="User" class="pull-right"><a href=""><i class="material-icons" title="User">person</i>  {{ Auth::user()->name}}</a> </li>
+                        <li data-toggle="tooltip" title="Coint" class="pull-right"><a href="{{ url('/userprofile') }}"><i><img src="http://nanoup.net/assets/img/icon-coin.png"></i> {{ Auth::user()->coint}}</a> </li>
+                        <li data-toggle="tooltip" title="User" class="pull-right"><a href="{{ url('/userprofile') }}"><i class="material-icons" title="User">person</i>  {{ Auth::user()->name}}</a> </li>
                     @endif
                 </ul>
             </div>

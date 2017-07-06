@@ -9,7 +9,7 @@
                                 <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                                     <div class="list-group">
                                         <div class="list-group-item active">
-                                            <h4>Top Users </h4>
+                                            <h4>Top Global Users </h4>
                                         </div>
                                         @foreach($top_games as $top_games)
                                         <a href="{{ url('play', $top_games->id) }}" class="list-group-item"><h4><img class="img-circle" src="{{ asset($top_games->img) }}" width="50" height="50" >&emsp;&emsp;&emsp;&emsp;{{ $top_games->name }} <span class="pull-right">{{ $top_games->score}}</span></h4></a>

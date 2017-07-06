@@ -171,15 +171,15 @@
  	</div>
             </div>
             <div class="topnav" id="myTopnav">
-                <a href="{{ url('/') }}">
+                <a href="#">
                     <i><img src="http://nanoup.net/assets/img/navbar-achievement.png"></i>
                     <span>Achievements</span>
                 </a>
-                <a href="{{ url('/action') }}">
+                <a href="#">
                     <i><img src="http://nanoup.net/assets/img/navbar-favorites.png"><i>
                     <span>Favorites</span>
                 </a>
-                <a href="{{ url('/casino') }}">
+                <a href="#">
                     <i><img src="http://nanoup.net/assets/img/navbar-follow.png"><i>
                     <span>Friends</span>
                 </a>
