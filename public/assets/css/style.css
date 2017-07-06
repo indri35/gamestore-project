@@ -8122,6 +8122,8 @@ html.ie11 .bs-searchbox .form-control {
                 color: #fff;
                 background-color: #222;
                 border-color: #333;
+                font-size: 11px;
+                margin-bottom:5px; 
             }
             .fa {
                 display: inline-block;
