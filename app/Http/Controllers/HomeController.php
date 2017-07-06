@@ -24,7 +24,7 @@ class HomeController extends Controller
 		     */
 	
 	public function __construct()
-		{
+	{
 		//$		this->middleware('auth');
 	}
 	
@@ -197,7 +197,18 @@ class HomeController extends Controller
 		$user = Auth::user();
 		return view('admin.addgameaction');
 	}
-	
+	public function userprofile()
+	{
+		$user = Auth::user();
+		$slider = DB::table('t_games')
+				->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games.img_slider'))
+				->orderBy('t_games.count_play','DESC')
+				->paginate(3);
+
+		return view('public.profile',compact('user','slider'));
+	}
+
+
 	public function addgamepuzzle()
 		    {
 		$user = Auth::user();

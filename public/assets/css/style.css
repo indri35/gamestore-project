@@ -8070,3 +8070,101 @@ html.ie11 .dropdown-menu ul.menu li a {
 html.ie11 .bs-searchbox .form-control {
   width: 90%; }
 
+              .user-data {
+                overflow: hidden;
+                border-top-right-radius: 10px;
+                border-top-left-radius: 10px;
+                z-index: 1;
+            }
+            .user-data {
+                background: #333;
+                color: white;
+            }
+            .user-data .relative {
+                position: relative;
+            }
+            .row {
+                margin-left: -15px;
+                margin-right: -15px;
+            }
+            .user-data .user-bg {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                background: center repeat;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+                opacity: .3;
+                filter: alpha(opacity=30);
+            }
+            .user-data .profile-data {
+                padding-left: 0;
+                list-style: none;
+                padding-top: 25px;
+                margin-bottom: 0px;
+            }
+            .user-data .profile-data>.name {
+                font-size: 24px;
+                text-shadow: black 0.1em 0.1em 0.2em;
+            }
+            .user-data .profile-data>.data {
+                font-size: 14px;
+                text-shadow: black 0.1em 0.1em 0.2em;
+            }
+            .user-data .profile-buttons {
+                padding-left: 0;
+                list-style: none;
+                padding-bottom: 25px;
+                padding-top: 25px;
+            }
+            .btn-profile {
+                color: #fff;
+                background-color: #222;
+                border-color: #333;
+            }
+            .btn-sm, .btn-group-sm>.btn {
+                padding: 5px 10px;
+                font-size: 12px;
+                line-height: 1.5;
+                border-radius: 40px;
+            }
+            .btn-sm, .btn-group-sm>.btn {
+                padding: 5px 10px;
+                font-size: 12px;
+                line-height: 1.5;
+                border-radius: 3px;
+            }
+            .btn {
+                display: inline-block;
+                margin-bottom: 0;
+                font-weight: normal;
+                text-align: center;
+                vertical-align: middle;
+                touch-action: manipulation;
+                cursor: pointer;
+                background-image: none;
+                border: 1px solid transparent;
+                white-space: nowrap;
+                padding: 6px 12px;
+                font-size: 14px;
+                line-height: 1.42857143;
+                border-radius: 4px;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+            .fa {
+                display: inline-block;
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+            .pull-right {
+                float: right !important;
+            }
+
+

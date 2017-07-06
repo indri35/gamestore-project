@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-@include('layouts.header')
+@include('layouts.header-public')
 <!-- Start Map -->
     <div id="map" data-position-latitude="-6.1807632" data-position-longitude="106.8261164"></div>
     <script>
