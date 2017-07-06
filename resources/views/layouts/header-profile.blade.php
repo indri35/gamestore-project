@@ -150,7 +150,7 @@
  		<div class="row relative">
 			<div class="user-bg" style="background-image: url(http://nanoup.net/assets/userdata/avatar/background/default-avatar.png)"></div>
 	 		<div class="col-md-4 col-md-push-4">				
-	 		    <img class="avatar img-responsive img-circle center-block" src="http://nanoup.net/assets/userdata/avatar/resized/default-avatar.png">
+	 		    <img class="avatar img-responsive img-circle center-block" src="{{ asset(Auth::user()->img) }}">
 	 		</div>
 	 		<div class="col-md-4 col-md-pull-4">
 				<ul class="profile-data">
@@ -163,7 +163,6 @@
 	 		<div class="col-md-4">				
 	 		    <ul class="profile-buttons pull-right">
 	 		    	<li><a class="btn btn-profile btn-sm" href="#" data-toggle="modal" data-target="#editModal"><i class="fa fa-edit"></i> Edit profile</a></li>
-	 		    	<li><a class="btn btn-profile btn-sm" href="#" data-toggle="modal" data-target="#preferencesModal"><i class="fa fa-gear"></i> Preferences</a></li>
 				</ul>
 	 		</div>
  		</div>
