@@ -103,7 +103,7 @@ class AuthController extends Controller
             'birthdate' => $data['birthdate'],
             'sex' => $data['sex'],
             'role' => '2',
-            'activated'=> 1,
+            'activated'=> '1',
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'img' => '/img_profil/'.$image
@@ -112,7 +112,7 @@ class AuthController extends Controller
 
         public function authenticated(Request $request, $user)
     {
-        if ($user->activated) {
+        if (!$user->activated) {
             $this->activationService->sendActivationMail($user);
             auth()->logout();
             return back()->with('warning', 'You need to confirm your account. We have sent you an activation code, please check your email.');
