@@ -171,28 +171,16 @@
             </div>
             <div class="topnav" id="myTopnav">
                 <a href="{{ url('/') }}">
-                    <i class="material-icons">select_all</i>
-                    <span>All</span>
+                    <i><img src="http://nanoup.net/assets/img/navbar-achievement.png"></i>
+                    <span>Achievements</span>
                 </a>
                 <a href="{{ url('/action') }}">
-                    <i class="material-icons">videogame_asset</i>
-                    <span>Action</span>
+                    <i><img src="http://nanoup.net/assets/img/navbar-favorites.png"><i>
+                    <span>Favorites</span>
                 </a>
                 <a href="{{ url('/casino') }}">
-                    <i class="material-icons">videogame_asset</i>
-                    <span>Casino</span>
-                </a>
-                <a href="{{ url('/adventure') }}">
-                    <i class="material-icons">videogame_asset</i>
-                    <span>Adventure</span>
-                </a>
-                <a href="{{ url('/puzzle') }}">
-                    <i class="material-icons">videogame_asset</i>
-                    <span>Puzzle</span>
-                </a>
-                <a href="{{ url('/sports') }}">
-                    <i class="material-icons">videogame_asset</i>
-                    <span>Sports</span>
+                    <i><img src="http://nanoup.net/assets/img/navbar-follow.png"><i>
+                    <span>Friends</span>
                 </a>
             </div>
     

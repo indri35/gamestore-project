@@ -8123,38 +8123,6 @@ html.ie11 .bs-searchbox .form-control {
                 background-color: #222;
                 border-color: #333;
             }
-            .btn-sm, .btn-group-sm>.btn {
-                padding: 5px 10px;
-                font-size: 12px;
-                line-height: 1.5;
-                border-radius: 40px;
-            }
-            .btn-sm, .btn-group-sm>.btn {
-                padding: 5px 10px;
-                font-size: 12px;
-                line-height: 1.5;
-                border-radius: 3px;
-            }
-            .btn {
-                display: inline-block;
-                margin-bottom: 0;
-                font-weight: normal;
-                text-align: center;
-                vertical-align: middle;
-                touch-action: manipulation;
-                cursor: pointer;
-                background-image: none;
-                border: 1px solid transparent;
-                white-space: nowrap;
-                padding: 6px 12px;
-                font-size: 14px;
-                line-height: 1.42857143;
-                border-radius: 4px;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-            }
             .fa {
                 display: inline-block;
                 font: normal normal normal 14px/1 FontAwesome;
