@@ -162,7 +162,7 @@
 	 		</div>
 	 		<div class="col-md-4">				
 	 		    <ul class="profile-buttons pull-right">
-	 		    	<li><a class="btn btn-profile btn-sm" href="#" data-toggle="modal" data-target="#editModal"><i class="fa fa-edit"></i> Edit profile</a></li>
+	 		    	<li><a class="btn btn-profile btn-sm" href="{{ url('/editprofile') }}"><i class="fa fa-edit"></i> Edit profile</a></li>
 				</ul>
 	 		</div>
  		</div>

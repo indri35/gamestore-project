@@ -207,6 +207,43 @@ class HomeController extends Controller
 
 		return view('public.profile',compact('user','slider'));
 	}
+	public function editprofile()
+	{
+		$user = Auth::user();
+
+		return view('public.editprofile',compact('user'));
+	}
+	public function updateprofile(Request $request)
+	{		
+		$this->validate($request, [
+				'name' => 'required',
+				'sex' => 'required',
+				'birthdate' => 'date|required',
+				'password' => 'required|min:6|confirmed',
+				'img' => 'mimes:jpeg,bmp,jpg,png||max:5000}'
+		]);
+
+		$user = Auth::user();
+		$user->name = $request->input("name");
+		$user->sex = $request->input("sex");
+		$user->birthdate = $request->input("birthdate");
+		$user->password = bcrypt($request->input("password"));
+		
+		if ($request->hasFile('img')) {
+			$imageTempName = $request->file('img')->getPathname();
+			$imageName =$request->file('img')->getClientOriginalName();
+			$path = base_path() . '/public/upload/images/';
+			$request->file('img')->move($path , $imageName);
+			$user->img = '/upload/images/'.$imageName;
+		}
+		
+		$user->save();
+		
+		return redirect()->action(
+			'HomeController@userprofile'
+		);
+	}
+	
 
 
 	public function addgamepuzzle()
