@@ -135,12 +135,6 @@
                       <li data-toggle="tooltip" title="Signup" class="pull-right"><a href="{{ url('/register') }}"><i class="material-icons" title="Register">person_add</i> Signup</a></li>
                     @else
                         <li data-toggle="tooltip" title="Signout" class="pull-right"><a href="{{ url('/logout') }}" class="gs-navbar-menu"><i class="material-icons gs-navbar-menu__icon">input</i> Signout</a></li>
-                        <li class="nav-icons hidden-sm pull-right">
-      			            <a data-toggle="tooltip" data-placement="bottom" title="" href="#" data-original-title="Achievements"><i><img src="http://nanoup.net/assets/img/navbar-achievement.png"></i><span class="text-hidden">  Achievements</span></a>
-    		            </li>
-                        <li class="nav-icons hidden-sm pull-right">
-                            <a data-toggle="tooltip" data-placement="bottom" title="" href="#" data-original-title="Favorites"><i><img src="http://nanoup.net/assets/img/navbar-favorites.png"></i><span class="text-hidden">  Favorites</span></a>
-                        </li>
                         <li data-toggle="tooltip" title="Coint" class="pull-right"><a href="{{ url('/userprofile') }}"><i><img src="http://nanoup.net/assets/img/icon-coin.png"></i> {{ Auth::user()->coint}}</a> </li>
                         <li data-toggle="tooltip" title="User" class="pull-right"><a href="{{ url('/userprofile') }}" class="gs-navbar-menu"><i class="material-icons gs-navbar-menu__icon" title="User">person</i>  {{ Auth::user()->name}}</a> </li>
                     @endif
