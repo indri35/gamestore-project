@@ -198,27 +198,27 @@
             </div>
             @if($nav!='detail')
             <div class="topnav" id="myTopnav">
-                <a href="{{ url('/') }}" class="@if($nav=='all') active @endif">
+                <a data-toggle="tooltip" title="All" href="{{ url('/') }}" class="@if($nav=='all') active @endif">
                     <i class="material-icons">select_all</i>
                     <span class="hidden-xs">All</span>
                 </a>
-                <a href="{{ url('/action') }}" class="@if($nav=='action') active @endif">
+                <a data-toggle="tooltip" title="Action" href="{{ url('/action') }}" class="@if($nav=='action') active @endif">
                     <i class="material-icons">theaters</i>
                     <span class="hidden-xs">Action</span>
                 </a>
-                <a href="{{ url('/casino') }}" class="@if($nav=='casino') active @endif">
+                <a data-toggle="tooltip" title="Casino" href="{{ url('/casino') }}" class="@if($nav=='casino') active @endif">
                     <i class="material-icons">group_work</i>
                     <span class="hidden-xs">Casino</span>
                 </a>
-                <a href="{{ url('/adventure') }}" class="@if($nav=='adventure') active @endif">
+                <a data-toggle="tooltip" title="Adventure" href="{{ url('/adventure') }}" class="@if($nav=='adventure') active @endif">
                     <i class="material-icons">explore</i>
                     <span class="hidden-xs">Adventure</span>
                 </a>
-                <a href="{{ url('/puzzle') }}" class="@if($nav=='puzzle') active @endif">
+                <a data-toggle="tooltip" title="Puzzle" href="{{ url('/puzzle') }}" class="@if($nav=='puzzle') active @endif">
                     <i class="material-icons">videogame_asset</i>
                     <span class="hidden-xs">Puzzle</span>
                 </a>
-                <a href="{{ url('/sports') }}" class="@if($nav=='sport') active @endif">
+                <a data-toggle="tooltip" title="Sport" href="{{ url('/sports') }}" class="@if($nav=='sport') active @endif">
                     <i class="material-icons">rowing</i>
                     <span class="hidden-xs">Sports</span>
                 </a>
