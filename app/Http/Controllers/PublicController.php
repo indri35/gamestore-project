@@ -86,11 +86,11 @@ class PublicController extends Controller
 						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games.img_slider'))
 						                ->orderBy('t_games.count_play','DESC')
 						                ->paginate(10);
-
+			$nav='all';
 			if(!Auth::user()||Auth::user()->role==2){
-				return view('public.home', compact('new_game','most_played','most_rated','slider','top_games'));
+				return view('public.home', compact('new_game','most_played','most_rated','slider','top_games','nav'));
 			}else{
-				return view('admin.board-admin', compact('master_datas','dashboard_count','player_count','action','adventure','casino','puzzle','sports'));	
+				return view('admin.board-admin', compact('master_datas','dashboard_count','player_count','action','adventure','casino','puzzle','sports','nav'));	
 			}
 	}
 
@@ -214,6 +214,7 @@ class PublicController extends Controller
 
 	public function adventure()
 		    {
+			$nav='adventure';
 			$master_datas = Games::Where('category','Adventure')->orderBy('created_at','DESC')->paginate();
 			$new_game = DB::table('t_games')
 						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
@@ -242,15 +243,16 @@ class PublicController extends Controller
 						                ->orderBy('t_games.count_play','DESC')
 						                ->paginate(10);
 			if(!Auth::user()||Auth::user()->role==2){
-				return view('public.adventure', compact('new_game','most_played','most_rated','slider','top_games'));
+				return view('public.adventure', compact('new_game','most_played','most_rated','slider','top_games','nav'));
 			}else{
-				return view('admin.adventure-admin', compact('master_datas','new_game','most_played','most_rated','slider','top_games'));	
+				return view('admin.adventure-admin', compact('master_datas','new_game','most_played','most_rated','slider','top_games','nav'));	
 			}
 	}
 	
 
 	public function action()
 		    {
+			$nav='action';
 			$master_datas = Games::Where('category','Action')->orderBy('created_at','DESC')->paginate();
 
 			$new_game = DB::table('t_games')
@@ -280,9 +282,9 @@ class PublicController extends Controller
 						                ->orderBy('t_games.count_play','DESC')
 						                ->paginate(10);
 			if(!Auth::user()||Auth::user()->role==2){
-				return view('public.action', compact('new_game','most_played','most_rated','slider','top_games'));
+				return view('public.action', compact('new_game','most_played','most_rated','slider','top_games','nav'));
 			}else{
-				return view('admin.action-admin', compact('master_datas','new_game','most_played','most_rated','slider','top_games'));	
+				return view('admin.action-admin', compact('master_datas','new_game','most_played','most_rated','slider','top_games','nav'));	
 			}
 	}
 	
@@ -290,6 +292,7 @@ class PublicController extends Controller
 	
 	public function casino()
 		    {
+			$nav='casino';
 			$master_datas = Games::Where('category','Casino')->orderBy('created_at','DESC')->paginate();
 
 			$new_game = DB::table('t_games')
@@ -319,15 +322,15 @@ class PublicController extends Controller
 						                ->orderBy('t_games.count_play','DESC')
 						                ->paginate(10);
 			if(!Auth::user()||Auth::user()->role==2){
-				return view('public.casino', compact('new_game','most_played','most_rated','slider','top_games'));
+				return view('public.casino', compact('new_game','most_played','most_rated','slider','top_games','nav'));
 			}else{
-				return view('admin.action-admin', compact('master_datas','new_game','most_played','most_rated','slider','top_games'));	
+				return view('admin.action-admin', compact('master_datas','new_game','most_played','most_rated','slider','top_games','nav'));	
 			}
 	}
 	
 	public function sports()
 		    {
-
+			$nav='sport';
 			$master_datas = Games::Where('category','Sports')->orderBy('created_at','DESC')->paginate();
 	
 			$new_game = DB::table('t_games')
@@ -357,15 +360,15 @@ class PublicController extends Controller
 						                ->orderBy('t_games.count_play','DESC')
 						                ->paginate(10);
 			if(!Auth::user()||Auth::user()->role==2){
-				return view('public.sports', compact('new_game','most_played','most_rated','slider','top_games'));
+				return view('public.sports', compact('new_game','most_played','most_rated','slider','top_games','nav'));
 			}else{
-				return view('admin.sports-admin', compact('master_datas','new_game','most_played','most_rated','slider','top_games'));	
+				return view('admin.sports-admin', compact('master_datas','new_game','most_played','most_rated','slider','top_games','nav'));	
 			}
 	}
 	
 	public function puzzle()
 		    {
-		
+			$nav='puzzle';
 			$master_datas = Games::Where('category','Puzzle')->orderBy('created_at','DESC')->paginate();
 
 			$new_game = DB::table('t_games')
@@ -395,15 +398,16 @@ class PublicController extends Controller
 						                ->orderBy('t_games.count_play','DESC')
 						                ->paginate(10);
 			if(!Auth::user()||Auth::user()->role==2){
-				return view('public.puzzle', compact('new_game','most_played','most_rated','slider','top_games'));
+				return view('public.puzzle', compact('new_game','most_played','most_rated','slider','top_games','nav'));
 			}else{
-				return view('admin.puzzle-admin', compact('master_datas','new_game','most_played','most_rated','slider','top_games'));	
+				return view('admin.puzzle-admin', compact('master_datas','new_game','most_played','most_rated','slider','top_games','nav'));	
 			}
 	}
 	
 		
 	public function detail($id=null)
 		    {
+		$nav='detail';
 		$master_datas = DB::table('t_games')
 				                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 				                ->join('t_rate', 't_rate.id_game', '=', 't_games.id','left outer')
@@ -420,7 +424,7 @@ class PublicController extends Controller
 						        ->paginate(5);
 
 			if($master_datas->count() > 0){
-				return view('public.detail', compact('master_datas','slider','top_games'));
+				return view('public.detail', compact('master_datas','slider','top_games','nav'));
 			}else{
 				return $this->index();
 			}

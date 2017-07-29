@@ -3,11 +3,6 @@
                 <!-- <div class="col-xs-12"> -->
                     <div class="card">
                         <div class="body">
-                            <div class="header">
-                                <h2>
-                                    <br/>Category: Casino
-                                </h2>
-                            </div>
                             <div class="row">
                                 <div class="col-md-8">
                                     @include('components.tab-navigation')
