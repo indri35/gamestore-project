@@ -10,9 +10,9 @@
                                     <div class="tab-content">
                                         <div role="tabpanel" class="tab-pane fade in active" id="new-games">
                                             @foreach($new_game as $new_game)
-                                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">  
+                                            <div class="col-sm-4 col-xs-6 no-pad">  
                                                 <div class="thumbnail">
-                                                    <div class="container">
+                                                    <div class="container no-pad">
                                                         <a href="{{ route('detail.id', ['id' => $new_game->id]) }}" ><img src="{{ asset($new_game->img) }}" class="image" width="900px" height="900px">
                                                         <div class="bottomright"><button type="button" class="btn bg-black waves-effect waves-light">{{ $new_game->category }}<br/><img src="{{ ('assets/images/icon-coin-sm.png') }}">{{ $new_game->coint }}</button></div>
                                                         <div class="overlay1">
@@ -36,9 +36,9 @@
                                         </div>
                                         <div role="tabpanel" class="tab-pane fade" id="most-played">
                                             @foreach($most_played as $most_played)
-                                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">  
+                                            <div class="col-sm-4 col-xs-6 no-pad">  
                                                 <div class="thumbnail">
-                                                    <div class="container">
+                                                    <div class="container no-pad">
                                                         <a href="{{ route('detail.id', ['id' => $most_played->id]) }}" ><img src="{{ asset($most_played->img) }}" class="image" width="900px" height="900px">
                                                         <div class="bottomright"><button type="button" class="btn bg-black waves-effect waves-light">{{ $most_played->category }}<br/><img src="{{ ('assets/images/icon-coin-sm.png') }}">{{ $most_played->coint }}</button></div>
                                                         <div class="overlay1">
@@ -62,9 +62,9 @@
                                         </div>
                                         <div role="tabpanel" class="tab-pane fade" id="most-rated">
                                             @foreach($most_rated as $most_rated)
-                                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">  
+                                            <div class="col-sm-4 col-xs-6 no-pad">  
                                                 <div class="thumbnail">
-                                                    <div class="container">
+                                                    <div class="container no-pad">
                                                         <a href="{{ route('detail.id', ['id' => $most_rated->id]) }}" ><img src="{{ asset($most_rated->img) }}" class="image" width="900px" height="900px">
                                                         <div class="bottomright"><button type="button" class="btn bg-black waves-effect waves-light">{{ $most_rated->category }}<br/><img src="{{ ('assets/images/icon-coin-sm.png') }}">{{ $most_rated->coint }}</button></div>
                                                         <div class="overlay1">

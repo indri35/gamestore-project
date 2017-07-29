@@ -22,6 +22,14 @@
         top: 0;
         left: 0;
     }
+    .mobile-visible {
+        z-index: 1002;
+        display: none;
+    }
+    .mobile-visible .list-group {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
 
     /* Navbar Brand */
     .navbar-brand {
@@ -69,12 +77,18 @@
     .user-data .profile-buttons {
         float: none;
     }
+
+    /* Override default style */
+    .btn:not(.btn-link):not(.btn-circle) {
+        font-size: 11px;
+    }
 }
 
 /* Small Devices */
 @media (min-width: 768px) {
     /* Hidden close icon outside mobile view */
-    .card-play-close {
+    .card-play__icon-show,
+    .card-play__icon-exit {
         display: none;
     }
 }

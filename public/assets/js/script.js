@@ -9,16 +9,30 @@
   }
 
   $(window).resize(function() {
-    var cardPlay = $('.card-play'),
-        cardPlayHeight = cardPlay.height() + 'px';
+    
+    if($(this).width() < 768) {
+      /* Adjust iframe height */
+      var cardPlay = $('.card-play'),
+          cardPlayHeight = cardPlay.height() + 'px';
 
-    iframe.css('height', cardPlayHeight);
+      iframe.css('height', cardPlayHeight);  
+
+      /* Hide top games */
+      $('.mobile-visible').hide();
+    } else {
+      /* Display top games */
+      $('.gs-top-games').show();
+
+      /* Revert iframe height */
+      iframe.css('height', '480px');
+    }
   });
 
   /* Hide card-play while click close button */
-  var minimizeBtn = $('.card-play-close');
+  var showBtn = $('.card-play__icon-show'),
+      mobileElements = $('.mobile-visible');
 
-  minimizeBtn.on('click', function() {
-    cardPlay.remove();
+  showBtn.on('click', function() {
+    mobileElements.toggle();
   });
 });

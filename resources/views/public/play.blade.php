@@ -2,12 +2,21 @@
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card card-play">
-                        <span class="card-play-close"></span>
-                         <div class="body">
+                        <span class="card-play__icon-show"></span>
+                        <a href="#" class="btn card-play__icon-exit mobile-visible">Exit Game</a>
+                        <div class="body">
                             <div class="iframe-wrapper">
                                 <iframe src="{{ $master_datum->url }}" name="bestgameever"  width="720" height="480" frameborder="1" scrolling="no" class="gs-play-iframe">   
                                 <p>Your browser does not support iframes.</p>
                                 </iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="visible-xs">
+                        <div class="col-xs-12">
+                            <div class="card card-play-user mobile-visible"> 
+                                <div class="pull-left">{{ Auth::user()->name}}</div>
+                                <div class="pull-right"><img src="http://nanoup.net/assets/img/icon-coin.png">&nbsp;{{ Auth::user()->coint}}</div>
                             </div>
                         </div>
                     </div>
@@ -18,7 +27,7 @@
                     <div class="card">
                         <div class="body">
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-md-8 hidden-xs">
                                     <div class="bs-example" data-example-id="media-alignment">
                                         <div class="media">
                                             <div class="media-left gs-media__img">
@@ -119,7 +128,7 @@
                                         @endforeach   
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-4 mobile-visible gs-top-games">
                                     <div class="list-group">
                                         <div class="list-group-item active">
                                             <h4> Top Players </h4>
@@ -134,7 +143,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row hidden-xs">
                                 <!-- Best User Section -->
                                 @include('components.best-user')
                             </div>

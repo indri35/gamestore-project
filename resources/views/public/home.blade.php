@@ -10,7 +10,7 @@
                                     <div class="tab-content">
                                         <div role="tabpanel" class="tab-pane fade in active" id="new-games">
                                             @foreach($new_game as $new_game)
-                                            <div class="col-sm-4 col-xs-6">  
+                                            <div class="col-sm-4 col-xs-6 no-pad">  
                                                 <div class="thumbnail">
                                                     <div class="container no-pad">
                                                     <a href="{{ route('detail.id', ['id' => $new_game->id]) }}" >
@@ -37,7 +37,7 @@
                                         </div>
                                         <div role="tabpanel" class="tab-pane fade" id="most-played">
                                             @foreach($most_played as $most_played)
-                                            <div class="col-sm-4 col-xs-6">  
+                                            <div class="col-sm-4 col-xs-6 no-pad">  
                                                 <div class="thumbnail">
                                                     <div class="container no-pad">
                                                         <a href="{{ route('detail.id', ['id' => $most_played->id]) }}" ><img src="{{ asset($most_played->img) }}" class="image" width="900px" height="900px">
@@ -63,7 +63,7 @@
                                         </div>
                                         <div role="tabpanel" class="tab-pane fade" id="most-rated">
                                             @foreach($most_rated as $most_rated)
-                                            <div class="col-sm-4 col-xs-6">  
+                                            <div class="col-sm-4 col-xs-6 no-pad">  
                                                 <div class="thumbnail">
                                                     <div class="container no-pad">
                                                         <a href="{{ route('detail.id', ['id' => $most_rated->id]) }}" ><img src="{{ asset($most_rated->img) }}" class="image" width="900px" height="900px">
