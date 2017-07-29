@@ -2310,8 +2310,8 @@
 @media (max-width: 767px) {
   .navbar > .container .navbar-brand,
   .navbar > .container-fluid .navbar-brand {
-    margin-left: 35px;
-    width: 73%; }
+    margin-left: 35px; 
+  }
   .navbar .navbar-header {
     display: inline-block;
     margin-bottom: -6px;
@@ -6648,10 +6648,7 @@ fieldset[disabled] .form-control {
   left: 0;
   width:100%;
   z-index: 12; 
-    padding-right:15px;
-    margin-right: 15px; 
-    margin-left: 15px; 
-  }
+}
 
 .navbar-admin {
   font-family: "Roboto", sans-serif;
@@ -8083,10 +8080,13 @@ html.ie11 .bs-searchbox .form-control {
             .user-data .relative {
                 position: relative;
             }
-            .row {
+            /* Input for dev: Dont override bootstrap class, you will mess it
+             * Just create other class to override bootstrap style
+
+             .row {
                 margin-left: -15px;
                 margin-right: -15px;
-            }
+            } */
             .user-data .user-bg {
                 position: absolute;
                 top: 0px;

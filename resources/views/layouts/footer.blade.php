@@ -18,6 +18,7 @@
 
     <!-- Custom Js -->
     <script type="text/javascript" src="{{ URL::to('assets/js/admin.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::to('assets/js/script.js') }}"></script>
 
     <!-- Chart Plugins Js -->
     <script type="text/javascript" src="{{ URL::to('assets/plugins/chartjs/Chart.bundle.js') }}"></script>

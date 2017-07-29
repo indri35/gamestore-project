@@ -21,8 +21,14 @@
     <!-- Animation Css -->
     <link href="{{ URL::to('assets/plugins/animate-css/animate.css') }}" rel="stylesheet" />
 
-    <!-- Custom Css -->
-    <link href="{{ URL::to('assets/css/style.css') }}" rel="stylesheet">
+    <!-- Custom style Css -->
+    <link href="{{ URL::to('assets/css/style.css') }}" rel="stylesheet" />
+
+    <!-- Specificity purpose -->
+    <link href="{{ URL::to('assets/css/custom.css') }}" rel="stylesheet" />
+
+    <!-- Media Queries -->
+    <link href="{{ URL::to('assets/css/mediaqueries.css') }}" rel="stylesheet" />
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{{ URL::to('assets/css/themes/all-themes.css') }}" rel="stylesheet" />

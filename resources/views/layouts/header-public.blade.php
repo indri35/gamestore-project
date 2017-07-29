@@ -25,7 +25,13 @@
     <link href="{{ URL::to('assets/plugins/animate-css/animate.css') }}" rel="stylesheet" />
 
     <!-- Custom Css -->
-    <link href="{{ URL::to('assets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ URL::to('assets/css/style.css') }}" rel="stylesheet" />
+
+    <!-- Specificity purpose -->
+    <link href="{{ URL::to('assets/css/custom.css') }}" rel="stylesheet" />
+
+    <!-- Media Queries -->
+    <link href="{{ URL::to('assets/css/mediaqueries.css') }}" rel="stylesheet" />
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{{ URL::to('assets/css/themes/all-themes.css') }}" rel="stylesheet" />
@@ -142,7 +148,7 @@
                       <li data-toggle="tooltip" title="Signin" class="pull-right"><a href="{{ url('/login') }}"><i class="material-icons" title="Login">input</i> Signin</a></li>
                       <li data-toggle="tooltip" title="Signup" class="pull-right"><a href="{{ url('/register') }}"><i class="material-icons" title="Register">person_add</i> Signup</a></li>
                     @else
-                        <li data-toggle="tooltip" title="Signout" class="pull-right"><a href="{{ url('/logout') }}"><i class="material-icons">input</i> Signout</a></li>
+                        <li data-toggle="tooltip" title="Signout" class="pull-right"><a href="{{ url('/logout') }}" class="gs-navbar-menu"><i class="material-icons gs-navbar-menu__icon">input</i> Signout</a></li>
                         <li class="nav-icons hidden-sm pull-right">
       			            <a data-toggle="tooltip" data-placement="bottom" title="" href="#" data-original-title="Achievements"><i><img src="http://nanoup.net/assets/img/navbar-achievement.png"></i><span class="text-hidden">  Achievements</span></a>
     		            </li>
@@ -150,7 +156,7 @@
                             <a data-toggle="tooltip" data-placement="bottom" title="" href="#" data-original-title="Favorites"><i><img src="http://nanoup.net/assets/img/navbar-favorites.png"></i><span class="text-hidden">  Favorites</span></a>
                         </li>
                         <li data-toggle="tooltip" title="Coint" class="pull-right"><a href="{{ url('/userprofile') }}"><i><img src="http://nanoup.net/assets/img/icon-coin.png"></i> {{ Auth::user()->coint}}</a> </li>
-                        <li data-toggle="tooltip" title="User" class="pull-right"><a href="{{ url('/userprofile') }}"><i class="material-icons" title="User">person</i>  {{ Auth::user()->name}}</a> </li>
+                        <li data-toggle="tooltip" title="User" class="pull-right"><a href="{{ url('/userprofile') }}" class="gs-navbar-menu"><i class="material-icons gs-navbar-menu__icon" title="User">person</i>  {{ Auth::user()->name}}</a> </li>
                     @endif
                 </ul>
             </div>
@@ -191,29 +197,29 @@
                 </div>
             </div>
             <div class="topnav" id="myTopnav">
-                <a href="{{ url('/') }}">
+                <a href="{{ url('/') }}" class="active">
                     <i class="material-icons">select_all</i>
-                    <span>All</span>
+                    <span class="hidden-xs">All</span>
                 </a>
                 <a href="{{ url('/action') }}">
-                    <i class="material-icons">videogame_asset</i>
-                    <span>Action</span>
+                    <i class="material-icons">theaters</i>
+                    <span class="hidden-xs">Action</span>
                 </a>
                 <a href="{{ url('/casino') }}">
-                    <i class="material-icons">videogame_asset</i>
-                    <span>Casino</span>
+                    <i class="material-icons">group_work</i>
+                    <span class="hidden-xs">Casino</span>
                 </a>
                 <a href="{{ url('/adventure') }}">
-                    <i class="material-icons">videogame_asset</i>
-                    <span>Adventure</span>
+                    <i class="material-icons">explore</i>
+                    <span class="hidden-xs">Adventure</span>
                 </a>
                 <a href="{{ url('/puzzle') }}">
                     <i class="material-icons">videogame_asset</i>
-                    <span>Puzzle</span>
+                    <span class="hidden-xs">Puzzle</span>
                 </a>
                 <a href="{{ url('/sports') }}">
-                    <i class="material-icons">videogame_asset</i>
-                    <span>Sports</span>
+                    <i class="material-icons">rowing</i>
+                    <span class="hidden-xs">Sports</span>
                 </a>
             </div>
     

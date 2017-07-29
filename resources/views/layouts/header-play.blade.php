@@ -27,6 +27,12 @@
     <!-- Custom Css -->
     <link href="{{ URL::to('assets/css/style.css') }}" rel="stylesheet">
 
+    <!-- Specificity purpose -->
+    <link href="{{ URL::to('assets/css/custom.css') }}" rel="stylesheet" />
+
+    <!-- Media Queries -->
+    <link href="{{ URL::to('assets/css/mediaqueries.css') }}" rel="stylesheet" />
+
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{{ URL::to('assets/css/themes/all-themes.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ URL::to('assets/css/SimpleStarRating.css') }}">
@@ -142,7 +148,7 @@
                       <li data-toggle="tooltip" title="Signin" class="pull-right"><a href="{{ url('/login') }}"><i class="material-icons" title="Login">input</i> Signin</a></li>
                       <li data-toggle="tooltip" title="Signup" class="pull-right"><a href="{{ url('/register') }}"><i class="material-icons" title="Register">person_add</i> Signup</a></li>
                     @else
-                        <li data-toggle="tooltip" title="Signout" class="pull-right"><a href="{{ url('/logout') }}"><i class="material-icons">input</i> Signout</a></li>
+                        <li data-toggle="tooltip" title="Signout" class="pull-right"><a href="{{ url('/logout') }}" class="gs-navbar-menu"><i class="material-icons gs-navbar-menu__icon">input</i> Signout</a></li>
                         <li class="nav-icons hidden-sm pull-right">
       			            <a data-toggle="tooltip" data-placement="bottom" title="" href="#" data-original-title="Achievements"><i><img src="http://nanoup.net/assets/img/navbar-achievement.png"></i><span class="text-hidden">  Achievements</span></a>
     		            </li>
@@ -150,7 +156,7 @@
                             <a data-toggle="tooltip" data-placement="bottom" title="" href="#" data-original-title="Favorites"><i><img src="http://nanoup.net/assets/img/navbar-favorites.png"></i><span class="text-hidden">  Favorites</span></a>
                         </li>
                         <li data-toggle="tooltip" title="Coint" class="pull-right"><a href="{{ url('/userprofile') }}"><i><img src="http://nanoup.net/assets/img/icon-coin.png"></i> {{ Auth::user()->coint}}</a> </li>
-                        <li data-toggle="tooltip" title="User" class="pull-right"><a href="{{ url('/userprofile') }}"><i class="material-icons" title="User">person</i>  {{ Auth::user()->name}}</a> </li>
+                        <li data-toggle="tooltip" title="User" class="pull-right"><a href="{{ url('/userprofile') }}" class="gs-navbar-menu"><i class="material-icons gs-navbar-menu__icon" title="User">person</i>  {{ Auth::user()->name}}</a> </li>
                     @endif
                 </ul>
             </div>

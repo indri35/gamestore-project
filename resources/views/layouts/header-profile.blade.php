@@ -23,6 +23,12 @@
     <!-- Custom Css -->
     <link href="{{ URL::to('assets/css/style.css') }}" rel="stylesheet">
 
+    <!-- Specificity purpose -->
+    <link href="{{ URL::to('assets/css/custom.css') }}" rel="stylesheet" />
+
+    <!-- Media Queries -->
+    <link href="{{ URL::to('assets/css/mediaqueries.css') }}" rel="stylesheet" />
+
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{{ URL::to('assets/css/themes/all-themes.css') }}" rel="stylesheet" />
@@ -128,7 +134,7 @@
                       <li data-toggle="tooltip" title="Signin" class="pull-right"><a href="{{ url('/login') }}"><i class="material-icons" title="Login">input</i> Signin</a></li>
                       <li data-toggle="tooltip" title="Signup" class="pull-right"><a href="{{ url('/register') }}"><i class="material-icons" title="Register">person_add</i> Signup</a></li>
                     @else
-                        <li data-toggle="tooltip" title="Signout" class="pull-right"><a href="{{ url('/logout') }}"><i class="material-icons">input</i> Signout</a></li>
+                        <li data-toggle="tooltip" title="Signout" class="pull-right"><a href="{{ url('/logout') }}" class="gs-navbar-menu"><i class="material-icons gs-navbar-menu__icon">input</i> Signout</a></li>
                         <li class="nav-icons hidden-sm pull-right">
       			            <a data-toggle="tooltip" data-placement="bottom" title="" href="#" data-original-title="Achievements"><i><img src="http://nanoup.net/assets/img/navbar-achievement.png"></i><span class="text-hidden">  Achievements</span></a>
     		            </li>
@@ -136,7 +142,7 @@
                             <a data-toggle="tooltip" data-placement="bottom" title="" href="#" data-original-title="Favorites"><i><img src="http://nanoup.net/assets/img/navbar-favorites.png"></i><span class="text-hidden">  Favorites</span></a>
                         </li>
                         <li data-toggle="tooltip" title="Coint" class="pull-right"><a href="{{ url('/userprofile') }}"><i><img src="http://nanoup.net/assets/img/icon-coin.png"></i> {{ Auth::user()->coint}}</a> </li>
-                        <li data-toggle="tooltip" title="User" class="pull-right"><a href="{{ url('/userprofile') }}"><i class="material-icons" title="User">person</i>  {{ Auth::user()->name}}</a> </li>
+                        <li data-toggle="tooltip" title="User" class="pull-right"><a href="{{ url('/userprofile') }}" class="gs-navbar-menu"><i class="material-icons gs-navbar-menu__icon" title="User">person</i>  {{ Auth::user()->name}}</a> </li>
                     @endif
                 </ul>
             </div>
@@ -144,44 +150,44 @@
     </nav>
     <!-- #Top Bar -->
     <section class="content1">
-            <!-- Custom Content -->
-            <div class="body">
+        <!-- Custom Content -->
+        <div class="body">
             <div class="container user-data">
- 		<div class="row relative">
-			<div class="user-bg" style="background-image: url(http://nanoup.net/assets/userdata/avatar/background/default-avatar.png)"></div>
-	 		<div class="col-md-4 col-md-push-4">				
-	 		    <img class="avatar img-responsive img-circle center-block" src="{{ asset(Auth::user()->img) }}">
-	 		</div>
-	 		<div class="col-md-4 col-md-pull-4">
-				<ul class="profile-data">
-				  <li class="name"><em>{{ $user->name }}</em></li>
-				  <li class="data">{{ $user->sex }} <i class="fa fa-angle-right"></i> 
-                    {{ $user->birthdate }} 
-				   </li>
-                    <li class="data"><img src="{{ URL::to('assets/images/icon-coin-sm.png') }}"> {{ $user->coint }}</li>
+         		<div class="row relative">
+        			<div class="user-bg" style="background-image: url(http://nanoup.net/assets/userdata/avatar/background/default-avatar.png)"></div>
+        	 		<div class="col-sm-4 col-sm-push-4 col-xs-6 col-xs-push-3">				
+        	 		    <img class="avatar img-responsive clip-img-circle center-block" src="{{ asset(Auth::user()->img) }}">
+        	 		</div>
+        	 		<div class="col-sm-4 col-sm-pull-4 col-xs-12">
+        				<ul class="profile-data">
+        				  <li class="name"><em>{{ $user->name }}</em></li>
+        				  <li class="data">{{ $user->sex }} <i class="fa fa-angle-right"></i> 
+                            {{ $user->birthdate }} 
+        				   </li>
+                            <li class="data"><img src="{{ URL::to('assets/images/icon-coin-sm.png') }}"> {{ $user->coint }}</li>
 
-				</ul>
-	 		</div>
-	 		<div class="col-md-4">				
-	 		    <ul class="profile-buttons pull-right">
-	 		    	<li><a class="btn btn-profile btn-sm" href="{{ url('/editprofile') }}"><i class="fa fa-edit"></i> Edit profile</a></li>
-				</ul>
-	 		</div>
- 		</div>
- 	</div>
-            </div>
-            <div class="topnav" id="myTopnav">
-                <a href="#">
-                    <i><img src="http://nanoup.net/assets/img/navbar-achievement.png"></i>
-                    <span>Achievements</span>
-                </a>
-                <a href="#">
-                    <i><img src="http://nanoup.net/assets/img/navbar-favorites.png"><i>
-                    <span>Favorites</span>
-                </a>
-                <a href="#">
-                    <i><img src="http://nanoup.net/assets/img/navbar-follow.png"><i>
-                    <span>Friends</span>
-                </a>
-            </div>
+        				</ul>
+        	 		</div>
+        	 		<div class="col-sm-4 col-xs-12">				
+        	 		    <ul class="profile-buttons">
+        	 		    	<li><a class="btn btn-profile btn-sm" href="{{ url('/editprofile') }}"><i class="fa fa-edit"></i> Edit profile</a></li>
+        				</ul>
+        	 		</div>
+         		</div>
+         	</div>
+        </div>
+        <div class="topnav" id="myTopnav">
+            <a href="#" class="active">
+                <i class="material-icons">assignment_turned_in</i>
+                <span class="hidden-xs">Achievements</span>
+            </a>
+            <a href="#">
+                <i class="material-icons">favorite</i>
+                <span class="hidden-xs">Favorites</span>
+            </a>
+            <a href="#">
+                <i class="material-icons">group</i>
+                <span class="hidden-xs">Friends</span>
+            </a>
+        </div>
     
