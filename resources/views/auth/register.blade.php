@@ -152,7 +152,7 @@
                                             <div class="form-group">
                                                 <div >
                                                     <img class="img-circle" id="avatar" src="http://nanoup.net/assets/userdata/avatar/thumbs/default-avatar.png">
-                                                    <input type="file" id="img" name="img" accept="image/x-png,image/gif,image/jpeg">
+                                                    <input type="file" id="img" name="img" accept="image/x-png,image/gif,image/jpeg" onchange="loadFile(event)">
                                                     @if ($errors->has('img'))
                                                         <span class="help-block">
                                                             <strong>{{ $errors->first('img') }}</strong>
@@ -195,6 +195,12 @@
     <!-- Custom Js -->
     <script src="{{ ('assets/js/admin.js') }}"></script>
     <script src="{{ ('assets/js/pages/examples/sign-in.js') }}"></script>
+    <script>
+    var loadFile = function(event) {
+        var output = document.getElementById('avatar');
+        output.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
 </body>
 
 </html>
