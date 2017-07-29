@@ -196,6 +196,7 @@
     <script src="{{ ('assets/js/admin.js') }}"></script>
     <script src="{{ ('assets/js/pages/examples/sign-in.js') }}"></script>
     <script>
+    document.getElementById("birthdate").valueAsDate = new Date();
     var loadFile = function(event) {
         var output = document.getElementById('avatar');
         output.src = URL.createObjectURL(event.target.files[0]);
