@@ -1,11 +1,44 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html>
 
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Reset Password | Games</title>
+    <!-- Favicon-->
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="{{ URL::to('assets/plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="{{ URL::to('assets/plugins/node-waves/waves.css') }}" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="{{ URL::to('assets/plugins/animate-css/animate.css') }}" rel="stylesheet" />
+    <style>
+        .password-box{
+            margin: 0;
+            text-align: center;
+        }
+    </style>
+
+</head>
 <!-- Main Content -->
-@section('content')
+<body>
 <div class="container">
+    
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
+            <div class="password-box">
+                    <img src="{{ asset('img_game/logo.png') }}" width="100" height="100" alt="User Image">
+            </div>
+            <div style="text-align: center;margin-top:5px;margin-bottom:15px;">Kujang Games - Happy to Play</div>
+             <div class="panel panel-default" style="margin-top:20px;">
                 <div class="panel-heading">Reset Password</div>
                 <div class="panel-body">
                     @if (session('status'))
@@ -44,4 +77,22 @@
         </div>
     </div>
 </div>
-@endsection
+</body>
+    <!-- Jquery Core Js -->
+    <script src="{{ URL::to('assets/plugins/jquery/jquery.min.js') }}"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="{{ URL::to('assets/plugins/bootstrap/js/bootstrap.js') }}"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="{{ URL::to('assets/plugins/node-waves/waves.js') }}"></script>
+
+    <!-- Validation Plugin Js -->
+    <script src="{{ URL::to('assets/plugins/jquery-validation/jquery.validate.js') }}"></script>
+
+    <!-- Custom Js -->
+    <script src="{{ URL::to('assets/js/admin.js') }}"></script>
+    <script src="{{ URL::to('assets/js/pages/examples/sign-in.js') }}"></script>
+</body>
+
+</html>
