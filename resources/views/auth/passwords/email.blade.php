@@ -38,7 +38,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="password-box">
-                    <img src="{{ asset('img_game/logo.png') }}" width="100" height="100" alt="User Image">
+                    <a href="{{ url('/') }}"><img src="{{ asset('img_game/logo.png') }}" width="100" height="100" alt="User Image"></a>
             </div>
             <div style="text-align: center;color:white; margin-top:5px;margin-bottom:15px;">Kujang Games - Happy to Play</div>
              <div class="panel panel-default" style="margin-top:20px;">

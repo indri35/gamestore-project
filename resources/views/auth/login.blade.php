@@ -34,7 +34,7 @@
     <div class="login-box">
         <div class="logo">
             <div class="login-box-msg">
-                <img src="{{ asset('img_game/logo.png') }}" width="100" height="100" alt="User Image">
+                <a href="{{ url('/') }}"><img src="{{ asset('img_game/logo.png') }}" width="100" height="100" alt="User Image"></a>
             </div>
             <a href="javascript:void(0);">Signin</b></a>
             <small>Kujang Games - Happy to Play</small>
