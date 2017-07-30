@@ -3,7 +3,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card card-play">
                         <span class="card-play__icon-show"></span>
-                        <a href="#" class="btn card-play__icon-exit mobile-visible">Exit Game</a>
+                        <a href="{{ url('/') }}" class="btn card-play__icon-exit mobile-visible">Exit Game</a>
                         <div class="body">
                             <div class="iframe-wrapper">
                                 <iframe src="{{ $master_datum->url }}" name="bestgameever"  width="720" height="480" frameborder="1" scrolling="no" class="gs-play-iframe">   
