@@ -25,11 +25,14 @@
             margin: 0;
             text-align: center;
         }
+        .reset-page{
+            background-color:#999;
+        }
     </style>
 
 </head>
 <!-- Main Content -->
-<body>
+<body class="reset-page">
 <div class="container">
     
     <div class="row">
@@ -37,7 +40,7 @@
             <div class="password-box">
                     <img src="{{ asset('img_game/logo.png') }}" width="100" height="100" alt="User Image">
             </div>
-            <div style="text-align: center;margin-top:5px;margin-bottom:15px;">Kujang Games - Happy to Play</div>
+            <div style="text-align: center;color:white; margin-top:5px;margin-bottom:15px;">Kujang Games - Happy to Play</div>
              <div class="panel panel-default" style="margin-top:20px;">
                 <div class="panel-heading">Reset Password</div>
                 <div class="panel-body">
