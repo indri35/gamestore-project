@@ -23,6 +23,11 @@
 
     <!-- Custom Css -->
     <link href="{{ ('assets/css/style.css') }}" rel="stylesheet">
+    <style>
+        .login-box{
+            padding:5px;
+        }
+    </style>
 </head>
 
 <body class="login-page">

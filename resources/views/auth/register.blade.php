@@ -23,6 +23,12 @@
 
     <!-- Custom Css -->
     <link href="{{ ('assets/css/style.css') }}" rel="stylesheet">
+    <style>
+        .signup-box{
+            padding:20px;
+        }
+    </style>
+
     </head>
     <body class="signup-page">
         <div class="signup-box">
