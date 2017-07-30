@@ -157,7 +157,7 @@
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div >
-                                                    <img class="img-circle" id="avatar" src="http://nanoup.net/assets/userdata/avatar/thumbs/default-avatar.png">
+                                                    <img class="img-circle" width="100" height="100" id="avatar" src="http://nanoup.net/assets/userdata/avatar/thumbs/default-avatar.png">
                                                     <input type="file" id="img" name="img" accept="image/x-png,image/gif,image/jpeg" onchange="loadFile(event)">
                                                     @if ($errors->has('img'))
                                                         <span class="help-block">
