@@ -87,10 +87,12 @@ class DevController extends Controller
 		foreach($max as $row){
 			$max = $row->id+1;
 		}
+		
 		$imageName = 'game_icon'.-$max. 
 				                $request->file('img')->getClientOriginalName();
 		$path = base_path() . '/public/img_game/';
 		$request->file('img')->move($path , $imageName);
+
 		$masterdata = new MasterData;
 		$masterdata->img = '/img_game/'.$imageName;
 		$masterdata->name = Input::get('name');

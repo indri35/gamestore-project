@@ -44,16 +44,16 @@
                 <form id="sign_in" role="form" method="POST" action="{{ url('/login') }}">
                     <div class="msg">Sign in to start your session</div>
                     {{ csrf_field() }}
-                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                    <div class="form-group{{ $errors->has('phone_number') ? ' has-error' : '' }}">
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">email</i>
+                            <i class="material-icons">phone</i>
                         </span>
                         <div class="form-line">
-                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-                            @if ($errors->has('email'))
+                            <input id="phone_number" type="text" class="form-control" name="phone_number" value="{{ old('phone_number') }}" required autofocus>
+                            @if ($errors->has('phone_number'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('phone_number') }}</strong>
                                     </span>
                                 @endif
                         </div>

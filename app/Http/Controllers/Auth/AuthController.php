@@ -35,6 +35,8 @@ class AuthController extends Controller
     protected $redirectTo = '/';
     
     protected $activationService;
+
+    protected $username = 'phone_number';
     /**
      * Create a new authentication controller instance.
      *
@@ -78,6 +80,7 @@ class AuthController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'phone_number' => 'required|unique:users',
             'birthdate' => 'required',
             'sex' => 'required',
             'img' => 'required|mimes:jpeg,bmp,jpg,png'
@@ -103,7 +106,8 @@ class AuthController extends Controller
             'birthdate' => $data['birthdate'],
             'sex' => $data['sex'],
             'role' => '2',
-            'activated'=> '1',
+            'activated'=> 1,
+            'phone_number'=>$data['phone_number'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'img' => '/img_profil/'.$image

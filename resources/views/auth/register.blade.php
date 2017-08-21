@@ -100,16 +100,33 @@
                                         </div>
                                     </div>
                                     <div class="row clearfix">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <label for="email">Email</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                            <div class="form-line">
+                                                <input id="email" type="email" class="form-control" name="email" placeholder="Input Your Email">
+                                                @if ($errors->has('email'))
+                                                    <span class="help-block">
+                                                        <strong>{{ $errors->first('email') }}</strong>
+                                                    </span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                            <label for="email">Email</label>
+                                            <label for="phone_number">Phone Number</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                            <div class="form-group{{ $errors->has('phone_number') ? ' has-error' : '' }}">
                                                 <div class="form-line">
-                                                    <input id="email" type="email" class="form-control" name="email" placeholder="Input Your Email">
-                                                    @if ($errors->has('email'))
+                                                    <input id="phone_number" type="text" class="form-control" name="phone_number" placeholder="Input Your Phone Number">
+                                                    @if ($errors->has('phone_number'))
                                                         <span class="help-block">
-                                                            <strong>{{ $errors->first('email') }}</strong>
+                                                            <strong>{{ $errors->first('phone_number') }}</strong>
                                                         </span>
                                                     @endif
                                                 </div>
