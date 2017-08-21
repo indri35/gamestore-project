@@ -155,11 +155,13 @@
         	 		<div class="col-sm-4 col-sm-pull-4 col-xs-12">
         				<ul class="profile-data">
         				  <li class="name"><em>{{ $user->name }}</em></li>
-        				  <li class="data">{{ $user->sex }} <i class="fa fa-angle-right"></i> 
+        				  <li class="data">{{ $user->sex }} 
+                            <i class="fa fa-angle-right"></i> 
                             {{ $user->birthdate }} 
-        				   </li>
+                            </li>
+                            <li class="data"> {{ $user->phone_number }}</li>
                             <li class="data"><img src="{{ URL::to('assets/images/icon-coin-sm.png') }}"> {{ $user->coint }}</li>
-
+                            
         				</ul>
         	 		</div>
         	 		<div class="col-sm-4 col-xs-12">				
