@@ -11,6 +11,8 @@ use App\Models\Plays;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
+use JWTAuth;
+
 
 class PublicController extends Controller
 {
@@ -33,6 +35,18 @@ class PublicController extends Controller
 			return $bar_chart;
 		}
 
+		public function getgames(Request $request, $take)
+		{	
+			$user = JWTAuth::parseToken()->toUser();			
+			$data = Games::inRandomOrder()->take($take)->skip(0)->get();
+			foreach($data as $item){
+				$item->url_game = url('/').'/detail/'.$item->id;;
+			}
+			
+			$status=true;
+			return compact('status','data');
+		}
+		
 	public function index()
 			{
 			$master_datas = Games::orderBy('created_at','DESC')->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')->paginate();

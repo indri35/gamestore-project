@@ -1,5 +1,7 @@
 <?php
 
+use App\User;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -43,3 +45,55 @@ Route::group(['middleware' => 'auth'], function(){
 //activation
 Route::get('/user/activation/{token}', 'Auth\AuthController@activateUser')->name('user.activate');
 Route::auth();
+
+//jwt-auth
+Route::group(['middleware' => ['bcors']], function () {
+	
+	Route::post('/signup', function(){
+	
+	$input = Input::only('email','birthdate','password','name','phone_number','sex','address');
+
+		if (isset($input['email']) && isset($input['birthdate']) && isset($input['password']) && isset($input['sex']) &&
+			isset($input['address']) && isset($input['phone_number']) && isset($input['name'])){
+					$input['password'] = Hash::make($input['password']);
+					$email = $input['phone_number'];		
+
+					$user = User::where('phone_number',$email)->first();
+					if($user){
+						return Response::json(['status'=>false,'message'=>'user already exsist']);
+					}else{
+						try {
+							$input['activated']=1;
+							$input['role']=2;
+							User::create($input);            
+						} catch (Exception $e) {
+							return Response::json(['status'=>false,'message'=>$e]);
+						}
+						return Response::json(['status'=>true,'message'=>"success created user"]);            
+					}
+					}else{
+						return Response::json(['status'=>false,'message'=>'parameter input not complete!','data'=>$input]);
+					}
+		});
+	
+		Route::post('/signin', function(){
+
+			$input = Input::only('phone_number','password');
+			//$customClaims = ['name' => $user->nama, 'picture' => $user->file_foto];
+			//if (!$token = JWTAuth::attempt($input, $customClaims)) {
+			
+			if (!$token = JWTAuth::attempt($input)) {
+				return response()->json(['status'=>false,'message' => 'wrong email or password.']);
+			}
+			$user = User::Where('phone_number',$input['phone_number'])->first();
+			return response()->json(['status'=>true,'user'=>$user,'token' => $token]);
+
+		});
+
+	 });
+	
+	
+	Route::group(['middleware' => ['bcors','jwt.auth']], function () {
+		Route::get('/getgames/{take?}','PublicController@getgames');
+	});
+	
