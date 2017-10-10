@@ -202,7 +202,7 @@
                 </a>
                 <a data-toggle="tooltip" title="Casino" href="{{ url('/casino') }}" class="@if($nav=='casino') active @endif">
                     <i class="material-icons">group_work</i>
-                    <span class="hidden-xs">Casino</span>
+                    <span class="hidden-xs">Casual</span>
                 </a>
                 <a data-toggle="tooltip" title="Adventure" href="{{ url('/adventure') }}" class="@if($nav=='adventure') active @endif">
                     <i class="material-icons">explore</i>

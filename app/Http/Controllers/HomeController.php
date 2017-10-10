@@ -63,7 +63,7 @@ class HomeController extends Controller
 										->paginate();
 			$casino = Games::orderBy('created_at','DESC')
 										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
-										->WHERE('t_games.category','Casino')
+										->WHERE('t_games.category','Casual')
 										->paginate();
 			$puzzle = Games::orderBy('created_at','DESC')
 										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')

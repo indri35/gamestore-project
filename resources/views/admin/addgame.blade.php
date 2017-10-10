@@ -58,7 +58,7 @@
                                                 <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                                     <div class="form-group">
                                                         <div class="form-line">
-                                                            <textarea id="url" type="text" class="form-control" name="desc" placeholder="Input Your Game URL"></textarea>
+                                                            <textarea id="url" type="text" class="form-control" name="url" placeholder="Input Your Game URL"></textarea>
                                                             @if ($errors->has('url'))
                                                                 <span class="help-block">
                                                                     <strong>{{ $errors->first('url') }}</strong>
@@ -80,9 +80,10 @@
                                                                 <option value="">-- Please select --</option>
                                                                 <option value="Adventure">Adventure</option>
                                                                 <option value="Action">Action</option>
-                                                                <option value="Casino">Casino</option>
+                                                                <option value="Casual">Casual</option>
                                                                 <option value="Puzzle">Puzzle</option>
                                                                 <option value="Sports">Sports</option>
+                                                                
                                                             </select>
                                                             </div>      
                                                             @if ($errors->has('category'))

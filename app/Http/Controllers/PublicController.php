@@ -67,7 +67,7 @@ class PublicController extends Controller
 										->paginate();
 			$casino = Games::orderBy('created_at','DESC')
 										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
-										->WHERE('t_games.category','Casino')
+										->WHERE('t_games.category','Casual')
 										->paginate();
 			$puzzle = Games::orderBy('created_at','DESC')
 										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
@@ -128,7 +128,7 @@ class PublicController extends Controller
 										->paginate();
 			$casino = Games::orderBy('created_at','DESC')
 										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
-										->WHERE('t_games.category','Casino')
+										->WHERE('t_games.category','Casual')
 										->paginate();
 			$puzzle = Games::orderBy('created_at','DESC')
 										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
@@ -307,24 +307,24 @@ class PublicController extends Controller
 	public function casino()
 		    {
 			$nav='casino';
-			$master_datas = Games::Where('category','Casino')->orderBy('created_at','DESC')->paginate();
+			$master_datas = Games::Where('category','Casual')->orderBy('created_at','DESC')->paginate();
 
 			$new_game = DB::table('t_games')
 						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate'))
-						                ->where('t_games.category','Casino')
+						                ->where('t_games.category','Casual')
 						                ->orderBy('t_games.id','DESC')
 						                ->paginate();
 			$most_played = DB::table('t_games')
 						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate'))
-						                ->where('t_games.category','Casino')
+						                ->where('t_games.category','Casual')
 						                ->orderBy('t_games.count_play','DESC')
 						                ->paginate();
 			$most_rated = DB::table('t_games')
 						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate'))
-						                ->where('t_games.category','Casino')
+						                ->where('t_games.category','Casual')
 						                ->orderBy('t_games_rate.user_rate','DESC')
 						                ->paginate();
 			$slider = DB::table('t_games')

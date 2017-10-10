@@ -145,7 +145,7 @@
                     <li>
                         <a href="{{ url('/casino') }}">
                             <i class="material-icons">videogame_asset</i>
-                            <span>Casino</span>
+                            <span>Casual</span>
                         </a>
                     </li>
                     <li class="active">

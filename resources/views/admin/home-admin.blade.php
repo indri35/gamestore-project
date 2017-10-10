@@ -23,7 +23,7 @@
                                     </li>
                                     <li role="presentation">
                                         <a href="#casino" data-toggle="tab">
-                                            Casino
+                                            Casual
                                         </a>
                                     </li>
                                     <li role="presentation">
