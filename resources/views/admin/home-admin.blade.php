@@ -89,8 +89,8 @@
                                                         <td><span class="rating" data-default-rating="{{ $master_datas->avg_rate }}" disabled></span></td>
                                                         <td>{{ $master_datas->count_play }}</td>
                                                         <td width="20%" align="center">
-                                                            <a class="btn btn-xs btn-warning" href="#"><i class="glyphicon glyphicon-edit"></i> Ubah</a>
-                                                            <form action="#" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
+                                                            <a class="btn btn-xs btn-warning" href="{{ url('/editgame', $master_datas->id)}}"><i class="glyphicon glyphicon-edit"></i> Ubah</a>
+                                                            <form action="{{ url('/deletegame', $master_datas->id)}}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete game id {{$master_datas->id}} ? Are you sure?')) { return true } else {return false };">
                                                                 <input type="hidden" name="_method" value="DELETE">
                                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                                 <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Hapus</button>
@@ -120,14 +120,14 @@
                                                         <td><span class="rating" data-default-rating="{{ $master_datas->avg_rate }}" disabled></span></td>
                                                         <td>{{ $master_datas->count_play }}</td>
                                                         <td width="20%" align="center">
-                                                            <a class="btn btn-xs btn-warning" href="#"><i class="glyphicon glyphicon-edit"></i> Ubah</a>
-                                                            <form action="#" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
-                                                                <input type="hidden" name="_method" value="DELETE">
-                                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                                <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Hapus</button>
-                                                            </form>
-                                                        </td>
-                                                    </tr>
+                                                        <a class="btn btn-xs btn-warning" href="{{ url('/editgame', $master_datas->id)}}"><i class="glyphicon glyphicon-edit"></i> Ubah</a>
+                                                        <form action="{{ url('/deletegame', $master_datas->id)}}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete game id {{$master_datas->id}} ? Are you sure?')) { return true } else {return false };">
+                                                            <input type="hidden" name="_method" value="DELETE">
+                                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                            <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Hapus</button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
                                                     @endforeach
                                                 </tbody>
                                             </table>  
@@ -151,14 +151,14 @@
                                                         <td><span class="rating" data-default-rating="{{ $master_datas->avg_rate }}" disabled></span></td>
                                                         <td>{{ $master_datas->count_play }}</td>
                                                         <td width="20%" align="center">
-                                                            <a class="btn btn-xs btn-warning" href="#"><i class="glyphicon glyphicon-edit"></i> Ubah</a>
-                                                            <form action="#" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
-                                                                <input type="hidden" name="_method" value="DELETE">
-                                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                                <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Hapus</button>
-                                                            </form>
-                                                        </td>
-                                                    </tr>
+                                                        <a class="btn btn-xs btn-warning" href="{{ url('/editgame', $master_datas->id)}}"><i class="glyphicon glyphicon-edit"></i> Ubah</a>
+                                                        <form action="{{ url('/deletegame', $master_datas->id)}}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete game id {{$master_datas->id}} ? Are you sure?')) { return true } else {return false };">
+                                                            <input type="hidden" name="_method" value="DELETE">
+                                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                            <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Hapus</button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
                                                     @endforeach
                                                 </tbody>
                                             </table>  
@@ -182,14 +182,14 @@
                                                         <td><span class="rating" data-default-rating="{{ $master_datas->avg_rate }}" disabled></span></td>
                                                         <td>{{ $master_datas->count_play }}</td>
                                                         <td width="20%" align="center">
-                                                            <a class="btn btn-xs btn-warning" href="#"><i class="glyphicon glyphicon-edit"></i> Ubah</a>
-                                                            <form action="#" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
-                                                                <input type="hidden" name="_method" value="DELETE">
-                                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                                <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Hapus</button>
-                                                            </form>
-                                                        </td>
-                                                    </tr>
+                                                        <a class="btn btn-xs btn-warning" href="{{ url('/editgame', $master_datas->id)}}"><i class="glyphicon glyphicon-edit"></i> Ubah</a>
+                                                        <form action="{{ url('/deletegame', $master_datas->id)}}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete game id {{$master_datas->id}} ? Are you sure?')) { return true } else {return false };">
+                                                            <input type="hidden" name="_method" value="DELETE">
+                                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                            <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Hapus</button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
                                                     @endforeach
                                                 </tbody>
                                             </table>  
@@ -213,14 +213,14 @@
                                                         <td><span class="rating" data-default-rating="{{ $master_datas->avg_rate }}" disabled></span></td>
                                                         <td>{{ $master_datas->count_play }}</td>
                                                         <td width="20%" align="center">
-                                                            <a class="btn btn-xs btn-warning" href="#"><i class="glyphicon glyphicon-edit"></i> Ubah</a>
-                                                            <form action="#" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
-                                                                <input type="hidden" name="_method" value="DELETE">
-                                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                                <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Hapus</button>
-                                                            </form>
-                                                        </td>
-                                                    </tr>
+                                                        <a class="btn btn-xs btn-warning" href="{{ url('/editgame', $master_datas->id)}}"><i class="glyphicon glyphicon-edit"></i> Ubah</a>
+                                                        <form action="{{ url('/deletegame', $master_datas->id)}}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete game id {{$master_datas->id}} ? Are you sure?')) { return true } else {return false };">
+                                                            <input type="hidden" name="_method" value="DELETE">
+                                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                            <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Hapus</button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
                                                     @endforeach
                                                 </tbody>
                                             </table>  
