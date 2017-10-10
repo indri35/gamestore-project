@@ -100,10 +100,10 @@
                                                 <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                                     <div class="form-group">
                                                         <div class="form-line">
-                                                            <input id="price" type="text" class="form-control" name="price" placeholder="Input Your Game Point">
-                                                                @if ($errors->has('price'))
+                                                            <input id="coint" type="text" class="form-control" name="coint" placeholder="Input Your Game Point">
+                                                                @if ($errors->has('coint'))
                                                                 <span class="help-block">
-                                                                    <strong>{{ $errors->first('price') }}</strong>
+                                                                    <strong>{{ $errors->first('coint') }}</strong>
                                                                 </span>
                                                             @endif
 

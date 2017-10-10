@@ -116,7 +116,7 @@ class HomeController extends Controller
 									'name'=> 'required|max:15|unique:t_games',
 									'category'=> 'required',
 									'desc'=> 'required',
-									'price'=> 'required',
+									'coint'=> 'required',
 									'url'=> 'required',
 				                    'img' => 'required|mimes:jpeg,bmp,jpg,png|max:2000|dimensions:width=512,height=512',
 				                    'banner' => 'required|mimes:jpeg,bmp,png,jpg,pngmax:2000|dimensions:min_width=1024,min_height=270'
@@ -143,6 +143,7 @@ class HomeController extends Controller
 		$masterdata->img = '/img_game/'.$imageName;
 		$masterdata->banner = '/img_game/'.$imagebannerName;
 		$masterdata->name = Input::get('name');
+		$masterdata->coint = Input::get('coint');
 		$masterdata->url = Input::get('url');
 		$masterdata->desc = Input::get('desc');
 		$masterdata->category = Input::get('category');
@@ -293,5 +294,12 @@ class HomeController extends Controller
 		return view('detail', compact('master_datas'));
 	}
 	
+	public function editgame($id) {
+		
+		$game = MasterData::findOrFail($id);
+
+		return view('admin.editgame',compact('game'));
+	}
+		
 	
 }

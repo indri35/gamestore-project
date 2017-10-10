@@ -47,7 +47,8 @@
                                                         <th>Category</th>
                                                         <th>Rate</th>
                                                         <th>Played</th>
-                                                    </tr>
+                                                        <th>Action</th>
+                                                        </tr>
                                                 </thead>
                                                 <tbody>
                                                     @foreach($master_datas as $master_datas)
@@ -56,6 +57,14 @@
                                                         <td>{{ $master_datas->category }}</td>
                                                         <td><span class="rating" data-default-rating="{{ $master_datas->avg_rate }}" disabled></span></td>
                                                         <td>{{ $master_datas->count_play }}</td>
+                                                        <td width="20%" align="center">
+                                                            <a class="btn btn-xs btn-warning" href="{{  url('/editgame', $master_datas->id)}}"><i class="glyphicon glyphicon-edit"></i> Ubah</a>
+                                                            <form action="#" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
+                                                                <input type="hidden" name="_method" value="DELETE">
+                                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                                <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Hapus</button>
+                                                            </form>
+                                                        </td>
                                                     </tr>
                                                     @endforeach
                                                 </tbody>
@@ -69,6 +78,7 @@
                                                         <th>Category</th>
                                                         <th>Rate</th>
                                                         <th>Played</th>
+                                                        <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -78,6 +88,14 @@
                                                         <td>{{ $master_datas->category }}</td>
                                                         <td><span class="rating" data-default-rating="{{ $master_datas->avg_rate }}" disabled></span></td>
                                                         <td>{{ $master_datas->count_play }}</td>
+                                                        <td width="20%" align="center">
+                                                            <a class="btn btn-xs btn-warning" href="#"><i class="glyphicon glyphicon-edit"></i> Ubah</a>
+                                                            <form action="#" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
+                                                                <input type="hidden" name="_method" value="DELETE">
+                                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                                <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Hapus</button>
+                                                            </form>
+                                                        </td>
                                                     </tr>
                                                     @endforeach
                                                 </tbody>
@@ -91,6 +109,7 @@
                                                         <th>Category</th>
                                                         <th>Rate</th>
                                                         <th>Played</th>
+                                                        <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -100,6 +119,14 @@
                                                         <td>{{ $master_datas->category }}</td>
                                                         <td><span class="rating" data-default-rating="{{ $master_datas->avg_rate }}" disabled></span></td>
                                                         <td>{{ $master_datas->count_play }}</td>
+                                                        <td width="20%" align="center">
+                                                            <a class="btn btn-xs btn-warning" href="#"><i class="glyphicon glyphicon-edit"></i> Ubah</a>
+                                                            <form action="#" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
+                                                                <input type="hidden" name="_method" value="DELETE">
+                                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                                <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Hapus</button>
+                                                            </form>
+                                                        </td>
                                                     </tr>
                                                     @endforeach
                                                 </tbody>
@@ -113,6 +140,7 @@
                                                         <th>Category</th>
                                                         <th>Rate</th>
                                                         <th>Played</th>
+                                                        <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -122,6 +150,14 @@
                                                         <td>{{ $master_datas->category }}</td>
                                                         <td><span class="rating" data-default-rating="{{ $master_datas->avg_rate }}" disabled></span></td>
                                                         <td>{{ $master_datas->count_play }}</td>
+                                                        <td width="20%" align="center">
+                                                            <a class="btn btn-xs btn-warning" href="#"><i class="glyphicon glyphicon-edit"></i> Ubah</a>
+                                                            <form action="#" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
+                                                                <input type="hidden" name="_method" value="DELETE">
+                                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                                <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Hapus</button>
+                                                            </form>
+                                                        </td>
                                                     </tr>
                                                     @endforeach
                                                 </tbody>
@@ -135,6 +171,7 @@
                                                         <th>Category</th>
                                                         <th>Rate</th>
                                                         <th>Played</th>
+                                                        <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -144,6 +181,14 @@
                                                         <td>{{ $master_datas->category }}</td>
                                                         <td><span class="rating" data-default-rating="{{ $master_datas->avg_rate }}" disabled></span></td>
                                                         <td>{{ $master_datas->count_play }}</td>
+                                                        <td width="20%" align="center">
+                                                            <a class="btn btn-xs btn-warning" href="#"><i class="glyphicon glyphicon-edit"></i> Ubah</a>
+                                                            <form action="#" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
+                                                                <input type="hidden" name="_method" value="DELETE">
+                                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                                <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Hapus</button>
+                                                            </form>
+                                                        </td>
                                                     </tr>
                                                     @endforeach
                                                 </tbody>
@@ -157,6 +202,7 @@
                                                         <th>Category</th>
                                                         <th>Rate</th>
                                                         <th>Played</th>
+                                                        <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -166,6 +212,14 @@
                                                         <td>{{ $master_datas->category }}</td>
                                                         <td><span class="rating" data-default-rating="{{ $master_datas->avg_rate }}" disabled></span></td>
                                                         <td>{{ $master_datas->count_play }}</td>
+                                                        <td width="20%" align="center">
+                                                            <a class="btn btn-xs btn-warning" href="#"><i class="glyphicon glyphicon-edit"></i> Ubah</a>
+                                                            <form action="#" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
+                                                                <input type="hidden" name="_method" value="DELETE">
+                                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                                <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Hapus</button>
+                                                            </form>
+                                                        </td>
                                                     </tr>
                                                     @endforeach
                                                 </tbody>

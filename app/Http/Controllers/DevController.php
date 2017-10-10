@@ -75,8 +75,8 @@ class DevController extends Controller
 	}
 	
 	
-	public function adddatagame(Request $request)
-		        {
+	public function adddatagame(Request $request){
+		
 		$this->validate($request, [
 				                    'img' => 'required'
 				                ]);

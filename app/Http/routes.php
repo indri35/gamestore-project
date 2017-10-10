@@ -34,6 +34,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/addgamepuzzle', 'HomeController@addgamepuzzle');
 	Route::get('/addgamesports', 'HomeController@addgamesports');
 	Route::get('/addgame', 'HomeController@addgame');
+	Route::get('/editgame/{id}', 'HomeController@editgame');
 	Route::get('/userprofile', 'HomeController@userprofile');
 	Route::get('/editprofile', 'HomeController@editprofile');
 	Route::post('/updateprofile', 'HomeController@updateprofile');
