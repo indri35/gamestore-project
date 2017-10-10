@@ -106,7 +106,16 @@ return [
     | been provided here, which will work well on most of your systems.
     |
     */
+    /*
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=gamestore
+    DB_USERNAME=root
+    DB_PASSWORD=password
+    */
 
     'sendmail' => '/usr/sbin/sendmail -bs',
 
 ];
+
