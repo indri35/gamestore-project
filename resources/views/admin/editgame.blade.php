@@ -14,8 +14,9 @@
                                         </h4>
                                     </div>
                                     <div class="body">
-                                        <form  role="form" method="POST" action="{{ url('/adddatagame') }}" enctype="multipart/form-data">
+                                        <form  role="form" method="POST" action="{{ url('/updatedatagame') }}" enctype="multipart/form-data">
                                             {{ csrf_field() }}
+                                            <input type="hidden" name="id" value="{{ $game->id }}">
                                             <div class="row clearfix">
                                                 <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                                     <label for="name">Game Name</label>

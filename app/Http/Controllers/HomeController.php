@@ -152,6 +152,54 @@ class HomeController extends Controller
 		return $this->index()->withMessage('Game saved!');
 	}
 
+	public function updatedatagame(Request $request)
+	{
+		$this->validate($request, [
+								'name'=> 'required|max:15',
+								'category'=> 'required',
+								'desc'=> 'required',
+								'coint'=> 'required',
+								'url'=> 'required',
+								'img' => 'mimes:jpeg,bmp,jpg,png|max:2000|dimensions:width=512,height=512',
+								'banner' => 'mimes:jpeg,bmp,png,jpg,pngmax:2000|dimensions:min_width=1024,min_height=270'
+							]);
+
+		$max = DB::table('t_games')        
+						->where('id', DB::raw("(select max(`id`) from t_games)"))
+						->paginate();
+		
+		foreach($max as $row){
+			$max = $row->id+1;
+		}
+		
+		$id = Input::get('id');		
+		$masterdata = MasterData::findOrFail($id);
+		
+		if($request->file('img')){
+			$imageName = 'game_icon'.-$max. 
+								$request->file('img')->getClientOriginalName();
+			$path = base_path() . '/public/img_game/';
+			$request->file('img')->move($path , $imageName);
+			$masterdata->img = '/img_game/'.$imageName;			
+		}
+		if($request->file('banner')){
+			$imagebannerName = 'game_icon'.-$max. 
+								$request->file('banner')->getClientOriginalName();
+			$path = base_path() . '/public/img_game/';
+			$request->file('banner')->move($path , $imagebannerName);
+			$masterdata->banner = '/img_game/'.$imagebannerName;			
+		}
+
+		$masterdata->name = Input::get('name');
+		$masterdata->coint = Input::get('coint');
+		$masterdata->url = Input::get('url');
+		$masterdata->desc = Input::get('desc');
+		$masterdata->category = Input::get('category');
+		$masterdata->save();
+
+		return $this->index()->withMessage('Game updated!');
+		}
+
 	public function addreviewgame(Request $request)
 		        {
 		
@@ -299,6 +347,13 @@ class HomeController extends Controller
 		$game = MasterData::findOrFail($id);
 
 		return view('admin.editgame',compact('game'));
+	}
+	
+	public function deletegame($id) {
+		
+		$game = MasterData::findOrFail($id);
+		$game->delete();		
+		return $this->index()->withMessage('Game deleted!');
 	}
 		
 	
