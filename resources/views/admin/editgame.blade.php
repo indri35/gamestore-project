@@ -125,9 +125,9 @@
                                                                     <strong>{{ $errors->first('img') }}</strong>
                                                                 </span>
                                                             @endif
-
                                                         </div>
                                                     </div>
+                                                    <img src="{{ asset($game->img)}}" height="150" width="150" class="img img-responsive"/>
                                                 </div>
                                             </div>
                                             <div class="row clearfix">
@@ -143,9 +143,9 @@
                                                                     <strong>{{ $errors->first('banner') }}</strong>
                                                                 </span>
                                                             @endif
-
                                                         </div>
                                                     </div>
+                                                    <img src="{{ asset($game->banner)}}" height="150" width="450" class="img img-responsive"/>
                                                 </div>
                                             </div>
 
