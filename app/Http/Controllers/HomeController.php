@@ -113,7 +113,7 @@ class HomeController extends Controller
 	public function adddatagame(Request $request)
 		        {
 		$this->validate($request, [
-									'name'=> 'required|max:15|unique:t_games',
+									'name'=> 'required|max:50|unique:t_games',
 									'category'=> 'required',
 									'desc'=> 'required',
 									'coint'=> 'required',
@@ -155,7 +155,7 @@ class HomeController extends Controller
 	public function updatedatagame(Request $request)
 	{
 		$this->validate($request, [
-								'name'=> 'required|max:15',
+								'name'=> 'required|max:50',
 								'category'=> 'required',
 								'desc'=> 'required',
 								'coint'=> 'required',
