@@ -37,7 +37,7 @@
                 <a href="{{ url('/') }}"><img src="{{ asset('img_game/logo.png') }}" width="100" height="100" alt="User Image"></a>
             </div>
             <a href="javascript:void(0);">Signup</b></a>
-            <small>Kujang Games - Happy to Play</small>
+            <small>Game Asik Store - Happy to Play</small>
                 </div>
                 <div class="row clearfix">
                         <div class="card">
