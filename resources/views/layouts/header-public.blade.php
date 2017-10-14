@@ -200,7 +200,7 @@
                     <i class="material-icons">theaters</i>
                     <span class="hidden-xs">Action</span>
                 </a>
-                <a data-toggle="tooltip" title="Casino" href="{{ url('/casino') }}" class="@if($nav=='casino') active @endif">
+                <a data-toggle="tooltip" title="Casual" href="{{ url('/casino') }}" class="@if($nav=='casino') active @endif">
                     <i class="material-icons">group_work</i>
                     <span class="hidden-xs">Casual</span>
                 </a>
