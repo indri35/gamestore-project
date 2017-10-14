@@ -50,7 +50,7 @@
                             <i class="material-icons">phone</i>
                         </span>
                         <div class="form-line">
-                            <input id="phone_number" type="text" placeholder="082 *** ***" class="form-control" name="phone_number" value="{{ old('phone_number') }}" required autofocus>
+                            <input id="phone_number" type="text" placeholder="082 *** *** ***" class="form-control" name="phone_number" value="{{ old('phone_number') }}" required autofocus>
                             @if ($errors->has('phone_number'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('phone_number') }}</strong>
