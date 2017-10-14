@@ -22,11 +22,16 @@
                                         </a>
                                     </li>
                                     <li role="presentation">
+                                    <a href="#arcade" data-toggle="tab">
+                                        Arcade
+                                    </a>
+                                </li>
+                                <li role="presentation">
                                         <a href="#casino" data-toggle="tab">
                                             Casual
                                         </a>
                                     </li>
-                                    <li role="presentation">
+                                <li role="presentation">
                                         <a href="#puzzle" data-toggle="tab">
                                             Puzzle
                                         </a>
@@ -176,6 +181,37 @@
                                                 </thead>
                                                 <tbody>
                                                     @foreach($casino as $master_datas)
+                                                    <tr>
+                                                        <td>{{ $master_datas->name }}</td>
+                                                        <td>{{ $master_datas->category }}</td>
+                                                        <td><span class="rating" data-default-rating="{{ $master_datas->avg_rate }}" disabled></span></td>
+                                                        <td>{{ $master_datas->count_play }}</td>
+                                                        <td width="20%" align="center">
+                                                        <a class="btn btn-xs btn-warning" href="{{ url('/editgame', $master_datas->id)}}"><i class="glyphicon glyphicon-edit"></i> Ubah</a>
+                                                        <form action="{{ url('/deletegame', $master_datas->id)}}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete game id {{$master_datas->id}} ? Are you sure?')) { return true } else {return false };">
+                                                            <input type="hidden" name="_method" value="DELETE">
+                                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                            <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Hapus</button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                                    @endforeach
+                                                </tbody>
+                                            </table>  
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="arcade">
+                                            <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Category</th>
+                                                        <th>Rate</th>
+                                                        <th>Played</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach($arcade as $master_datas)
                                                     <tr>
                                                         <td>{{ $master_datas->name }}</td>
                                                         <td>{{ $master_datas->category }}</td>

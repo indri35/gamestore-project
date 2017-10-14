@@ -57,6 +57,11 @@ class HomeController extends Controller
 										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 										->WHERE('t_games.category','Action')
 										->paginate();
+			$arcade = Games::orderBy('created_at','DESC')
+										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
+										->WHERE('t_games.category','Arcade')
+										->paginate();
+
 			$adventure = Games::orderBy('created_at','DESC')
 										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 										->WHERE('t_games.category','Adventure')
@@ -97,7 +102,7 @@ class HomeController extends Controller
 						                ->orderBy('t_games.count_play','DESC')
 						                ->paginate(10);
 												
-			return view('admin.home-admin', compact('master_datas','dashboard_count','player_count','action','adventure','casino','puzzle','sports'));	
+			return view('admin.home-admin', compact('master_datas','arcade','dashboard_count','player_count','action','adventure','casino','puzzle','sports'));	
 			}
 		}
 		else{
