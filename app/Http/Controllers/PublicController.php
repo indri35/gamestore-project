@@ -480,7 +480,7 @@ class PublicController extends Controller
 						        ->orderBy('t_games.count_play','DESC')
 						        ->paginate(5);
 
-			if($master_datas->count() > 0){
+			if($master_datas){
 				return view('public.detail', compact('master_datas','slider','top_games','nav'));
 			}else{
 				return $this->index();
