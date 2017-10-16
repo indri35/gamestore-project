@@ -38,61 +38,61 @@ class HomeController extends Controller
 				$master_datas = DB::table('t_games')
 								                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 								                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate'))
-								                ->paginate();
+								                ->get();
 				return view('public.home', compact('master_datas'));
 			}
 			elseif($user->role=='1'){
 
 
 
-			$master_datas = Games::orderBy('created_at','DESC')->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')->paginate();
+			$master_datas = Games::orderBy('created_at','DESC')->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')->get();
 			$dashboard_count = DB::table('t_games')
 						                ->select(DB::raw('count(t_games.id) as games,sum(t_games.count_play) as played'))
-						                ->paginate();
+						                ->get();
 			$player_count = DB::table('users')
 						                ->select(DB::raw('COUNT(users.id) as player'))
 						                ->WHERE('users.role',2)
-						                ->paginate();
+						                ->get();
 			$action = Games::orderBy('created_at','DESC')
 										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 										->WHERE('t_games.category','Action')
-										->paginate();
+										->get();
 			$arcade = Games::orderBy('created_at','DESC')
 										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 										->WHERE('t_games.category','Arcade')
-										->paginate();
+										->get();
 
 			$adventure = Games::orderBy('created_at','DESC')
 										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 										->WHERE('t_games.category','Adventure')
-										->paginate();
+										->get();
 			$casino = Games::orderBy('created_at','DESC')
 										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 										->WHERE('t_games.category','Casual')
-										->paginate();
+										->get();
 			$puzzle = Games::orderBy('created_at','DESC')
 										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 										->WHERE('t_games.category','Puzzle')
-										->paginate();
+										->get();
 			$sports = Games::orderBy('created_at','DESC')
 										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 										->WHERE('t_games.category','Sports')
-										->paginate();							
+										->get();							
 			$new_game = DB::table('t_games')
 						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate'))
 						                ->orderBy('t_games.id','DESC')
-						                ->paginate();
+						                ->get();
 			$most_played = DB::table('t_games')
 						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate'))
 						                ->orderBy('t_games.count_play','DESC')
-						                ->paginate();
+						                ->get();
 			$most_rated = DB::table('t_games')
 						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate'))
 						                ->orderBy('t_games_rate.user_rate','DESC')
-						                ->paginate();
+						                ->get();
 			$slider = DB::table('t_games')
 						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games.img_slider'))
 						                ->orderBy('t_games.count_play','DESC')
@@ -109,7 +109,7 @@ class HomeController extends Controller
 			$master_datas = DB::table('t_games')
 						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate'))
-						                ->paginate();
+						                ->get();
 			return view('user.home-user', compact('master_datas'));
 		}
 	}
@@ -129,7 +129,7 @@ class HomeController extends Controller
 		
 		$max = DB::table('t_games')        
 				            ->where('id', DB::raw("(select max(`id`) from t_games)"))
-				            ->paginate();
+				            ->get();
 		foreach($max as $row){
 			$max = $row->id+1;
 		}
@@ -171,7 +171,7 @@ class HomeController extends Controller
 
 		$max = DB::table('t_games')        
 						->where('id', DB::raw("(select max(`id`) from t_games)"))
-						->paginate();
+						->get();
 		
 		foreach($max as $row){
 			$max = $row->id+1;
@@ -214,7 +214,7 @@ class HomeController extends Controller
 				                ->join('t_rate', 't_rate.id_game', '=', 't_games.id','left outer')
 				                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate, t_rate.user_name,t_rate.rate,t_rate.comment,t_rate.created_at'))
 				                ->where('t_games.id',$id)
-				                ->paginate();
+				                ->get();
 		$slider = DB::table('t_games')
 						        ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games.img_slider'))
 						        ->orderBy('t_games.count_play','DESC')
@@ -343,7 +343,7 @@ class HomeController extends Controller
 				                ->join('t_rate', 't_rate.id_game', '=', 't_games.id','left outer')
 				                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate, t_rate.user_name,t_rate.rate,t_rate.comment,t_rate.created_at'))
 				                ->where('t_games.id',$id)
-				                ->paginate();
+				                ->get();
 		return view('detail', compact('master_datas'));
 	}
 	
