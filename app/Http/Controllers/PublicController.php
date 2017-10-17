@@ -94,7 +94,7 @@ class PublicController extends Controller
 						                ->paginate(9);
 			$slider = DB::table('t_games')
 						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category, t_games.banner, t_games.img,t_games.img_slider'))
-						                ->orderBy('t_games.count_play','DESC')
+						                ->orderBy('t_games.created_at','DESC')
 						                ->paginate(3);
 			$top_games = DB::table('t_games')
 						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games.img_slider'))
