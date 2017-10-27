@@ -139,7 +139,7 @@
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <!--<p><img src="{{ asset('img_game/logo.png') }}" width="30" height="30" alt="User Image">Game Asik Store </p>-->
+                    <!--<p><img src="{{ asset('img_game/logo.png') }}" width="30" height="30" alt="User Image">-->Game Asik Store </p>
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
