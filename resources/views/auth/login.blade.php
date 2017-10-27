@@ -34,7 +34,9 @@
     <div class="login-box">
         <div class="logo">
             <div class="login-box-msg">
-                <a href="{{ url('/') }}"><img src="" width="100" height="100" alt="User Image"></a>
+                <a href="{{ url('/') }}">
+                <!--<img src="{{ asset('img_game/logo.png') }}" width="100" height="100" alt="User Image">-->
+                </a>
             </div>
             <a href="javascript:void(0);">Signin</b></a>
             <small>Game Asik Store - Happy to Play</small>
