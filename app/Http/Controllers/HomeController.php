@@ -133,7 +133,7 @@ class HomeController extends Controller
 		foreach($max as $row){
 			$max = $row->id+1;
 		}
-		$imageName = 'game_icon'.-$max. 
+		$imageName = 'game_icon'.$max. 
 				                $request->file('img')->getClientOriginalName();
 		$path = base_path() . '/public/img_game/';
 		$request->file('img')->move($path , $imageName);
@@ -181,7 +181,7 @@ class HomeController extends Controller
 		$masterdata = MasterData::findOrFail($id);
 		
 		if($request->file('img')){
-			$imageName = 'game_icon'.-$max. 
+			$imageName = 'game_icon'.$max. 
 								$request->file('img')->getClientOriginalName();
 			$path = base_path() . '/public/img_game/';
 			$request->file('img')->move($path , $imageName);
