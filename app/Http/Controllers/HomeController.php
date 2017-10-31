@@ -127,19 +127,13 @@ class HomeController extends Controller
 				                    'banner' => 'required|mimes:jpeg,bmp,png,jpg,pngmax:2000|dimensions:min_width=1024,min_height=270'
 				                ]);
 		
-		$max = DB::table('t_games')        
-				            ->where('id', DB::raw("(select max(`id`) from t_games)"))
-				            ->get();
-		foreach($max as $row){
-			$max = $row->id+1;
-		}
-		$imageName = 'game_icon'.$max. 
-				                $request->file('img')->getClientOriginalName();
+		
+		$imageName = 'game_icon'.$request->file('img')->getClientOriginalName();
+
 		$path = base_path() . '/public/img_game/';
 		$request->file('img')->move($path , $imageName);
 
-		$imagebannerName = 'game_icon'.-$max. 
-				                $request->file('banner')->getClientOriginalName();
+		$imagebannerName = 'game_icon'.$request->file('banner')->getClientOriginalName();
 		$path = base_path() . '/public/img_game/';
 		$request->file('banner')->move($path , $imagebannerName);
 
@@ -169,27 +163,18 @@ class HomeController extends Controller
 								'banner' => 'mimes:jpeg,bmp,png,jpg,pngmax:2000|dimensions:min_width=1024,min_height=270'
 							]);
 
-		$max = DB::table('t_games')        
-						->where('id', DB::raw("(select max(`id`) from t_games)"))
-						->get();
-		
-		foreach($max as $row){
-			$max = $row->id+1;
-		}
 		
 		$id = Input::get('id');		
 		$masterdata = MasterData::findOrFail($id);
 		
 		if($request->file('img')){
-			$imageName = 'game_icon'.$max. 
-								$request->file('img')->getClientOriginalName();
+			$imageName = 'game_icon'.$request->file('img')->getClientOriginalName();
 			$path = base_path() . '/public/img_game/';
 			$request->file('img')->move($path , $imageName);
 			$masterdata->img = '/img_game/'.$imageName;			
 		}
 		if($request->file('banner')){
-			$imagebannerName = 'game_icon'.-$max. 
-								$request->file('banner')->getClientOriginalName();
+			$imagebannerName = 'game_icon'.$request->file('banner')->getClientOriginalName();
 			$path = base_path() . '/public/img_game/';
 			$request->file('banner')->move($path , $imagebannerName);
 			$masterdata->banner = '/img_game/'.$imagebannerName;			
