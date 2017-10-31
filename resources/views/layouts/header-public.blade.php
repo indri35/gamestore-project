@@ -171,15 +171,23 @@
                     </ol>
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
+                        @if($slider[0]->banner!=null)
                         <div class="item active">
                             <img class="img-responsive center-block" height="270" src="{{ asset($slider[0]->banner) }}" />
                         </div>
+                        @endif
+                        @if($slider[1]->banner!=null)
                         <div class="item">
                             <img  class="img-responsive center-block" height="270" src="{{ asset($slider[1]->banner) }}" />
                         </div>
+                        @endif
+
+                        @if($slider[2]->banner!=null)
                         <div class="item">
                             <img class="img-responsive center-block" height="270" src="{{ asset($slider[2]->banner) }}" />
                         </div>
+                        @endif
+
                     </div>
                     <!-- Controls -->
                     <a class="left carousel-control" href="#carousel-example-generic_2" role="button" data-slide="prev">
