@@ -171,18 +171,18 @@
                     </ol>
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
-                        @if($slider[0]->banner!=null)
+                        @if($slider->length==1)
                         <div class="item active">
                             <img class="img-responsive center-block" height="270" src="{{ asset($slider[0]->banner) }}" />
                         </div>
                         @endif
-                        @if($slider[1]->banner!=null)
+                        @if($slider->length ==2)
                         <div class="item">
                             <img  class="img-responsive center-block" height="270" src="{{ asset($slider[1]->banner) }}" />
                         </div>
                         @endif
 
-                        @if($slider[2]->banner!=null)
+                        @if($slider->length ==3)
                         <div class="item">
                             <img class="img-responsive center-block" height="270" src="{{ asset($slider[2]->banner) }}" />
                         </div>
