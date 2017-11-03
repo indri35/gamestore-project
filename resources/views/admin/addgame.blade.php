@@ -83,7 +83,7 @@
                                                                 <option value="Casual">Casual</option>
                                                                 <option value="Arcade">Arcade</option>
                                                                 <option value="Puzzle">Puzzle</option>
-                                                                <option value="Sports">Sports</option>
+                                                                <option value="Education">Education</option>
                                                                 
                                                             </select>
                                                             </div>      

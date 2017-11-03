@@ -171,23 +171,17 @@
                     </ol>
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
-                        @if(sizeof($slider) ==1)
+                    @foreach($slider as $key => $node)
+                        @if($key++<1)
                         <div class="item active">
-                            <img class="img-responsive center-block" height="270" src="{{ asset($slider[0]->banner) }}" />
+                            <img class="img-responsive center-block" height="270" src="{{ asset($node->banner) }}" />
                         </div>
-                        @endif
-                        @if(sizeof($slider) ==2)
+                        @else
                         <div class="item">
-                            <img  class="img-responsive center-block" height="270" src="{{ asset($slider[1]->banner) }}" />
+                            <img class="img-responsive center-block" height="270" src="{{ asset($node->banner) }}" />
                         </div>
                         @endif
-
-                        @if(sizeof($slider) ==3)
-                        <div class="item">
-                            <img class="img-responsive center-block" height="270" src="{{ asset($slider[2]->banner) }}" />
-                        </div>
-                        @endif
-
+                    @endforeach
                     </div>
                     <!-- Controls -->
                     <a class="left carousel-control" href="#carousel-example-generic_2" role="button" data-slide="prev">
@@ -226,9 +220,9 @@
                     <i class="material-icons">videogame_asset</i>
                     <span class="hidden-xs">Puzzle</span>
                 </a>
-                <a data-toggle="tooltip" title="Sport" href="{{ url('/sports') }}" class="@if($nav=='sport') active @endif">
+                <a data-toggle="tooltip" title="Education" href="{{ url('/education') }}" class="@if($nav=='education') active @endif">
                     <i class="material-icons">rowing</i>
-                    <span class="hidden-xs">Sports</span>
+                    <span class="hidden-xs">Education</span>
                 </a>
             </div>
             @endif

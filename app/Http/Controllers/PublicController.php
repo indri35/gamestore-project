@@ -73,9 +73,9 @@ class PublicController extends Controller
 										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 										->WHERE('t_games.category','Puzzle')
 										->get();
-			$sports = Games::orderBy('created_at','DESC')
+			$education = Games::orderBy('created_at','DESC')
 										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
-										->WHERE('t_games.category','Sports')
+										->WHERE('t_games.category','Education')
 										->get();							
 			$new_game = DB::table('t_games')
 						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
@@ -104,7 +104,7 @@ class PublicController extends Controller
 			if(!Auth::user()||Auth::user()->role==2){
 				return view('public.home', compact('new_game','most_played','most_rated','slider','top_games','nav'));
 			}else{
-				return view('admin.board-admin', compact('master_datas','dashboard_count','player_count','action','adventure','casino','puzzle','sports','nav'));	
+				return view('admin.board-admin', compact('master_datas','dashboard_count','player_count','action','adventure','casino','puzzle','education','nav'));	
 			}
 	}
 
@@ -138,9 +138,9 @@ class PublicController extends Controller
 										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 										->WHERE('t_games.category','Puzzle')
 										->get();
-			$sports = Games::orderBy('created_at','DESC')
+			$education = Games::orderBy('created_at','DESC')
 										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
-										->WHERE('t_games.category','Sports')
+										->WHERE('t_games.category','Education')
 										->get();							
 			$new_game = DB::table('t_games')
 						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
@@ -168,7 +168,7 @@ class PublicController extends Controller
 			if(!Auth::user()||Auth::user()->role==2){
 				return view('public.home', compact('new_game','most_played','most_rated','slider','top_games'));
 			}else{
-				return view('admin.home-admin', compact('master_datas','dashboard_count','arcade','player_count','action','adventure','casino','puzzle','sports'));	
+				return view('admin.home-admin', compact('master_datas','dashboard_count','arcade','player_count','action','adventure','casino','puzzle','education'));	
 			}
 	}
 	
@@ -346,27 +346,27 @@ class PublicController extends Controller
 			}
 	}
 	
-	public function sports()
+	public function education()
 		    {
-			$nav='sport';
-			$master_datas = Games::Where('category','Sports')->orderBy('created_at','DESC')->get();
+			$nav='education';
+			$master_datas = Games::Where('category','Education')->orderBy('created_at','DESC')->get();
 	
 			$new_game = DB::table('t_games')
 						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate'))
-						                ->where('t_games.category','Sports')
+						                ->where('t_games.category','Education')
 						                ->orderBy('t_games.id','DESC')
 						                ->get();
 			$most_played = DB::table('t_games')
 						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate'))
-						                ->where('t_games.category','Sports')
+						                ->where('t_games.category','Education')
 						                ->orderBy('t_games.count_play','DESC')
 						                ->get();
 			$most_rated = DB::table('t_games')
 						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate'))
-						                ->where('t_games.category','Sports')
+						                ->where('t_games.category','Education')
 						                ->orderBy('t_games_rate.user_rate','DESC')
 						                ->get();
 			$slider = DB::table('t_games')
@@ -378,9 +378,9 @@ class PublicController extends Controller
 						                ->orderBy('t_games.count_play','DESC')
 						                ->paginate(10);
 			if(!Auth::user()||Auth::user()->role==2){
-				return view('public.sports', compact('new_game','most_played','most_rated','slider','top_games','nav'));
+				return view('public.education', compact('new_game','most_played','most_rated','slider','top_games','nav'));
 			}else{
-				return view('admin.sports-admin', compact('master_datas','new_game','most_played','most_rated','slider','top_games','nav'));	
+				return view('admin.education-admin', compact('master_datas','new_game','most_played','most_rated','slider','top_games','nav'));	
 			}
 	}
 	

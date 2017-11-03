@@ -22,7 +22,7 @@ Route::get('/adventure', 'PublicController@adventure');
 Route::get('/home', 'PublicController@index');
 Route::get('/puzzle', 'PublicController@puzzle');
 Route::get('/arcade', 'PublicController@arcade');
-Route::get('/sports', 'PublicController@sports');
+Route::get('/education', 'PublicController@education');
 Route::get('/play/{id}', 'PublicController@play');
 Route::get('/dashboard', 'DashboardController@dashboard');
 Route::get('/getDataBarChart', 'PublicController@getDataBarChart');
