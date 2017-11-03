@@ -220,9 +220,9 @@
                     <i class="material-icons">videogame_asset</i>
                     <span class="hidden-xs">Puzzle</span>
                 </a>
-                <a data-toggle="tooltip" title="Sport" href="{{ url('/sports') }}" class="@if($nav=='sport') active @endif">
+                <a data-toggle="tooltip" title="Education" href="{{ url('/education') }}" class="@if($nav=='education') active @endif">
                     <i class="material-icons">rowing</i>
-                    <span class="hidden-xs">Sports</span>
+                    <span class="hidden-xs">Education</span>
                 </a>
             </div>
             @endif

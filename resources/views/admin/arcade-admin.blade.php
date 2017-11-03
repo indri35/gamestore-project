@@ -167,9 +167,9 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('/sports') }}">
+                        <a href="{{ url('/education') }}">
                             <i class="material-icons">videogame_asset</i>
-                            <span>Sports</span>
+                            <span>Education</span>
                         </a>
                     </li>
                 </ul>

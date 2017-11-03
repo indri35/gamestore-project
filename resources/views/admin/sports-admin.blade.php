@@ -161,9 +161,9 @@
                         </a>
                     </li>
                     <li class="active">
-                        <a href="{{ url('/sports') }}">
+                        <a href="{{ url('/education') }}">
                             <i class="material-icons">videogame_asset</i>
-                            <span>Sports</span>
+                            <span>Education</span>
                         </a>
                     </li>
                 </ul>
@@ -335,7 +335,7 @@
                         <div class="header">
                             <a href="{{ url('/addgamesports') }}" ><button type="button" class="btn bg-deep-orange waves-effect font-italic"><h2>Add Games</h2></button></a>
                             <h2>
-                                <br/>Category : Sports
+                                <br/>Category : Education
                             </h2>
                         </div>
                         <div class="body">

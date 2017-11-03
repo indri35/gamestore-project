@@ -124,8 +124,8 @@
                                         </a>
                                     </li>
                                     <li role="presentation">
-                                        <a href="#sports" data-toggle="tab">
-                                            Sports
+                                        <a href="#education" data-toggle="tab">
+                                            Education
                                         </a>
                                     </li>
                                     </ul>
@@ -241,7 +241,7 @@
                                                 </tbody>
                                             </table>  
                                         </div>
-                                        <div role="tabpanel" class="tab-pane fade" id="sports">
+                                        <div role="tabpanel" class="tab-pane fade" id="education">
                                             <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                                 <thead>
                                                     <tr>
@@ -252,7 +252,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach($sports as $master_datas)
+                                                    @foreach($education as $master_datas)
                                                     <tr>
                                                         <td>{{ $master_datas->name }}</td>
                                                         <td>{{ $master_datas->category }}</td>

@@ -148,24 +148,24 @@ class DevController extends Controller
 		}
 	}
 	
-	public function sports()
+	public function education()
 		    {
 		$user = Auth::user();
 		if($user->role=='2'){
 			$master_datas = DB::table('t_games')
 						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.category,t_games.img,t_games.price,t_games_rate.avg_rate,t_games_rate.user_rate'))
-						                ->where('t_games.category','Sports')
+						                ->where('t_games.category','Education')
 						                ->paginate();
-			return view('sports', compact('master_datas'));
+			return view('education', compact('master_datas'));
 		}
 		else{
 			$master_datas = DB::table('t_games')
 						                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 						                ->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.category,t_games.img,t_games.price,t_games_rate.avg_rate,t_games_rate.user_rate'))
-						                ->where('t_games.category','Sports')
+						                ->where('t_games.category','Education')
 						                ->paginate();
-			return view('admin.sports-admin', compact('master_datas'));
+			return view('admin.education-admin', compact('master_datas'));
 		}
 	}
 	

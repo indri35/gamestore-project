@@ -83,7 +83,7 @@
                                                                 <option @if($game->category=="Action") selected="selected" @endif value="Action">Action</option>
                                                                 <option @if($game->category=="Casual") selected="selected" @endif value="Casual">Casual</option>
                                                                 <option @if($game->category=="Puzzle") selected="selected" @endif value="Puzzle">Puzzle</option>
-                                                                <option @if($game->category=="Sports") selected="selected" @endif value="Sports">Sports</option>
+                                                                <option @if($game->category=="Education") selected="selected" @endif value="Education">Education</option>
                                                                 
                                                             </select>
                                                             </div>      
