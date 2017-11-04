@@ -31,7 +31,7 @@
                 <img src="{{ asset('img_game/logo.png') }}" width="100" height="100" alt="User Image">
             </div>
             <a href="javascript:void(0);">Edit Profile</b></a>
-            <small>Game Asik Store - Happy to Play</small>
+            <small>Game Kepo Store - Happy to Play</small>
                 </div>
                 <div class="row clearfix">
                         <div class="card">

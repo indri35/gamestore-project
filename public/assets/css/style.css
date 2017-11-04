@@ -5521,11 +5521,11 @@ fieldset[disabled] .form-control {
   transition: 0.5s; }
 
 .list-group .active {
-  background-color: #f44336;
-  border-color: #f44336; }
+  background-color: #2196F3;
+  border-color: #2196F3; }
   .list-group .active:hover, .list-group .active:focus, .list-group .active:active {
-    background-color: #f44336;
-    border-color: #f44336; }
+    background-color: #2196F3;
+    border-color: #2196F3; }
   .list-group .active .list-group-item-text {
     color: #dfe9f1;
     font-size: 13px; }
@@ -6665,7 +6665,7 @@ fieldset[disabled] .form-control {
   top: 0;
   left: 0;
   width:100%;
-  background-color: #F44336;
+  background-color: #2196F3;
   z-index: 12; 
   }
 

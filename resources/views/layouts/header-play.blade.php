@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Game Asik Store</title>
+    <title>Game Kepo Store</title>
     <!-- Favicon-->
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 
@@ -127,7 +127,7 @@
             </style>
 </head>
 
-<body class="theme-red">
+<body class="theme-blue">
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
     <!-- #END# Overlay For Sidebars -->
@@ -138,7 +138,7 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="{{ url('/') }}"><p><img src="{{ asset('img_game/logo.png') }}" width="30" height="30" alt="User Image">Game Asik Store </p></a>
+                <a class="navbar-brand" href="{{ url('/') }}"><p><img src="{{ asset('img_game/logo.png') }}" width="30" height="30" alt="User Image">Game Kepo Store </p></a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
