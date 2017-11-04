@@ -39,7 +39,7 @@
                 </a>
             </div>
             <a href="javascript:void(0);">Signup</b></a>
-            <small>Game Asik Store - Happy to Play</small>
+            <small>Game Kepo Store - Happy to Play</small>
                 </div>
                 <div class="row clearfix">
                         <div class="card">

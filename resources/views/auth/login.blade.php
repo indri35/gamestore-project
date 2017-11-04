@@ -39,7 +39,7 @@
                 </a>
             </div>
             <a href="javascript:void(0);">Signin</b></a>
-            <small>Game Asik Store - Happy to Play</small>
+            <small>Game Kepo Store - Happy to Play</small>
         </div>
         <div class="card">
             <div class="body">
