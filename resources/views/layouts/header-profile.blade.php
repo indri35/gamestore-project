@@ -113,7 +113,7 @@
             }
             </style>
 </head>
-<body class="theme-red">
+<body class="theme-blue">
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
     <!-- #END# Overlay For Sidebars -->
