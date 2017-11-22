@@ -99,7 +99,7 @@ Route::group(['middleware' => ['bcors']], function () {
 							$input['role']=2;
 							User::create($input);            
 						} catch (Exception $e) {
-							return Response::json(['status'=>false,'message'=>$e]);
+							echo $e;
 						}
 						echo $pass;            
 					}
