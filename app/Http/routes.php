@@ -101,10 +101,10 @@ Route::group(['middleware' => ['bcors']], function () {
 						} catch (Exception $e) {
 							return Response::json(['status'=>false,'message'=>$e]);
 						}
-						return Response::json(['status'=>true,'password'=>$pass, 'message'=>"success created user"]);            
+						echo $pass;            
 					}
 					}else{
-						return Response::json(['status'=>false,'message'=>'parameter input not complete!','data'=>$input]);
+						echo 'please input msisdn!';
 					}
 				});
 	
