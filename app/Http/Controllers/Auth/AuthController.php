@@ -119,10 +119,10 @@ class AuthController extends Controller
         public function authenticated(Request $request, $user)
     {
         $now = date("Y-m-d H:i:s");
-        $date = strtotime($user->created_at);
+        $date = strtotime($user->subdate);
         $subdate= strtotime("+7 day", $date);
         $subdate = date("Y-m-d H:i:s", $subdate);
-        
+
         if ($subdate <= $now) {
             auth()->logout();
             return back()->with('warning', 'Your subscription has expired account. Now '. $now.' and your subcription date is '.$subdate.' Please buy the subscription again.');
