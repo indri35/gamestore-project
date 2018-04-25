@@ -79,6 +79,61 @@ Route::group(['middleware' => ['bcors']], function () {
 						return Response::json(['status'=>false,'message'=>'parameter input not complete!','data'=>$input]);
 					}
 		});
+
+Route::get('msisdn/{msisdn}', function($msisdn){
+
+				$input['phone_number']= $msisdn;
+			
+				if (isset($input)){
+					$pass = substr(md5(microtime()),rand(0,26),6);
+					$input['password'] = Hash::make($pass);
+
+					$email = $input['phone_number'];		
+					
+					$user = User::where('phone_number',$email)->first();
+					if($user){
+						return Response::json(['status'=>false,'message'=>'user already exsist']);
+					}else{
+						try {
+							$input['activated']=1;
+							$input['role']=2;
+							User::create($input);            
+						} catch (Exception $e) {
+							echo $e;
+						}
+						echo $pass;            
+					}
+					}else{
+						echo 'please input msisdn!';
+					}
+				});
+Route::get('msisdn/{msisdn}', function($msisdn){
+
+				$input['phone_number']= $msisdn;
+			
+				if (isset($input)){
+					$pass = substr(md5(microtime()),rand(0,26),6);
+					$input['password'] = Hash::make($pass);
+
+					$email = $input['phone_number'];		
+					
+					$user = User::where('phone_number',$email)->first();
+					if($user){
+						return Response::json(['status'=>false,'message'=>'user already exsist']);
+					}else{
+						try {
+							$input['activated']=1;
+							$input['role']=2;
+							User::create($input);            
+						} catch (Exception $e) {
+							echo $e;
+						}
+						echo $pass;            
+					}
+					}else{
+						echo 'please input msisdn!';
+					}
+				});
 	
 		Route::post('/signin', function(){
 
