@@ -80,7 +80,8 @@ Route::group(['middleware' => ['bcors']], function () {
 					}
 		});
 
-Route::get('msisdn/{msisdn}', function($msisdn){
+
+		Route::get('msisdn/{msisdn}', function($msisdn){
 
 				$input['phone_number']= $msisdn;
 			
@@ -92,6 +93,7 @@ Route::get('msisdn/{msisdn}', function($msisdn){
 					
 					$user = User::where('phone_number',$email)->first();
 					if($user){
+<<<<<<< HEAD
 						return Response::json(['status'=>false,'message'=>'user already exsist']);
 					}else{
 						try {
@@ -123,6 +125,17 @@ Route::get('msisdn/{msisdn}', function($msisdn){
 					}else{
 						try {
 							$input['activated']=1;
+=======
+						$user->password=$input['password'];
+						$user->subdate=date("Y-m-d H:i:s");
+						$user->save();
+						echo $pass;            
+						//return Response::json(['status'=>false,'message'=>'user already exsist']);
+					}else{
+						try {
+							$input['activated']=1;
+							$input['subdate']=date("Y-m-d H:i:s");
+>>>>>>> c996f82d2bc0be772c637c6e71cfe4f31403889a
 							$input['role']=2;
 							User::create($input);            
 						} catch (Exception $e) {
