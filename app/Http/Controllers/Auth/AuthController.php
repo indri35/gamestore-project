@@ -118,7 +118,16 @@ class AuthController extends Controller
 
         public function authenticated(Request $request, $user)
     {
-        if (!$user->activated) {
+        $now = date("Y-m-d H:i:s");
+        $date = strtotime($user->created_at);
+        $subdate= strtotime("+7 day", $date);
+        $subdate = date("Y-m-d H:i:s", $subdate);
+        
+        if ($subdate <= $now) {
+            auth()->logout();
+            return back()->with('warning', 'Your subscription has expired account. Now '. $now.' and your subcription date is '.$subdate.' Please buy the subscription again.');
+        }
+        else if (!$user->activated) {
             $this->activationService->sendActivationMail($user);
             auth()->logout();
             return back()->with('warning', 'You need to confirm your account. We have sent you an activation code, please check your email.');

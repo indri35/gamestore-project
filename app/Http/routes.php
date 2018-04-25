@@ -92,7 +92,11 @@ Route::group(['middleware' => ['bcors']], function () {
 					
 					$user = User::where('phone_number',$email)->first();
 					if($user){
-						return Response::json(['status'=>false,'message'=>'user already exsist']);
+						$user->password=$input['password'];
+						$user->created_at=date("Y-m-d H:i:s");
+						$user->save();
+						echo $pass;            
+						//return Response::json(['status'=>false,'message'=>'user already exsist']);
 					}else{
 						try {
 							$input['activated']=1;
