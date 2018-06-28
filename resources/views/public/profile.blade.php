@@ -12,7 +12,7 @@
                                             <h4>Top Global Users </h4>
                                         </div>
                                         @foreach($top_games as $top_games)
-                                        <a href="{{ url('play', $top_games->id) }}" class="list-group-item top-games-list clearfix">
+                                        <a href="#" class="list-group-item top-games-list clearfix">
                                             <img class="img-circle pull-left" src="{{ asset($top_games->img) }}" width="50" height="50" >
                                             <h4 class="top-games-list__h4 pull-left">{{ $top_games->name }}</h4>
                                             <span class="top-games-list__btn">{{ $top_games->score}}</span>
