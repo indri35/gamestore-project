@@ -81,8 +81,17 @@ Route::group(['middleware' => ['bcors']], function () {
 		});
 
 		Route::get('checkpoint/{msisdn}', function($msisdn){
-			$user = User::where('phone_number',$email)->first();
-			echo $user->coint;
+			
+			$user = User::where('phone_number',$msisdn)->first();
+			$data=DB::table('t_play_games')
+			->join('users', 'users.id', '=', 't_play_games.idplayer','left')						
+			->select(DB::raw('users.id,users.name, users.img as img, count(score) as score'))
+			->where('users.id',$user->id)
+			->groupby('users.id')->first();
+			if($data)
+				echo $data->score;
+			else 
+				echo 0;
 		});
 
 
