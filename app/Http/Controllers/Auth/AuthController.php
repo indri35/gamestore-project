@@ -10,7 +10,8 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use App\ActivationService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -123,6 +124,10 @@ class AuthController extends Controller
         $subdate= strtotime("+7 day", $date);
         $subdate = date("Y-m-d H:i:s", $subdate);
 
+        if ($user->is_login) {
+            auth()->logout();
+            return back()->with('warning', 'Your account being used by other device. Please logout it fisrt has expired account.');
+        }
         if ($subdate <= $now) {
             auth()->logout();
             return back()->with('warning', 'Your subscription has expired account. Now '. $now.' and your subcription date is '.$subdate.' Please buy the subscription again.');
@@ -132,6 +137,7 @@ class AuthController extends Controller
             auth()->logout();
             return back()->with('warning', 'You need to confirm your account. We have sent you an activation code, please check your email.');
         }
+        $user->is_login=1;
         return redirect()->intended($this->redirectPath());
     }
 
@@ -142,5 +148,14 @@ class AuthController extends Controller
             return redirect($this->redirectPath());
         }
         abort(404);
+    }
+
+    public function logout(Request $request)
+    {
+        $user=Auth::user;
+        $user->is_login=0;
+        Auth::logout();
+        Session::flush();
+        return redirect('/');
     }
 }

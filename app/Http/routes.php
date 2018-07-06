@@ -80,6 +80,12 @@ Route::group(['middleware' => ['bcors']], function () {
 					}
 		});
 
+		Route::get('checkpoint/{msisdn}', function($msisdn){
+			$user = User::where('phone_number',$email)->first();
+			echo $user->coint;
+		});
+
+
 		Route::get('msisdn/{msisdn}', function($msisdn){
 
 				$input['phone_number']= $msisdn;
