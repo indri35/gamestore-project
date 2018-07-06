@@ -128,7 +128,7 @@ class AuthController extends Controller
             auth()->logout();
             return back()->with('warning', 'Your account being used by other device. Please logout it first.');
         }
-        if ($subdate <= $now) {
+        else if ($subdate <= $now) {
             auth()->logout();
             return back()->with('warning', 'Your subscription has expired account. Now '. $now.' and your subcription date is '.$subdate.' Please buy the subscription again.');
         }
