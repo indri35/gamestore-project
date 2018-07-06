@@ -138,6 +138,7 @@ class AuthController extends Controller
             return back()->with('warning', 'You need to confirm your account. We have sent you an activation code, please check your email.');
         }
         $user->is_login=1;
+        $user->save();
         return redirect()->intended($this->redirectPath());
     }
 
