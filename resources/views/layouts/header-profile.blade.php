@@ -175,15 +175,11 @@
         <div class="topnav" id="myTopnav">
             <a href="#" class="active">
                 <i class="material-icons">assignment_turned_in</i>
-                <span class="hidden-xs">Achievements</span>
+                <span class="hidden-xs">Leaderboard</span>
             </a>
             <a href="#">
                 <i class="material-icons">favorite</i>
                 <span class="hidden-xs">Favorites</span>
-            </a>
-            <a href="#">
-                <i class="material-icons">group</i>
-                <span class="hidden-xs">Friends</span>
             </a>
         </div>
     
