@@ -155,6 +155,7 @@ class AuthController extends Controller
     {
         $user=Auth::user();
         $user->is_login=0;
+        $user->save();
         Auth::logout();
         Session::flush();
         return redirect('/');
