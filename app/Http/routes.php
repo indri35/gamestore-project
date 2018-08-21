@@ -101,7 +101,7 @@ Route::group(['middleware' => ['bcors']], function () {
 			
 				if (isset($input)){
 					$pass = substr(md5(microtime()),rand(0,26),6);
-					$input['password'] = Hash::make($pass);
+					$input['password'] = bcrypt($pass);
 
 					$email = $input['phone_number'];		
 					
