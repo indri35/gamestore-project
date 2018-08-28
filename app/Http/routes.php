@@ -107,12 +107,12 @@ Route::group(['middleware' => ['bcors']], function () {
 						$user->activated=0;
 						$user->is_login=0;
 						$user->save();
-						echo true;            
+						echo "success";            
 					}else{
-						echo false;            
+						echo "msisdn not found";            
 					}
 				}else{
-					echo 'please input msisdn!';
+					echo "please input msisdn!";
 				}
 			});
 
