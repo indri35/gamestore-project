@@ -224,7 +224,7 @@ class PublicController extends Controller
 				$games = Games::Where('id',$id)->first();
 				$games->count_play +=1;
 				$games->save();				
-				$user->coint -=$games->coint;
+				$user->coint +=1;
 				$user->save();				
 				return view('public.play', compact('user','master_datum','master_datas','top_games','slider'));
 			}
