@@ -133,7 +133,7 @@ class AuthController extends Controller
             return back()->with('warning', 'Your subscription has expired account. Now '. $now.' and your subcription date is '.$subdate.' Please buy the subscription again.');
         }
         else if (!$user->activated) {
-            $this->activationService->sendActivationMail($user);
+            //$this->activationService->sendActivationMail($user);
             auth()->logout();
             return back()->with('warning', 'You need to activate your account. Please registration again!');
         }
