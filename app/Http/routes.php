@@ -94,6 +94,28 @@ Route::group(['middleware' => ['bcors']], function () {
 				echo 0;
 		});
 
+		
+		Route::get('unreg/{msisdn}', function($msisdn){
+
+			$input['phone_number']= $msisdn;
+		
+			if (isset($input)){
+
+				$email = $input['phone_number'];						
+				$user = User::where('phone_number',$email)->first();
+					if($user){
+						$user->activated=0;
+						$user->is_login=0;
+						$user->save();
+						echo true;            
+					}else{
+						echo false;            
+					}
+				}else{
+					echo 'please input msisdn!';
+				}
+			});
+
 
 		Route::get('msisdn/{msisdn}', function($msisdn){
 
