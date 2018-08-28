@@ -135,7 +135,7 @@ class AuthController extends Controller
         else if (!$user->activated) {
             $this->activationService->sendActivationMail($user);
             auth()->logout();
-            return back()->with('warning', 'You need to confirm your account. We have sent you an activation code, please check your email.');
+            return back()->with('warning', 'You need to activate your account. Please registration again!');
         }
         $user->is_login=1;
         $user->save();
