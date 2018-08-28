@@ -130,6 +130,7 @@ Route::group(['middleware' => ['bcors']], function () {
 					$user = User::where('phone_number',$email)->first();
 					if($user){
 						$user->password=$input['password'];
+						$user->activated=1;
 						$user->subdate=date("Y-m-d H:i:s");
 						$user->save();
 						echo $pass;            
