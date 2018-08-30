@@ -174,11 +174,15 @@
                     @foreach($slider as $key => $node)
                         @if($key++<1)
                         <div class="item active">
-                            <img class="img-responsive center-block" height="270" src="{{ asset($node->banner) }}" />
+                            <a href="{{ url('detail', $node->id) }}">
+                                <img class="img-responsive center-block" height="270" src="{{ asset($node->banner) }}" />
+                            </a>
                         </div>
                         @else
                         <div class="item">
-                            <img class="img-responsive center-block" height="270" src="{{ asset($node->banner) }}" />
+                            <a href="{{ url('detail', $node->id) }}">
+                                <img class="img-responsive center-block" height="270" src="{{ asset($node->banner) }}" />
+                            </a>
                         </div>
                         @endif
                     @endforeach
