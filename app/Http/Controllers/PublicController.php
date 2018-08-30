@@ -29,6 +29,12 @@ class PublicController extends Controller
 		$this->middleware('auth');
 	}
 	
+	public function listusers()
+			{
+				$users=User::orderBy('name')->get();
+				return view('admin.user-admin',compact('users'));
+			}
+
 	public function getDataBarChart()
 	    {
 			$bar_chart =  DB::table('t_games')->get();
