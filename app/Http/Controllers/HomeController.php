@@ -28,6 +28,28 @@ class HomeController extends Controller
 		$this->middleware('auth');
 	}
 	
+	public function active($id)
+	{
+		$user=User::where('id',$id)->first();
+		$user->is_login=0;
+		$user->activated=1;
+		$user->save();
+		return redirect()->action(
+			'PublicController@listusers'
+		);
+	}
+
+	public function unactive($id)
+	{
+		$user=User::where('id',$id)->first();
+		$user->is_login=0;
+		$user->activated=0;
+		$user->save();
+		return redirect()->action(
+			'PublicController@listusers'
+		);	
+	}
+
 	public function index()
 		    {
 		if(Auth::user()){
@@ -259,6 +281,8 @@ class HomeController extends Controller
 
 		return view('public.editprofile',compact('user'));
 	}
+
+
 	public function updateprofile(Request $request)
 	{		
 		$this->validate($request, [

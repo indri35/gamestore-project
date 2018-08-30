@@ -9,7 +9,7 @@
                                     <div class="bs-example" data-example-id="media-alignment">
                                         <div class="media">
                                             <div class="media-left gs-media__img">
-                                                <a href="javascript:void(0);">
+                                                <a href="{{ url('play', $master_datum->id) }}">
                                                     <img class="media-object" src="{{ asset($master_datum->img) }}" width="200" height="200">
                                                 </a>
                                             </div>
@@ -33,8 +33,9 @@
                                                 <?php } ?>
                                                 <p>
                                                    <a href="{{ url('play', $master_datum->id) }}">
-                                                        <img data-toggle="tooltip" title="Play" class="media-object" src="{{ asset('/img_game/play.png') }}" width="50" height="50">
+                                                        <img data-toggle="tooltip" title="Play" class="media-object" src="{{ asset('/img_game/play.png') }}" width="80" height="80">
                                                    </a>
+                                                   <b>Klik icon to Play</b>
                                                    
                                                 </p>
                                             </div>

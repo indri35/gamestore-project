@@ -133,6 +133,12 @@
                         </a>
                     </li>
                     <li >
+                        <a href="{{ url('/listusers') }}">
+                            <i class="material-icons">playlist_add</i>
+                            <span>List Users</span>
+                        </a>
+                    </li>
+                    <li >
                         <a href="{{ url('/addgame') }}">
                             <i class="material-icons">playlist_add</i>
                             <span>Add Game</span>

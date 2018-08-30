@@ -17,6 +17,7 @@ Route::get('/', 'PublicController@index');
 Route::get('/detail/{id?}', ['as'=>'detail.id','uses'=>'PublicController@detail']);
 Route::get('/action', 'PublicController@action');
 Route::get('/listgames', 'PublicController@listgames');
+Route::get('/listusers', 'PublicController@listusers');
 Route::get('/casino', 'PublicController@casino');
 Route::get('/adventure', 'PublicController@adventure');
 Route::get('/home', 'PublicController@index');
@@ -36,6 +37,8 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/addgamesports', 'HomeController@addgamesports');
 	Route::get('/addgame', 'HomeController@addgame');
 	Route::get('/editgame/{id}', 'HomeController@editgame');
+	Route::get('/active/{id}', 'HomeController@active');
+	Route::get('/unactive/{id}', 'HomeController@unactive');
 	Route::delete('/deletegame/{id}', 'HomeController@deletegame');
 	Route::post('/updatedatagame', 'HomeController@updatedatagame');
 	Route::get('/userprofile', 'HomeController@userprofile');
