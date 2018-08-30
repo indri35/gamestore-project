@@ -126,7 +126,9 @@ class AuthController extends Controller
 
         if ($user->is_login) {
             auth()->logout();
-            return back()->with('warning', 'Your account being used by other device. Please logout it first.');
+            $user->is_login=0;
+            $user->save();    
+            return back()->with('warning', 'Your account being used by other device. Please logout it first and login again.');
         }
         else if ($subdate <= $now) {
             auth()->logout();
