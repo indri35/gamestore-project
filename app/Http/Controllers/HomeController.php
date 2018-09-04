@@ -81,7 +81,7 @@ class HomeController extends Controller
 										->get();
 			$arcade = Games::orderBy('created_at','DESC')
 										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
-										->WHERE('t_games.category','Arcade')
+										->WHERE('t_games.category','Sport')
 										->get();
 
 			$adventure = Games::orderBy('created_at','DESC')

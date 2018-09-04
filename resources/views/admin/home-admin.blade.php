@@ -23,7 +23,7 @@
                                     </li>
                                     <li role="presentation">
                                     <a href="#arcade" data-toggle="tab">
-                                        Arcade
+                                        Sport
                                     </a>
                                 </li>
                                 <li role="presentation">
