@@ -139,7 +139,7 @@ class AuthController extends Controller
             auth()->logout();
             return back()->with('warning', 'You need to activate your account. Please registration again!');
         }
-        $user->is_login=1;
+        //$user->is_login=1;
         $user->save();
         return redirect()->intended($this->redirectPath());
     }

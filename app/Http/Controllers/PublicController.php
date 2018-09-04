@@ -138,7 +138,7 @@ class PublicController extends Controller
 										->get();
 			$arcade = Games::orderBy('created_at','DESC')
 										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
-										->WHERE('t_games.category','Arcade')
+										->WHERE('t_games.category','Sport')
 										->get();
 			$puzzle = Games::orderBy('created_at','DESC')
 										->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
@@ -390,27 +390,27 @@ class PublicController extends Controller
 			}
 	}
 	
-	public function arcade()
+	public function sport()
 	{
-	$nav='arcade';
-	$master_datas = Games::Where('category','Arcade')->orderBy('created_at','DESC')->get();
+	$nav='sport';
+	$master_datas = Games::Where('category','Sport')->orderBy('created_at','DESC')->get();
 
 	$new_game = DB::table('t_games')
 								->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 								->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate'))
-								->where('t_games.category','Arcade')
+								->where('t_games.category','Sport')
 								->orderBy('t_games.id','DESC')
 								->get();
 	$most_played = DB::table('t_games')
 								->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 								->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate'))
-								->where('t_games.category','Arcade')
+								->where('t_games.category','Sport')
 								->orderBy('t_games.count_play','DESC')
 								->get();
 	$most_rated = DB::table('t_games')
 								->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 								->select(DB::raw('t_games.id,t_games.name,t_games.desc,t_games.coint,t_games.category,t_games.img,t_games_rate.avg_rate,t_games_rate.user_rate'))
-								->where('t_games.category','Arcade')
+								->where('t_games.category','Sport')
 								->orderBy('t_games_rate.user_rate','DESC')
 								->get();
 	$slider = DB::table('t_games')
