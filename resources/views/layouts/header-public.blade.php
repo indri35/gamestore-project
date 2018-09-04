@@ -212,9 +212,9 @@
                     <i class="material-icons">group_work</i>
                     <span class="hidden-xs">Casual</span>
                 </a>
-                <a data-toggle="tooltip" title="Arcade" href="{{ url('/arcade') }}" class="@if($nav=='arcade') active @endif">
+                <a data-toggle="tooltip" title="Sport" href="{{ url('/sport') }}" class="@if($nav=='sport') active @endif">
                     <i class="material-icons">assistant</i>
-                    <span class="hidden-xs">Arcade</span>
+                    <span class="hidden-xs">Sport</span>
                 </a>
                 <a data-toggle="tooltip" title="Adventure" href="{{ url('/adventure') }}" class="@if($nav=='adventure') active @endif">
                     <i class="material-icons">explore</i>

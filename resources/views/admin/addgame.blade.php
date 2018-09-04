@@ -81,7 +81,7 @@
                                                                 <option value="Adventure">Adventure</option>
                                                                 <option value="Action">Action</option>
                                                                 <option value="Casual">Casual</option>
-                                                                <option value="Arcade">Arcade</option>
+                                                                <option value="Sport">Sport</option>
                                                                 <option value="Puzzle">Puzzle</option>
                                                                 <option value="Education">Education</option>
                                                                 
