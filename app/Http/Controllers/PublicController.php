@@ -55,6 +55,16 @@ class PublicController extends Controller
 		
 	public function index()
 			{
+			
+		$user=Auth::user();				
+		$cekuser=User::where('id',$user->id)->first();
+		if($cekuser->activated==0){
+			Auth::logout();
+			Session::flush();
+			return redirect('/');
+		}
+		else{
+
 			$master_datas = Games::orderBy('created_at','DESC')->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')->paginate(9);
 			$dashboard_count = DB::table('t_games')
 						                ->select(DB::raw('count(t_games.id) as games,sum(t_games.count_play) as played'))
@@ -112,6 +122,8 @@ class PublicController extends Controller
 			}else{
 				return view('admin.board-admin', compact('master_datas','dashboard_count','player_count','action','adventure','casino','puzzle','education','nav'));	
 			}
+		}
+		
 	}
 
 	public function listgames()
@@ -182,6 +194,15 @@ class PublicController extends Controller
 		
 	public function play($id)
 		    {
+				$user=Auth::user();				
+				$cekuser=User::where('id',$user->id)->first();
+				if($cekuser->activated==0){
+					Auth::logout();
+					Session::flush();
+					return redirect('/');
+				}
+				else{
+				
 				$master_datum = DB::table('t_games')
 						->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 						->join('t_rate', 't_rate.id_game', '=', 't_games.id','left outer')
@@ -234,6 +255,7 @@ class PublicController extends Controller
 				$user->save();				
 				return view('public.play', compact('user','master_datum','master_datas','top_games','slider'));
 			}
+		}
 	}
 
 	public function adventure()
