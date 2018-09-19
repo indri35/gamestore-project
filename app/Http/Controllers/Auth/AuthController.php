@@ -123,8 +123,6 @@ class AuthController extends Controller
         $date = strtotime($user->subdate);
         $subdate= strtotime("+7 day", $date);
         $subdate = date("Y-m-d H:i:s", $subdate);
-        $ua =  $request->header('User-Agent');
-        $cekdevice=User::where('phone_number', $request->phone_number)->first();
 
         if ($user->is_login) {
             auth()->logout();
@@ -139,8 +137,8 @@ class AuthController extends Controller
             auth()->logout();
             return back()->with('warning', 'You need to activate your account. Please registration again!');
         }
-        $cekdevice->is_login=1;
-        $cekdevice->save();
+        $user->is_login=1;
+        $user->save();
         return redirect()->intended($this->redirectPath());
     }
 
