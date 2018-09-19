@@ -1,6 +1,7 @@
 <?php
 
 use App\User;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -120,7 +121,7 @@ Route::group(['middleware' => ['bcors']], function () {
 			});
 
 
-		Route::get('msisdn/{msisdn}', function($msisdn){
+		Route::get('msisdn/{msisdn}', function(Request $request, $msisdn){
 
 				$input['phone_number']= $msisdn;
 			
@@ -129,11 +130,12 @@ Route::group(['middleware' => ['bcors']], function () {
 					$input['password'] = bcrypt($pass);
 
 					$email = $input['phone_number'];		
-					
+					$ua =  $request->header('User-Agent');
 					$user = User::where('phone_number',$email)->first();
 					if($user){
 						$user->password=$input['password'];
 						$user->activated=1;
+						$user->user_agent=$ua;
 						$user->subdate=date("Y-m-d H:i:s");
 						$user->save();
 						echo $pass;            
@@ -141,6 +143,7 @@ Route::group(['middleware' => ['bcors']], function () {
 					}else{
 						try {
 							$input['activated']=1;
+							$input['user_agent']=$ua;
 							$input['subdate']=date("Y-m-d H:i:s");
 							$input['role']=2;
 							User::create($input);            
