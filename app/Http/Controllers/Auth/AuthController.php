@@ -124,12 +124,12 @@ class AuthController extends Controller
         $subdate= strtotime("+7 day", $date);
         $subdate = date("Y-m-d H:i:s", $subdate);
         $ua =  $request->header('User-Agent');
-        $cekdevice=User::where('user_agent',$ua)->where('phone_number', $request->phone_number)->first();
+        $cekdevice=User::where('phone_number', $request->phone_number)->first();
 
         if ($user->is_login) {
             auth()->logout();
-            $user->is_login=0;
-            $user->save();    
+            $cekdevice->is_login=0;
+            $cekdevice->save();    
             return back()->with('warning', 'Your account being used by other device. Please logout it first and login again.');
         }
         else if ($subdate <= $now) {
@@ -143,12 +143,12 @@ class AuthController extends Controller
         }
         else if (!$cekdevice) {
             auth()->logout();
-            $user->is_login=0;
-            $user->save();    
+            $cekdevice->is_login=0;
+            $cekdevice->save();    
             return back()->with('warning', 'Your device is different from the register account. Please use the registered device.');
         }
-        $user->is_login=1;
-        $user->save();
+        $cekdevice->is_login=1;
+        $cekdevice->save();
         return redirect()->intended($this->redirectPath());
     }
 
