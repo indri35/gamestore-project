@@ -63,6 +63,11 @@ class PublicController extends Controller
 			Session::flush();
 			return redirect('/');
 		}
+		else if($user->is_login!=$cek_user->is_login){
+			Auth::logout();
+			Session::flush();
+			return redirect('/');
+		}
 		else{
 
 			$master_datas = Games::orderBy('created_at','DESC')->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')->paginate(9);
@@ -201,6 +206,11 @@ class PublicController extends Controller
 					Session::flush();
 					return redirect('/');
 				}
+				else if($user->is_login!=$cek_user->is_login){
+					Auth::logout();
+					Session::flush();
+					return redirect('/');
+				}		
 				else{
 				
 				$master_datum = DB::table('t_games')
@@ -499,6 +509,11 @@ class PublicController extends Controller
 					Session::flush();
 					return redirect('/');
 				}
+				else if($user->is_login!=$cek_user->is_login){
+					Auth::logout();
+					Session::flush();
+					return redirect('/');
+				}		
 				else{
 		$nav='detail';
 		$master_datas = DB::table('t_games')
