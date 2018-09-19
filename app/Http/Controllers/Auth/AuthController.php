@@ -147,7 +147,6 @@ class AuthController extends Controller
             $user->save();    
             return back()->with('warning', 'Your device is different from the register account. Please use the registered device.');
         }
- 
         $user->is_login=1;
         $user->save();
         return redirect()->intended($this->redirectPath());
