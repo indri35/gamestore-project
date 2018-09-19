@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use JWTAuth;
-
+use Illuminate\Support\Facades\Session;
 
 class PublicController extends Controller
 {
@@ -59,6 +59,8 @@ class PublicController extends Controller
 		$user=Auth::user();				
 		$cekuser=User::where('id',$user->id)->first();
 		if($cekuser->activated==0){
+			$cekuser->is_login=0;
+			$cekuser->save();
 			Auth::logout();
 			Session::flush();
 			return redirect('/');
@@ -197,6 +199,8 @@ class PublicController extends Controller
 				$user=Auth::user();				
 				$cekuser=User::where('id',$user->id)->first();
 				if($cekuser->activated==0){
+					$cekuser->is_login=0;
+					$cekuser->save();		
 					Auth::logout();
 					Session::flush();
 					return redirect('/');
@@ -492,7 +496,18 @@ class PublicController extends Controller
 		
 	public function detail($id=null)
 		    {
-		$nav='detail';
+				$user=Auth::user();				
+				$cekuser=User::where('id',$user->id)->first();
+				if($cekuser->activated==0){
+					$cekuser->is_login=0;
+					$cekuser->save();		
+					Auth::logout();
+					Session::flush();
+					return redirect('/');
+				}
+				else{
+
+		$nav='detail';		
 		$master_datas = DB::table('t_games')
 				                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 				                ->join('t_rate', 't_rate.id_game', '=', 't_games.id','left outer')
@@ -513,6 +528,7 @@ class PublicController extends Controller
 			}else{
 				return $this->index();
 			}
+		}
 	}
 	
 	
