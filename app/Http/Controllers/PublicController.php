@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use JWTAuth;
-
+use Illuminate\Support\Facades\Session;
 
 class PublicController extends Controller
 {
