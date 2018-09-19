@@ -128,8 +128,6 @@ class AuthController extends Controller
 
         if ($user->is_login) {
             auth()->logout();
-            $cekdevice->is_login=0;
-            $cekdevice->save();    
             return back()->with('warning', 'Your account being used by other device. Please logout it first and login again.');
         }
         else if ($subdate <= $now) {
@@ -140,12 +138,6 @@ class AuthController extends Controller
             //$this->activationService->sendActivationMail($user);
             auth()->logout();
             return back()->with('warning', 'You need to activate your account. Please registration again!');
-        }
-        else if (!$cekdevice) {
-            auth()->logout();
-            $cekdevice->is_login=0;
-            $cekdevice->save();    
-            return back()->with('warning', 'Your device is different from the register account. Please use the registered device.');
         }
         $cekdevice->is_login=1;
         $cekdevice->save();
