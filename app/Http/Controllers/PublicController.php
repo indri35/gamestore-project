@@ -63,7 +63,7 @@ class PublicController extends Controller
 			Session::flush();
 			return redirect('/');
 		}
-		else if($user->is_login!=$cek_user->is_login){
+		else if($user->is_login!=$cekuser->is_login){
 			Auth::logout();
 			Session::flush();
 			return redirect('/');
@@ -206,7 +206,7 @@ class PublicController extends Controller
 					Session::flush();
 					return redirect('/');
 				}
-				else if($user->is_login!=$cek_user->is_login){
+				else if($user->is_login!=$cekuser->is_login){
 					Auth::logout();
 					Session::flush();
 					return redirect('/');
@@ -509,7 +509,7 @@ class PublicController extends Controller
 					Session::flush();
 					return redirect('/');
 				}
-				else if($user->is_login!=$cek_user->is_login){
+				else if($user->is_login!=$cekuser->is_login){
 					Auth::logout();
 					Session::flush();
 					return redirect('/');
