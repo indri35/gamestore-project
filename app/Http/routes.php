@@ -135,7 +135,7 @@ Route::group(['middleware' => ['bcors']], function () {
 					if($user){
 						$user->password=$input['password'];
 						$user->activated=1;
-						$user->user_agent=$ua;
+						//$user->user_agent=$ua;
 						$user->subdate=date("Y-m-d H:i:s");
 						$user->save();
 						echo $pass;            
@@ -143,7 +143,7 @@ Route::group(['middleware' => ['bcors']], function () {
 					}else{
 						try {
 							$input['activated']=1;
-							$input['user_agent']=$ua;
+							//$input['user_agent']=$ua;
 							$input['subdate']=date("Y-m-d H:i:s");
 							$input['role']=2;
 							User::create($input);            
