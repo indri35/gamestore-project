@@ -48,7 +48,7 @@
                 <!--<img src="{{ asset('img_game/logo.png') }}" width="100" height="100" alt="User Image">-->
                 </a>
             </div>
-            <a href="javascript:void(0);">Signin</b></a>
+            <a href="javascript:void(0);">Sign in</b></a>
             <small>Game Kepo Store - Happy to Play</small>
         </div>
         <div class="card">
