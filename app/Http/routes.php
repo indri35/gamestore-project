@@ -110,6 +110,7 @@ Route::group(['middleware' => ['bcors']], function () {
 					if($user){
 						$user->activated=0;
 						$user->is_login=0;
+						$user->coint=0;
 						$user->save();
 						echo "success";            
 					}else{
