@@ -59,6 +59,8 @@ class PublicController extends Controller
 		$user=Auth::user();				
 		$cekuser=User::where('id',$user->id)->first();
 		if($cekuser->activated==0){
+			$cekuser->is_login=0;
+			$cekuser->save();
 			Auth::logout();
 			Session::flush();
 			return redirect('/');
@@ -197,6 +199,8 @@ class PublicController extends Controller
 				$user=Auth::user();				
 				$cekuser=User::where('id',$user->id)->first();
 				if($cekuser->activated==0){
+					$cekuser->is_login=0;
+					$cekuser->save();		
 					Auth::logout();
 					Session::flush();
 					return redirect('/');
@@ -495,12 +499,15 @@ class PublicController extends Controller
 				$user=Auth::user();				
 				$cekuser=User::where('id',$user->id)->first();
 				if($cekuser->activated==0){
+					$cekuser->is_login=0;
+					$cekuser->save();		
 					Auth::logout();
 					Session::flush();
 					return redirect('/');
 				}
 				else{
-		$nav='detail';
+
+		$nav='detail';		
 		$master_datas = DB::table('t_games')
 				                ->join('t_games_rate', 't_games_rate.id_game', '=', 't_games.id','left outer')
 				                ->join('t_rate', 't_rate.id_game', '=', 't_games.id','left outer')
