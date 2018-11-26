@@ -31,7 +31,7 @@ class PublicController extends Controller
 	
 	public function listusers()
 			{
-				$users=User::orderBy('name')->get();
+				$users=User::orderBy('name')->paginate(100);
 				return view('admin.user-admin',compact('users'));
 			}
 
