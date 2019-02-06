@@ -271,7 +271,7 @@ class HomeController extends Controller
 				->select(DB::raw('users.id, users.name, users.phone_number as hp, users.img as img, count(score) as score'))
 				->groupby('users.id')
 				->orderby('score','desc')
-				->paginate(5);
+				->paginate(10);
 
 		return view('public.profile',compact('user','top_games'));
 	}
