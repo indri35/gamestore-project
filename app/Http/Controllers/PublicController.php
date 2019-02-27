@@ -242,19 +242,22 @@ class PublicController extends Controller
 			}else if($master_datum == null){
 				return $this->index();
 			}else{
-				$user=Auth::user();				
+				$user=Auth::user();			
+				$games = Games::Where('id',$id)->first();
+				$games->count_play +=1;
+				$games->save();				
+	
 				$plays = Plays::Where('idgames',$id)->Where('idplayer',$user->id)->first();
 				if($plays==null){
 					$plays = new Plays();
 					$plays->idplayer = $user->id;
 					$plays->idgames = $id;
-					$plays->score = 0;
-					$plays->subscription = 5;
+					$plays->score = $games->coint;;
 					$plays->save();
+				}else{
+					$plays->score += $games->coint;;
+					$plays->save();					
 				}
-				$games = Games::Where('id',$id)->first();
-				$games->count_play +=1;
-				$games->save();				
 				$user->coint += $games->coint;
 				$user->save();				
 				return view('public.play', compact('user','master_datum','master_datas','top_games','slider'));
