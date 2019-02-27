@@ -267,7 +267,7 @@ class HomeController extends Controller
 				->paginate(3);
 
 		$top_games = DB::table('users')
-				->select(DB::raw('users.id, users.name, users.phone_number as hp, users.img as img, coint'))
+				->select(DB::raw('users.id, users.name, users.phone_number as hp, users.img as img, coint as score'))
 				->orderBy('coint', 'desc')->take(5)->get();
 
 		return view('public.profile',compact('user','top_games'));
