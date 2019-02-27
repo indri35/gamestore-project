@@ -19,7 +19,11 @@
                                             <img class="img-circle pull-left" src="{{ asset('/assets/images/user.png') }}" width="50" height="50" >
                                             @endif
                                             <h4 class="top-games-list__h4 pull-left">{{ substr($top_games->hp,0,9) }}***</h4>
-                                            <span class="top-games-list__btn">{{ $top_games->score}}</span>
+                                            @if($top_games->score<5000)
+                                                <span class="top-games-list__btn">{{ $top_games->score}}</span>
+                                            @else
+                                                <button class="btn bg-green top-games-list__btn">Redeem {{ $top_games->score}}</button>
+                                            @endif
                                         </a>
                                         @endforeach
                                     </div>
