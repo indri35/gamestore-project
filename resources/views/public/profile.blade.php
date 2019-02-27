@@ -9,7 +9,7 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="list-group">
                                         <div class="list-group-item active">
-                                            <h4>Top Weeks </h4>
+                                            <h4>Top Weekly </h4>
                                         </div>
                                         @foreach($top_games as $top_games)
                                         <a href="#" class="list-group-item top-games-list clearfix">
