@@ -221,13 +221,13 @@ class PublicController extends Controller
 						->where('t_games.id',$id)
 						->paginate(3);
 
-						$top_games = DB::table('t_play_games')
-							->join('users', 'users.id', '=', 't_play_games.idplayer','left')						
-							->select(DB::raw('users.id,users.name, users.img as img, count(score) as score'))
-							->where('idgames',$id)
-							->groupby('users.id')
-							->orderby('score','desc')
-							->paginate(5);
+				$top_games = DB::table('t_play_games')
+					->join('users', 'users.id', '=', 't_play_games.idplayer','left')						
+					->select(DB::raw('users.id, users.name, users.phone_number as hp, users.img as img, count(score) as score'))
+					->where('idgames',$id)
+					->groupby('users.id')
+					->orderby('score','desc')
+					->paginate(5);
 
 
 				$slider = DB::table('t_games')

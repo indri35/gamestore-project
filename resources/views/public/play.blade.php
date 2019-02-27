@@ -138,7 +138,7 @@
                                             <img class="img-circle pull-left" src="{{ asset('/assets/images/user.png') }}" width="50" height="50" >
                                             @endif
                                             <h4 class="top-games-list__h4 pull-left">{{ substr($top_games->hp,0,9) }}***</h4>
-                                            <div class="top-games-list__btn"> ({{ $top_games->score }})</div>
+                                            <span class="top-games-list__btn">{{ $top_games->score}}</span>
                                         </a>
                                         @endforeach
                                     </div>
