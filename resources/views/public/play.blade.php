@@ -132,8 +132,12 @@
                                         </div>
                                         @foreach($top_games as $top_games)
                                         <a href="{{ url('play', $top_games->id) }}" class="list-group-item top-games-list clearfix">
+                                            @if($top_games->img)
                                             <img class="img-circle pull-left" src="{{ asset($top_games->img) }}" width="50" height="50" >
-                                            <h4 class="top-games-list__h4 pull-left">{{ $top_games->name }}</h4>
+                                            @else
+                                            <img class="img-circle pull-left" src="{{ asset('/assets/images/user.png') }}" width="50" height="50" >
+                                            @endif
+                                            <h4 class="top-games-list__h4 pull-left">{{ substr($top_games->hp,0,9) }}***</h4>
                                             <div class="top-games-list__btn"> ({{ $top_games->score }})</div>
                                         </a>
                                         @endforeach
