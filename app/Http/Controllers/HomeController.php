@@ -12,6 +12,7 @@ use App\Models\Plays;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
+use GuzzleHttp;
 
 class HomeController extends Controller
 {
@@ -43,11 +44,32 @@ class HomeController extends Controller
 	{
 		$user=User::where('id',$id)->first();
 		$user->is_login=0;
-		$user->activated=0;
+		$user->activated=1;
 		$user->save();
 		return redirect()->action(
 			'PublicController@listusers'
-		);	
+		);
+	}
+
+	public function redeem($hp)
+	{
+		$user = Auth::user();
+		if($user->phone_number!=$hp)
+			return "Redeem gagal. No akun tidak sesuai";
+		else
+		{
+			$uri = 'http://202.53.250.149/vas/hutch/kepogame?mobile_no='.$hp.'&message=GAME+REDEEM';
+			$client = new GuzzleHttp\Client(['base_uri' => $uri]);
+			$response = $client->request('GET');
+			$data =$response->getBody();
+			if($data=="ok"){
+				$user->coint -=5000;
+				$user->save();
+				return "Redeem berhasil. Moho tunggu pemberitahuan/sms dari kami.";
+			}else{
+				return "Redeem gagal. No akun tidak sesuai";
+			}
+		}
 	}
 
 	public function index()
@@ -268,6 +290,7 @@ class HomeController extends Controller
 
 		$top_games = DB::table('users')
 				->select(DB::raw('users.id, users.name, users.phone_number as hp, users.img as img, coint as score'))
+				->where('coint','>=',5000)
 				->orderBy('coint', 'desc')->take(5)->get();
 
 		return view('public.profile',compact('user','top_games'));

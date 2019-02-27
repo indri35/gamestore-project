@@ -12,7 +12,7 @@
                                             <h4>Top Monthly </h4>
                                         </div>
                                         @foreach($top_games as $top_games)
-                                        <a href="#" class="list-group-item top-games-list clearfix">
+                                        <a href=""  onclick="cek({{ $top_games->hp }})" class="list-group-item top-games-list clearfix">
                                             @if($top_games->img)
                                             <img class="img-circle pull-left" src="{{ asset($top_games->img) }}" width="50" height="50" >
                                             @else
@@ -39,3 +39,20 @@
             </div>
     </section>
 @include('layouts.footer') 
+<script type="text/javascript">
+function cek(hp){    
+    var result = confirm('Are you sure want to redeem 5000 points?')
+    if(result){
+    $.ajax({
+        url: "{{ url('redeem')}}/0"+hp,
+        type: 'GET',
+        success: function(res) {
+            console.log(res);
+            alert(res);
+        },error:function(res) {
+            alert(res);
+        }
+        });
+    }
+}
+</script>

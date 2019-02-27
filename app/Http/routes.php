@@ -47,6 +47,8 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::post('/updateprofile', 'HomeController@updateprofile');
 	Route::post('/adddatagame', 'HomeController@adddatagame');
 	Route::post('/addreviewgame', 'HomeController@addreviewgame');
+	Route::get('/redeem/{hp}', 'HomeController@redeem');
+
 
 });
 
