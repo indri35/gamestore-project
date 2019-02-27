@@ -266,10 +266,8 @@ class HomeController extends Controller
 				->orderBy('t_games.count_play','DESC')
 				->paginate(3);
 
-		$top_games = DB::table('t_play_games')
-				->join('users', 'users.id', '=', 't_play_games.idplayer','left')						
-				->select(DB::raw('users.id, users.name, users.phone_number as hp, users.img as img, sum(score) as score'))
-				->groupby('users.id')
+		$top_games = DB::table('users')
+				->select(DB::raw('users.id, users.name, users.phone_number as hp, users.img as img, coint as score'))
 				->orderby('score','desc')
 				->paginate(5);
 
