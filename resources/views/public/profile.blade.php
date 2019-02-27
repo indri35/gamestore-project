@@ -12,7 +12,7 @@
                                             <h4>Top Monthly </h4>
                                         </div>
                                         @foreach($top_games as $top_games)
-                                        <a href=""  onclick="cek({{ $top_games->hp }})" class="list-group-item top-games-list clearfix">
+                                        <a href="{{ url('userprofile') }}"  onclick="cek({{ $top_games->hp }})" class="list-group-item top-games-list clearfix">
                                             @if($top_games->img)
                                             <img class="img-circle pull-left" src="{{ asset($top_games->img) }}" width="50" height="50" >
                                             @else
