@@ -267,7 +267,7 @@ class HomeController extends Controller
 				->paginate(3);
 
 		$top_games = DB::table('users')
-				->select(DB::raw('users.id, users.name, users.phone_number as hp, users.img as img, coint as score'))
+				->select(DB::raw('users.id, users.name, users.phone_number as hp, users.img as img, coint'))
 				->orderby('score','desc')
 				->paginate(5);
 
