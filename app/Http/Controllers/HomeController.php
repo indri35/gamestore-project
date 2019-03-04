@@ -61,7 +61,7 @@ class HomeController extends Controller
 			$last = (int)date('m',strtotime($user->last_redeem));
 			$month = (int)date('m');
 
-			if($month>$last){
+			if($month>$last || $user->last_redeem=='0000-00-00 00:00:00'){
 				$uri = 'http://202.53.250.149/vas/hutch/kepogame?mobile_no='.$hp.'&message=GAME+REDEEM';
 				$client = new GuzzleHttp\Client(['base_uri' => $uri]);
 				$response = $client->request('GET');
