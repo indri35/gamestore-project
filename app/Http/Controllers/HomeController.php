@@ -61,23 +61,19 @@ class HomeController extends Controller
 			$last = (int)date('m',strtotime($user->last_redeem));
 			$month = (int)date('m');
 
-			if($month>$last || $user->last_redeem=='0000-00-00 00:00:00'){
 				$uri = 'http://202.53.250.149/vas/hutch/kepogame?mobile_no='.$hp.'&message=GAME+REDEEM';
 				$client = new GuzzleHttp\Client(['base_uri' => $uri]);
 				$response = $client->request('GET');
 				$data =$response->getBody();
 
-				if($data=="ok"){
+				if($data=="OK"){
 					$user->coint -=5000;
 					$user->last_redeem= date("Y-m-d H:i:s");
 					$user->save();
 					return "Redeem berhasil. Mohon tunggu pemberitahuan/sms dari kami";
 				}else{
-					return "Redeem gagal. No akun tidak sesuai";
+					return "Redeem gagal. Disebabkan ".$data;
 				}
-		 	}else{
-				return "Redeem gagal. Anda telah melakukan redeem bulan ini. Mohon redeem kembali bulan berikutnya.";
-			 }
 		}
 	}
 
